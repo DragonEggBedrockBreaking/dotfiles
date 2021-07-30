@@ -7,3 +7,7 @@ alias unmute="pactl -- set-sink-mute @DEFAULT_SINK@ false"
 
 alias upvolume="pactl set-sink-volume @DEFAULT_SINK@ +10%"
 alias downvolume="pactl set-sink-volume @DEFAULT_SINK@ -10%"
+
+function on_exit --on-event fish_exit
+	echo goodbye
+end

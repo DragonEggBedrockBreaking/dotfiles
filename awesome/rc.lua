@@ -45,7 +45,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_themes_dir() .. "sky/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
@@ -460,5 +460,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 beautiful.useless_gap = 10
 
 awful.spawn.with_shell("picom")
-awful.spawn.with_shell("nitrogen --set-zoom-fill --random /home/debb/Photos/wallpapers")
-awful.spawn.with_shell("/home/debb/.config/polybar/launch.sh")
+awful.spawn.with_shell("nitrogen --set-zoom-fill --random ~/Photos/wallpapers")
+awful.spawn.with_shell("~/.config/polybar/launch.sh")
+awful.spawn.with_shell("~/.config/polybar/scripts/polybar-quotation/quot.py --random")

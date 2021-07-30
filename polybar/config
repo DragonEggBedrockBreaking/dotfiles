@@ -36,6 +36,8 @@ offset-x = 1%
 radius = 8.0
 fixed-center = true
 
+enable-ipc = true
+
 background = ${colors.background}
 foreground = ${colors.foreground}
 
