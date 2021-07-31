@@ -1,0 +1,9 @@
+set autoindent
+set expandtab
+set smarttab
+set tabstop=4
+set encoding=utf-8
+set background=dark
+set smartcase
+set nobackup
+set noswapfile
