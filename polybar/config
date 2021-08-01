@@ -116,17 +116,17 @@ label = %percentage_used%%
 type = internal/date
 interval = 1
 
-date = %d/%m/%Y
-date-alt = %Y-%m-%d
+date = %a %d %b
+date-alt = %a %d %b
 
-time = %H:%M:%S
-time-alt = %H:%M
+time = %R
+time-alt = %T
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
-label = %date% %time%
+label = %date%  %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
