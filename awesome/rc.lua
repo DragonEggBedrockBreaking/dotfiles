@@ -439,10 +439,6 @@ beautiful.useless_gap = 10
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("nitrogen --set-zoom-fill --random ~/Photos/wallpapers")
 
--- Setup polybar (removing border doesn't work yet)
--- ruled.client.append_rule {
-        -- rule = { class = "polybar" },
-        -- properties = { client.border_width = xresources.apply_dpi(1) }
--- }
-awful.spawn.with_shell("killall -q polybar")
-awful.spawn.with_shell("polybar mybar")
+-- Setup polybar
+awful.spawn("killall -q polybar")
+awful.spawn("polybar mybar")
