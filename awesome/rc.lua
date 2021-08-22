@@ -318,7 +318,7 @@ root.keys(globalkeys)
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
-      properties = { border_width = beautiful.border_width,
+      properties = { -- border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
                      raise = true,
@@ -328,37 +328,19 @@ awful.rules.rules = {
                      placement = awful.placement.no_overlap+awful.placement.no_offscreen
      }
     },
+    
+    -- Adds a border to all windows except a few specified windows
+    { rule = { },
+      except_any = { class = { "Polybar" } },
+      properties = { border_width = beautiful.border_width }
+    },
 
     -- Floating clients.
     { rule_any = {
-        instance = {
-          -- "DTA",  -- Firefox addon DownThemAll.
-          -- "copyq",  -- Includes session name in class.
-          -- "pinentry",
-        },
-        class = {
-          -- "Arandr",
-          -- "Blueman-manager",
-          -- "Gpick",
-          -- "Kruler",
-          -- "MessageWin",  -- kalarm.
-          -- "Sxiv",
-          -- "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
-          -- "Wpa_gui",
-          -- "veromix",
-          -- "xtightvncviewer"
-        },
-
-        -- Note that the name property shown in xprop might be set slightly after creation of the client
-        -- and the name shown there might not match defined rules here.
-        name = {
-          -- "Event Tester",  -- xev.
-        },
-        role = {
-          -- "AlarmWindow",  -- Thunderbird's calendar.
-          -- "ConfigManager",  -- Thunderbird's about:config.
-          "pop-up",       -- e.g. Google Chrome's (detached) Developer Tools.
-        }
+        instance = { },
+        class = { },
+        name = { },
+        role = { "pop-up" }, -- e.g. Google Chrome's (detached) Developer Tools.
       }, properties = { floating = true }},
 
     -- Add titlebars to normal clients and dialogs
@@ -435,10 +417,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- Add gaps to windows
 beautiful.useless_gap = 10
 
--- Setup compositor and wallpaper
+-- Setup compositor, wallpaper and titlebar
 awful.spawn.with_shell("picom")
 awful.spawn.with_shell("nitrogen --set-zoom-fill --random ~/Photos/wallpapers")
-
--- Setup polybar
 awful.spawn("killall -q polybar")
 awful.spawn("polybar mybar")

@@ -1,14 +1,12 @@
-local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 local themes_path = require("gears.filesystem").get_themes_dir()
-
 
 -- BASICS
 local theme = {}
 theme.font          = "FantasqueSans 8"
 
-theme.useless_gap   = dpi(0)
+theme.useless_gap   = dpi(10)
 theme.border_width  = dpi(5)
 theme.border_normal = "#14ff1b"
 theme.border_focus  = "#00158f"
