@@ -7,7 +7,7 @@ local theme = {}
 theme.font          = "FantasqueSans 8"
 
 theme.useless_gap   = dpi(10)
-theme.border_width  = dpi(8)
+theme.border_width  = dpi(5)
 theme.border_normal = "#14ff1b"
 theme.border_focus  = "#00158f"
 
