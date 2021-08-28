@@ -419,6 +419,6 @@ beautiful.useless_gap = 10
 
 -- Setup compositor, wallpaper and titlebar
 awful.spawn.with_shell("picom --config ~/.config/picom/picom.conf")
-awful.spawn.with_shell("nitrogen --set-zoom-fill --random ~/Photos/wallpapers")
+awful.spawn.with_shell("feh --bg-fill --no-fehbg Photos/wallpaper.jpg")
 awful.spawn("killall -q polybar")
 awful.spawn("polybar mybar")
