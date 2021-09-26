@@ -110,11 +110,11 @@ screens = [
 
                 widget.Spacer(length=bar.STRETCH),
 
-                widget.Backlight(
+                """widget.Backlight(
                     format='Brightness: {percent:2.0%}',
                     device='intel_backlight',
                     change_command='brightnessctl s {0}',
-                ),
+                ),"""
                 widget.Spacer(length=10),
                 widget.PulseVolume(
                     fmt='Volume: {}',
@@ -131,7 +131,7 @@ screens = [
         ),
         bottom=bar.Bar(
             [
-                widget.WindowTabs(),
+                widget.WindowName(),
                 widget.Spacer(length=bar.STRETCH),
                 
                 widget.CPU(
