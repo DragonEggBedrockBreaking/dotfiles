@@ -38,8 +38,7 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(),
-        desc="Move window focus to other window"),
+    Key([mod], "space", lazy.layout.next(),desc="Move window focus to other window"),
 
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
@@ -69,8 +68,7 @@ keys = [
     Key([mod, "shift"], "c", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawncmd(),
-        desc="Spawn a command using a prompt widget"),
+    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -87,7 +85,12 @@ for i in groups:
     ])
 
 layouts = [
-    layout.MonadTall(),
+    layout.MonadTall(
+        border_focus='#00158f',
+        border_normal='#14ff1b',
+        border_width=5,
+        margin=10,
+    ),
 ]
 
 widget_defaults = dict(
@@ -101,18 +104,14 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CPU(
-                    format='CPU: {load_percent}%'),
-                widget.Spacer(length=10),
-                widget.Memory(
-                    format='Memory: {MemUsed: .0f}{mm}/{MemTotal: .0f}{mm}'),
-                widget.Spacer(length=15),
+                widget.Clock(
+                    format='%a %d/%m/%Y %H:%M'),
                 widget.GroupBox(),
 
                 widget.Spacer(length=bar.STRETCH),
 
                 widget.Backlight(
-                    fmt='Brightness: {}',
+                    format='Brightness: {percent:2.0%}',
                     device='intel_backlight',
                     change_command='brightnessctl s {0}',
                 ),
@@ -125,12 +124,37 @@ screens = [
                 widget.Spacer(length=10),
                 widget.Battery(
                     format='Battery: {percent:2.0%}'),
-                widget.Spacer(length=10),
-                widget.Clock(
-                    format='%a %d/%m/%Y %H:%M'),
                 widget.QuickExit(),
             ],
             24,
+            background='#AA000000',
+        ),
+        bottom=bar.Bar(
+            [
+                widget.WindowTabs(),
+                widget.Spacer(length=bar.STRETCH),
+                
+                widget.CPU(
+                    format='CPU:{load_percent}%'),
+                widget.CPUGraph(
+                    border_color='#ff5c0a'),
+                widget.Spacer(length=10),
+
+                widget.Memory(
+                    format='Memory:{MemUsed: .0f}{mm} /{MemTotal: .0f}{mm}'),
+                widget.MemoryGraph(
+                    border_color='#ff5c0a'),
+                widget.SwapGraph(
+                    border_color='#ff5c0a'),
+                widget.Spacer(length=10),
+                
+                widget.Net(
+                    format='Network:{down} down;{up} up'),
+                widget.NetGraph(
+                    border_color='#ff5c0a'),
+            ],
+            36,
+            background='#AA000000',
         ),
     ),
 ]
