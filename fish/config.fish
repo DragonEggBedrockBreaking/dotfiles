@@ -1,6 +1,6 @@
 alias gimp='flatpak run org.gimp.GIMP//beta'
 alias cat='bat'
-alias exa='ls -a'
-alias fd='find'
+alias ls='exa -a'
+alias find='find'
 alias grep='rg'
 alias ps='procs'
