@@ -61,14 +61,11 @@ keys = [
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
 
-    # Launch Terminal
-    Key([mod], "Return", lazy.spawn('kitty'), desc="Launch terminal"),
-
     # Open/close/restart windows/software/WM
     Key([mod, "shift"], "c", lazy.window.kill(), desc="Kill focused window"),
-    Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "Return", lazy.spawn('kitty'), desc="Launch terminal"),
 ]
 
 groups = [Group(i) for i in "123456789"]
@@ -106,7 +103,10 @@ screens = [
             [
                 widget.Clock(
                     format='%a %d/%m/%Y %H:%M'),
+                widget.Spacer(10),
                 widget.GroupBox(),
+                widget.Spacer(20),
+                widget.Prompt(),
 
                 widget.Spacer(length=bar.STRETCH),
 
