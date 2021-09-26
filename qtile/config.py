@@ -110,12 +110,12 @@ screens = [
 
                 widget.Spacer(length=bar.STRETCH),
 
-                """widget.Backlight(
-                    format='Brightness: {percent:2.0%}',
-                    device='intel_backlight',
-                    change_command='brightnessctl s {0}',
-                ),"""
-                widget.Spacer(length=10),
+                #widget.Backlight(
+                #    format='Brightness: {percent:2.0%}',
+                #    device='intel_backlight',
+                #    change_command='brightnessctl s {0}',
+                #),
+                #widget.Spacer(length=10),
                 widget.PulseVolume(
                     fmt='Volume: {}',
                     volume_up_command='pactl set-sink-volume @DEFAULT_SINK@ +5%',
