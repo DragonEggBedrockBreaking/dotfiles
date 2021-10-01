@@ -29,3 +29,16 @@ set background=dark " use better colours for dark theme
 set nobackup "no backups as I have git
 set nowb "ignores it if it fails to write buffer
 set noswapfile "remove swap files
+
+"Plugins
+call plug#begin('~/.vim/plugged')
+    Plug 'tpope/vim-fugitive' "git inside vim
+    Plug 'preservim/nerdtree' "file management in vim
+    Plug 'vim-syntastic/syntastic' "syntax checker inside vim
+call plug#end()
+
+"Dealing with syntastic
+let g:syntastic_cpp_checkers = ['gcc']
+let g:syntastic_json_checkers = ['jsonlint']
+let g:syntastic_markdown_checkers = ['mdl']
+let g:syntastic_python_checkers = ['flake8']
