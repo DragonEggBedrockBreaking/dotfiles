@@ -24,8 +24,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from typing import List  # noqa: F401
-
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -101,17 +99,15 @@ screens = [
                 widget.Prompt(),
 
                 widget.Spacer(length=bar.STRETCH),
-                
-                #widget.Backlight(
-                #    format='Brightness: {percent:2.0%}',
-                #    device='intel_backlight',
-                #    change_command='brightnessctl s {0}',
-                #),
-                #widget.Spacer(length=10),
-                widget.PulseVolume(
+
+                # widget.Backlight(
+                #     format='Brightness: {percent:2.0%}',
+                #     device='intel_backlight',
+                #     change_command='brightnessctl s {0}',
+                # ),
+                # widget.Spacer(length=10),
+                widget.Volume(
                     fmt='Volume: {}',
-                    volume_up_command='pactl set-sink-volume @DEFAULT_SINK@ +5%',
-                    volume_down_command='pactl set-sink-volume @DEFAULT_SINK@ -5%',
                 ),
                 widget.Spacer(length=10),
                 widget.Battery(
@@ -125,7 +121,7 @@ screens = [
             [
                 widget.WindowName(),
                 widget.Spacer(length=bar.STRETCH),
-                
+
                 widget.CPU(
                     format='CPU:{load_percent}%'),
                 widget.CPUGraph(
@@ -139,7 +135,7 @@ screens = [
                 widget.SwapGraph(
                     border_color='#ff5c0a'),
                 widget.Spacer(length=10),
-                
+
                 widget.Net(
                     format='Network:{down} down;{up} up'),
                 widget.NetGraph(
@@ -193,5 +189,3 @@ auto_minimize = True
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
-
-
