@@ -41,4 +41,4 @@ call plug#end()
 let g:syntastic_cpp_checkers = ['gcc']
 let g:syntastic_json_checkers = ['jsonlint']
 let g:syntastic_markdown_checkers = ['mdl']
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['pylint']
