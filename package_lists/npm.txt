@@ -1,3 +1,0 @@
-debb@ /home/debb
-└── jsonlint@1.6.3
-
