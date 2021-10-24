@@ -1,3 +1,13 @@
+----------------
+--COLOURSCHEME--
+----------------
+--vim.g.material_style = "deep ocean"
+--vim.g.material_style = "oceanic"
+--vim.g.material_style = "palenight"
+vim.g.material_style = "darker"
+vim.cmd[[colorscheme material]]
+
+
 -----------
 --OPTIONS--
 -----------
@@ -141,7 +151,6 @@ map('n', '<silent> <leader>v', ':lua require"dap".repl.run_last()<CR>', {noremap
 map('n', '<silent> <leader>t', ':lua require("dap-python").test_method()<CR>', {noremap = true, silent = true})
 map('n', '<silent> <leader>d', '<ESC>:lua require("dap-python").debug_selection()<CR>', {noremap = true, silent = true})
 
-
 -----------
 --PLUGINS--
 -----------
@@ -163,5 +172,6 @@ return require('packer').startup(function()
     use 'ellisonleao/glow.nvim' --markdown previewer
     use 'mg979/vim-visual-multi' --multiple cursors
     use 'Yggdroot/indentLine' --visual indents
-    use 'dense-analysis/ale' --code linting (use defaults)
+    use 'vim-syntastic/syntastic' --syntax checking, uses whatever is installed
+    use 'marko-cerovac/material.nvim' --theme
 end)
