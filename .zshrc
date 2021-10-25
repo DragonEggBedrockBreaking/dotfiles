@@ -1,5 +1,5 @@
 # ZSH CONFIG
-export ZSH="~/.oh-my-zsh" # path to oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh" # path to oh-my-zsh
 
 pfetch # run as header
 ZSH_THEME="daveverwer" # zsh theme
