@@ -153,7 +153,6 @@ map('n', '<silent> <leader>d', '<ESC>:lua require("dap-python").debug_selection(
 -----------
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim' --plugin manager manages itself
-    use 'tpope/vim-fugitive' --git inside vim
     use 'luukvbaal/nnn.nvim' --file management inside vim
     use 'mfussenegger/nvim-lint' --syntax checker inside vim
     use 'mfussenegger/nvim-dap' --debugger inside vim
