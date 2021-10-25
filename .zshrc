@@ -20,10 +20,15 @@ plugins=(cargo colored-man-pages colorize copydir copyfile gitfast gitignore git
 
 source $ZSH/oh-my-zsh.sh
 
-# Export stuff
-export PATH=$PATH:/opt/gradle/gradle-7.3-rc-2/bin
+# Export general stuff
+export PATH=$PATH:/opt/gradle/gradle-7.3-rc-2/bin:~/.local/bin:~/node_modules/.bin:~/bin:~/.luarocks/bin
 export LANG=en_GB.UTF-8 # set language
 export EDITOR='nvim' # set editor
+
+# Export for nnn file manager
+export NNN_PLUG='j:autojump;b:bulknew;d:diffs;g:dragdrop;i:imgview;p:preview-tui;r:renamer;c:togglex' # all nnn plugins
+export NNN_FCOLORS='0000150a0b09090d09d0d0dd' # char/block: black, dirs: red, execs: green, normal: yellow, links: red, other: orange
+export NNN_FIFO="/tmp/nnn.fifo" # sets a temp file for nnn
 
 # Aliases for commands
 alias bat='bat --force-colorization --theme ansi'

@@ -1,11 +1,7 @@
 ----------------
 --COLOURSCHEME--
 ----------------
---vim.g.material_style = "deep ocean"
---vim.g.material_style = "oceanic"
---vim.g.material_style = "palenight"
-vim.g.material_style = "darker"
-vim.cmd[[colorscheme material]]
+vim.cmd[[colorscheme uwu]]
 
 
 -----------
@@ -173,5 +169,5 @@ return require('packer').startup(function()
     use 'mg979/vim-visual-multi' --multiple cursors
     use 'Yggdroot/indentLine' --visual indents
     use 'vim-syntastic/syntastic' --syntax checking, uses whatever is installed
-    use 'marko-cerovac/material.nvim' --theme
+    use 'mangeshrex/uwu.vim' --theme
 end)
