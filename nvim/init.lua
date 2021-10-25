@@ -131,6 +131,19 @@ require'nvim-treesitter.configs'.setup {
 }
 
 
+------------------
+--VISUAL INDENTS--
+------------------
+vim.opt.termguicolors = true
+vim.cmd [[highlight IndentBlankline guifg=#7e7e7e gui=nocombine]]
+require('indent_blankline').setup {
+    char = '┆',
+    char_highlight_list = {
+        'IndentBlankline',
+    },
+}
+
+
 -------------
 --DEBUGGING--
 -------------
@@ -167,7 +180,7 @@ return require('packer').startup(function()
     use 'mfussenegger/nvim-dap-python' --python debugger
     use 'ellisonleao/glow.nvim' --markdown previewer
     use 'mg979/vim-visual-multi' --multiple cursors
-    use 'Yggdroot/indentLine' --visual indents
+    use 'lukas-reineke/indent-blankline.nvim' --visual indents
     use 'vim-syntastic/syntastic' --syntax checking, uses whatever is installed
     use 'mangeshrex/uwu.vim' --theme
 end)
