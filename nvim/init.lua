@@ -55,8 +55,9 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
---NERDTree mapping
-map('n', '<silent> <leader>fm', ':NERDTree<CR>', {noremap = true, silent = true})
+--nnn mapping
+require("nnn").setup()
+map('n', '<silent> <leader>fm', ':NnnExplorer<CR>', {noremap = true, silent = true})
 
 --Formatting code
 map('n', '<silent> <leader>fmtc', '<cmd>astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true, silent = true})
@@ -153,7 +154,7 @@ map('n', '<silent> <leader>d', '<ESC>:lua require("dap-python").debug_selection(
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim' --plugin manager manages itself
     use 'tpope/vim-fugitive' --git inside vim
-    use 'preservim/nerdtree' --file management inside vim
+    use 'luukvbaal/nnn.nvim' --file management inside vim
     use 'mfussenegger/nvim-lint' --syntax checker inside vim
     use 'mfussenegger/nvim-dap' --debugger inside vim
     use 'neovim/nvim-lspconfig' --language server protocol in neovim
