@@ -160,6 +160,12 @@ map('n', '<silent> <leader>v', ':lua require"dap".repl.run_last()<CR>', {noremap
 map('n', '<silent> <leader>t', ':lua require("dap-python").test_method()<CR>', {noremap = true, silent = true})
 map('n', '<silent> <leader>d', '<ESC>:lua require("dap-python").debug_selection()<CR>', {noremap = true, silent = true})
 
+
+--------------
+--COMMENTING--
+--------------
+require('Comment').setup()
+
 -----------
 --PLUGINS--
 -----------
@@ -182,4 +188,5 @@ return require('packer').startup(function()
     use 'lukas-reineke/indent-blankline.nvim' --visual indents
     use 'vim-syntastic/syntastic' --syntax checking, uses whatever is installed
     use 'mangeshrex/uwu.vim' --theme
+    use 'numToStr/Comment.nvim' --commenting in nvim
 end)
