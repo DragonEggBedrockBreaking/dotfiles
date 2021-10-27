@@ -166,14 +166,49 @@ map('n', '<leader>d', '<ESC>:lua require("dap-python").debug_selection()<CR>', {
 --------------
 require('Comment').setup()
 
+
+---------------
+--STATUS LINE--
+---------------
+local colors = require('galaxyline.theme').default
+require('galaxyline').section.left[1] = {
+    FileName = {
+        provider = 'FileName',
+        highlight = {colors.cyan},
+    },
+    FileEncode = {
+        provider = 'FileEncode',
+        highlight = {colors.blue},
+    },
+    FileSize = {
+        provider = 'FileSize',
+        highlight = {colors.magenta},
+    },
+}
+require('galaxyline').section.mid[1] = {
+    GitBranch = {
+        provider = 'GitBranch',
+        highlight = {colors.green},
+    },
+}
+require('galaxyline').section.right[1] = {
+    LineColumn = {
+        provider = 'LineColumn',
+        highlight = {colors.red},
+    },
+    LinePercent = {
+        provider = 'LinePercent',
+        highlight = {colors.orange},
+    },
+}
+
+
 -----------
 --PLUGINS--
 -----------
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim' --plugin manager manages itself
     use 'luukvbaal/nnn.nvim' --file management inside vim
-    use 'mfussenegger/nvim-lint' --syntax checker inside vim
-    use 'mfussenegger/nvim-dap' --debugger inside vim
     use 'neovim/nvim-lspconfig' --language server protocol in neovim
     use 'hrsh7th/cmp-nvim-lsp' --autocompletion
     use 'hrsh7th/cmp-buffer' --autocompletion
@@ -189,4 +224,5 @@ return require('packer').startup(function()
     use 'vim-syntastic/syntastic' --syntax checking, uses whatever is installed
     use 'mangeshrex/uwu.vim' --theme
     use 'numToStr/Comment.nvim' --commenting in nvim
+    use 'glepnir/galaxyline.nvim' --status line
 end)
