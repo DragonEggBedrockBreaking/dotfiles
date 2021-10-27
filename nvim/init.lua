@@ -66,11 +66,11 @@ map('n', 'frs', ':!rustfmt --unstable-features --emit files %<CR>', {noremap = t
 map('n', 'fsh', ':!shfmt -w -s -i 4 %<CR>', {noremap = true, silent = true})
 
 --Running code
-map('n', 'bc', ':!gcc % -o %:r.out<CR>', {noremap = true, silent = true})
+map('n', 'bcc', ':!gcc % -o %:r.out<CR>', {noremap = true, silent = true})
 map('n', 'bcpp', ':!g++ % -o %:r.out<CR>', {noremap = true, silent = true})
 map('n', 'bcg', ':!cargo build<CR>', {noremap = true, silent = true})
 map('n', 'brs', ':!rustc %<CR>', {noremap = true, silent = true})
-map('n', 'rc', ':!gcc % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
+map('n', 'rcc', ':!gcc % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
 map('n', 'rcpp', ':!g++ % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
 map('n', 'rcg', ':!cargo run<CR>', {noremap = true, silent = true})
 map('n', 'rpy', ':!python %<CR>', {noremap = true, silent = true})
