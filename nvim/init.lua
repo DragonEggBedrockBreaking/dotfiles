@@ -59,22 +59,22 @@ require("nnn").setup()
 map('n', '<silent> <leader>fm', ':NnnExplorer<CR>', {noremap = true, silent = true})
 
 --Formatting code
-map('n', '<silent> <leader>fmtc', '<cmd>astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>fmtjson', '<cmd>fixjson --write --indent 4 %<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>fmtpy', '<cmd>autopep8 --aggressive --experimental --in-place --max-line-length 100 %<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>fmtrs', '<cmd>rustfmt --unstable-features --emit files %<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>fmtsh', '<cmd>shfmt -w -s -i 4 %<CR>', {noremap = true, silent = true})
+map('n', '<silent> fc', '<cmd>astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true, silent = true})
+map('n', '<silent> fjson', '<cmd>fixjson --write --indent 4 %<CR>', {noremap = true, silent = true})
+map('n', '<silent> fpy', '<cmd>autopep8 --aggressive --experimental --in-place --max-line-length 100 %<CR>', {noremap = true, silent = true})
+map('n', '<silent> frs', '<cmd>rustfmt --unstable-features --emit files %<CR>', {noremap = true, silent = true})
+map('n', '<silent> fsh', '<cmd>shfmt -w -s -i 4 %<CR>', {noremap = true, silent = true})
 
 --Running code
-map('n', '<silent> <leader>bdc', '<cmd>gcc % -o %:r.out<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>bdcpp', '<cmd>g++ % -o %:r.out<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>bdcg', '<cmd>cargo build<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>bdrs', '<cmd>rustc %<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>rnc', '<cmd>gcc % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>rncpp', '<cmd>g++ % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>rncg', '<cmd>cargo run<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>rnpy', '<cmd>python %<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>rnrs', '<cmd>rustc % && ./%:r<CR>', {noremap = true, silent = true})
+map('n', '<silent> bc', '<cmd>gcc % -o %:r.out<CR>', {noremap = true, silent = true})
+map('n', '<silent> bcpp', '<cmd>g++ % -o %:r.out<CR>', {noremap = true, silent = true})
+map('n', '<silent> bcg', '<cmd>cargo build<CR>', {noremap = true, silent = true})
+map('n', '<silent> brs', '<cmd>rustc %<CR>', {noremap = true, silent = true})
+map('n', '<silent> rc', '<cmd>gcc % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
+map('n', '<silent> rcpp', '<cmd>g++ % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
+map('n', '<silent> rcg', '<cmd>cargo run<CR>', {noremap = true, silent = true})
+map('n', '<silent> rpy', '<cmd>python %<CR>', {noremap = true, silent = true})
+map('n', '<silent> rrs', '<cmd>rustc % && ./%:r<CR>', {noremap = true, silent = true})
 
 
 ------------------
