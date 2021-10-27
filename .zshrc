@@ -21,7 +21,7 @@ plugins=(cargo colored-man-pages colorize copydir copyfile gitfast gitignore git
 source $ZSH/oh-my-zsh.sh
 
 # Export general stuff
-export PATH=$PATH:/opt/gradle/gradle-7.3-rc-2/bin:~/.local/bin:~/node_modules/.bin:~/bin:~/.luarocks/bin
+export PATH=$PATH:/opt/gradle/gradle-7.3-rc-3/bin:~/.local/bin:~/node_modules/.bin:~/bin:~/.luarocks/bin
 export LANG=en_GB.UTF-8 # set language
 export EDITOR='nvim'    # set editor
 
@@ -30,7 +30,7 @@ export NNN_PLUG='j:autojump;b:bulknew;d:diffs;g:dragdrop;i:imgview;p:preview-tui
 export NNN_FCOLORS='0000150a0b09090d09d0d0dd'                                                         # char/block: black, dirs: red, execs: green, normal: yellow, links: red, other: orange
 export NNN_FIFO="/tmp/nnn.fifo"                                                                       # sets a temp file for nnn
 
-# Aliases for commands
+# Aliases for utility commands
 alias bat='bat --force-colorization --theme ansi'
 alias exa='exa -ah@ --colour=auto --icons --git --group-directories-first'
 alias exalong='exa -lah@ --colour=auto --icons --no-permissions --git --group-directories-first'
@@ -38,6 +38,20 @@ alias exatree='exa --tree --level=2 --colour=auto'
 alias fd='fd -uuij 4'
 alias procs='procs --tree --color always'
 alias rg='rg -uuupj 4'
+
+# Aliases for git
+alias gstatus='git status'
+alias gfetch='git fetch'
+alias gpull='git pull'
+alias gbchange='git checkout'
+alias gbnew='git branch'
+alias gadd='git add .'
+alias gcommit='git commit -m'
+alias gcommitall='git commit -a -m'
+alias gpush='git push'
+alias gdiff='git diff'
+alias gshow='git show'
+alias glog='git log'
 
 # Aliases for software
 alias nqq='flatpak run com.notepadqq.Notepadqq'
