@@ -56,25 +56,25 @@ end
 
 --nnn mapping
 require("nnn").setup()
-map('n', '<silent> <leader>fm', ':NnnExplorer<CR>', {noremap = true, silent = true})
+map('n', ' <leader>fm', ':NnnExplorer<CR>', {noremap = true, silent = true})
 
 --Formatting code
-map('n', '<silent> fc', '<cmd>astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true, silent = true})
-map('n', '<silent> fjson', '<cmd>fixjson --write --indent 4 %<CR>', {noremap = true, silent = true})
-map('n', '<silent> fpy', '<cmd>autopep8 --aggressive --experimental --in-place --max-line-length 100 %<CR>', {noremap = true, silent = true})
-map('n', '<silent> frs', '<cmd>rustfmt --unstable-features --emit files %<CR>', {noremap = true, silent = true})
-map('n', '<silent> fsh', '<cmd>shfmt -w -s -i 4 %<CR>', {noremap = true, silent = true})
+map('n', ' fc', '<cmd>astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true, silent = true})
+map('n', ' fjson', '<cmd>fixjson --write --indent 4 %<CR>', {noremap = true, silent = true})
+map('n', ' fpy', '<cmd>autopep8 --aggressive --experimental --in-place --max-line-length 100 %<CR>', {noremap = true, silent = true})
+map('n', ' frs', '<cmd>rustfmt --unstable-features --emit files %<CR>', {noremap = true, silent = true})
+map('n', ' fsh', '<cmd>shfmt -w -s -i 4 %<CR>', {noremap = true, silent = true})
 
 --Running code
-map('n', '<silent> bc', '<cmd>gcc % -o %:r.out<CR>', {noremap = true, silent = true})
-map('n', '<silent> bcpp', '<cmd>g++ % -o %:r.out<CR>', {noremap = true, silent = true})
-map('n', '<silent> bcg', '<cmd>cargo build<CR>', {noremap = true, silent = true})
-map('n', '<silent> brs', '<cmd>rustc %<CR>', {noremap = true, silent = true})
-map('n', '<silent> rc', '<cmd>gcc % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
-map('n', '<silent> rcpp', '<cmd>g++ % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
-map('n', '<silent> rcg', '<cmd>cargo run<CR>', {noremap = true, silent = true})
-map('n', '<silent> rpy', '<cmd>python %<CR>', {noremap = true, silent = true})
-map('n', '<silent> rrs', '<cmd>rustc % && ./%:r<CR>', {noremap = true, silent = true})
+map('n', ' bc', '<cmd>gcc % -o %:r.out<CR>', {noremap = true, silent = true})
+map('n', ' bcpp', '<cmd>g++ % -o %:r.out<CR>', {noremap = true, silent = true})
+map('n', ' bcg', '<cmd>cargo build<CR>', {noremap = true, silent = true})
+map('n', ' brs', '<cmd>rustc %<CR>', {noremap = true, silent = true})
+map('n', ' rc', '<cmd>gcc % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
+map('n', ' rcpp', '<cmd>g++ % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
+map('n', ' rcg', '<cmd>cargo run<CR>', {noremap = true, silent = true})
+map('n', ' rpy', '<cmd>python %<CR>', {noremap = true, silent = true})
+map('n', ' rrs', '<cmd>rustc % && ./%:r<CR>', {noremap = true, silent = true})
 
 
 ------------------
@@ -150,15 +150,15 @@ require('indent_blankline').setup {
 require('dap-python').setup('/usr/bin/python')
 
 --Setup nvim-dap hotkeys
-map('n', '<silent> <leader>c', ':lua require("dap").continue()<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>n', ':lua require"dap".step_over()<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>.', ':lua require"dap".step_into()<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>,', ':lua require"dap".step_out()<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>b', ':lua require"dap".toggle_breakpoint()<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>o', ':lua require"dap".repl.open()<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>v', ':lua require"dap".repl.run_last()<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>t', ':lua require("dap-python").test_method()<CR>', {noremap = true, silent = true})
-map('n', '<silent> <leader>d', '<ESC>:lua require("dap-python").debug_selection()<CR>', {noremap = true, silent = true})
+map('n', ' <leader>c', ':lua require("dap").continue()<CR>', {noremap = true, silent = true})
+map('n', ' <leader>n', ':lua require"dap".step_over()<CR>', {noremap = true, silent = true})
+map('n', ' <leader>.', ':lua require"dap".step_into()<CR>', {noremap = true, silent = true})
+map('n', ' <leader>,', ':lua require"dap".step_out()<CR>', {noremap = true, silent = true})
+map('n', ' <leader>b', ':lua require"dap".toggle_breakpoint()<CR>', {noremap = true, silent = true})
+map('n', ' <leader>o', ':lua require"dap".repl.open()<CR>', {noremap = true, silent = true})
+map('n', ' <leader>v', ':lua require"dap".repl.run_last()<CR>', {noremap = true, silent = true})
+map('n', ' <leader>t', ':lua require("dap-python").test_method()<CR>', {noremap = true, silent = true})
+map('n', ' <leader>d', '<ESC>:lua require("dap-python").debug_selection()<CR>', {noremap = true, silent = true})
 
 
 --------------
