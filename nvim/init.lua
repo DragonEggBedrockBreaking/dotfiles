@@ -59,22 +59,22 @@ require("nnn").setup()
 map('n', '<leader>fm', ':NnnExplorer<CR>', {noremap = true, silent = true})
 
 --Formatting code
-map('n', 'fc', '<cmd>astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true, silent = true})
-map('n', 'fjson', '<cmd>fixjson --write --indent 4 %<CR>', {noremap = true, silent = true})
-map('n', 'fpy', '<cmd>autopep8 --aggressive --experimental --in-place --max-line-length 100 %<CR>', {noremap = true, silent = true})
-map('n', 'frs', '<cmd>rustfmt --unstable-features --emit files %<CR>', {noremap = true, silent = true})
-map('n', 'fsh', '<cmd>shfmt -w -s -i 4 %<CR>', {noremap = true, silent = true})
+map('n', 'fc', ':!astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true, silent = true})
+map('n', 'fjson', ':!fixjson --write --indent 4 %<CR>', {noremap = true, silent = true})
+map('n', 'fpy', ':!autopep8 --aggressive --experimental --in-place --max-line-length 100 %<CR>', {noremap = true, silent = true})
+map('n', 'frs', ':!rustfmt --unstable-features --emit files %<CR>', {noremap = true, silent = true})
+map('n', 'fsh', ':!shfmt -w -s -i 4 %<CR>', {noremap = true, silent = true})
 
 --Running code
-map('n', 'bc', '<cmd>gcc % -o %:r.out<CR>', {noremap = true, silent = true})
-map('n', 'bcpp', '<cmd>g++ % -o %:r.out<CR>', {noremap = true, silent = true})
-map('n', 'bcg', '<cmd>cargo build<CR>', {noremap = true, silent = true})
-map('n', 'brs', '<cmd>rustc %<CR>', {noremap = true, silent = true})
-map('n', 'rc', '<cmd>gcc % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
-map('n', 'rcpp', '<cmd>g++ % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
-map('n', 'rcg', '<cmd>cargo run<CR>', {noremap = true, silent = true})
-map('n', 'rpy', '<cmd>python %<CR>', {noremap = true, silent = true})
-map('n', 'rrs', '<cmd>rustc % && ./%:r<CR>', {noremap = true, silent = true})
+map('n', 'bc', ':!gcc % -o %:r.out<CR>', {noremap = true, silent = true})
+map('n', 'bcpp', ':!g++ % -o %:r.out<CR>', {noremap = true, silent = true})
+map('n', 'bcg', ':!cargo build<CR>', {noremap = true, silent = true})
+map('n', 'brs', ':!rustc %<CR>', {noremap = true, silent = true})
+map('n', 'rc', ':!gcc % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
+map('n', 'rcpp', ':!g++ % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
+map('n', 'rcg', ':!cargo run<CR>', {noremap = true, silent = true})
+map('n', 'rpy', ':!python %<CR>', {noremap = true, silent = true})
+map('n', 'rrs', ':!rustc % && ./%:r<CR>', {noremap = true, silent = true})
 
 
 ------------------
