@@ -20,6 +20,7 @@ vim.opt.smartcase = true --unless there is a capital letter
 
 --Performance options
 vim.opt.lazyredraw = true --don't update screen during macro and script execution
+vim.opt.ttyfast = true --also improves performance in vim
 
 --Text rendering
 vim.opt.encoding = 'utf-8' --use utf-8
@@ -38,10 +39,8 @@ vim.opt.backup = false --no backups as I have git
 vim.opt.wb = false --ignores it if it fails to write buffer
 vim.opt.swapfile = false --remove swap files
 
---Usability options
-vim.opt.compatible = false --don't maintain vi compat
-
--- Autocompletion options
+--Other options
+vim.opt.compatible = false --don't maintain vi compatibility
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'} --completion options
 
 
