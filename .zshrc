@@ -17,11 +17,10 @@ HIST_STAMPS="yyyy/mm/dd" # fix date-time
 
 # Plugins
 plugins=(cargo colored-man-pages colorize copydir copyfile gitfast gitignore git-prompt pip vi-mode zsh-autosuggestions zsh-syntax-highlighting)
-
 source $ZSH/oh-my-zsh.sh
 
 # Export general stuff
-export PATH=$PATH:/opt/gradle/gradle-7.3-rc-3/bin:~/.local/bin:~/node_modules/.bin:~/bin:~/.luarocks/bin
+export PATH=$PATH:/opt/gradle/gradle-7.3-rc-3/bin:~/.local/bin:~/node_modules/.bin:~/bin
 export LANG=en_GB.UTF-8 # set language
 export EDITOR='nvim'    # set editor
 
