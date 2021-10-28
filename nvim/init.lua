@@ -59,22 +59,24 @@ require("nnn").setup()
 map('n', 'nnn', ':NnnExplorer<CR>', {noremap = true, silent = true})
 
 --Formatting code
-map('n', 'fc', ':!astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true, silent = true})
-map('n', 'fjson', ':!fixjson --write --indent 4 %<CR>', {noremap = true, silent = true})
-map('n', 'fpy', ':!autopep8 --aggressive --experimental --in-place --max-line-length 100 %<CR>', {noremap = true, silent = true})
-map('n', 'frs', ':!rustfmt --unstable-features --emit files %<CR>', {noremap = true, silent = true})
-map('n', 'fsh', ':!shfmt -w -s -i 4 %<CR>', {noremap = true, silent = true})
+map('n', 'fc', ':!astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true, silent = true}) --Use astyle to format c code
+map('n', 'fjson', ':!fixjson --write --indent 4 %<CR>', {noremap = true, silent = true}) --Use fixjson to fix/format json
+map('n', 'fpy', ':!autopep8 --aggressive --experimental --in-place --max-line-length 100 %<CR>', {noremap = true, silent = true}) --Use autopep8 to format python code
+map('n', 'frs', ':!rustfmt --unstable-features --emit files %<CR>', {noremap = true, silent = true}) --Use rustfmt to format rust code
+map('n', 'fsh', ':!shfmt -w -s -i 4 %<CR>', {noremap = true, silent = true}) --Use shfmt to format sh code, e.g. the .zshrc or .bashrc (doesn't work with fish)
+
+--Building code
+map('n', 'bcc', ':!gcc % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c code with gcc
+map('n', 'bcpp', ':!g++ % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c++ code with g++
+map('n', 'bcg', ':!cargo build<CR>', {noremap = true, silent = true}) --Builds rust code with cargo
+map('n', 'brs', ':!rustc %<CR>', {noremap = true, silent = true}) --Builds rust code with rustc
 
 --Running code
-map('n', 'bcc', ':!gcc % -o %:r.out<CR>', {noremap = true, silent = true})
-map('n', 'bcpp', ':!g++ % -o %:r.out<CR>', {noremap = true, silent = true})
-map('n', 'bcg', ':!cargo build<CR>', {noremap = true, silent = true})
-map('n', 'brs', ':!rustc %<CR>', {noremap = true, silent = true})
-map('n', 'rcc', ':!gcc % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
-map('n', 'rcpp', ':!g++ % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true})
-map('n', 'rcg', ':!cargo run<CR>', {noremap = true, silent = true})
-map('n', 'rpy', ':!python %<CR>', {noremap = true, silent = true})
-map('n', 'rrs', ':!rustc % && ./%:r<CR>', {noremap = true, silent = true})
+map('n', 'rcc', ':!gcc % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c code with gcc
+map('n', 'rcpp', ':!g++ % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c++ code with g++
+map('n', 'rcg', ':!cargo run<CR>', {noremap = true, silent = true}) --Builds and runs rust code with cargo run
+map('n', 'rpy', ':!python3 %<CR>', {noremap = true, silent = true}) --Runs python code with python3
+map('n', 'rrs', ':!rustc % && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs rust code with rustc
 
 
 ------------------
