@@ -56,7 +56,7 @@ end
 
 --nnn mapping
 require("nnn").setup()
-map('n', '<leader>fm', ':NnnExplorer<CR>', {noremap = true, silent = true})
+map('n', 'nnn', ':NnnExplorer<CR>', {noremap = true, silent = true})
 
 --Formatting code
 map('n', 'fc', ':!astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true, silent = true})
