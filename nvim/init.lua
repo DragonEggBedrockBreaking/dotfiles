@@ -149,6 +149,30 @@ require('indent_blankline').setup {
 -- Setup nvim-dap-python
 require('dap-python').setup('/usr/bin/python')
 
+-- Setup dap for c/c++/rust
+local dap = require('dap')
+dap.adapters.lldb = {
+    type = 'executable',
+    command = '/usr/bin/lldb-vscode',
+    name = "lldb"
+}
+dap.configurations.c = {
+    {
+        name = "Launch",
+        type = "lldb",
+        request = "launch",
+        program = function()
+            return vim.fn.input('Path to executable: ', vim.fn.getcwd() ..  '/', 'file')
+        end,
+        cwd = '${workspaceFolder}',
+        stopOnEntry = false,
+        args = {},
+        runInTerminal = true,
+    },
+}
+dap.configurations.cpp = dap.configurations.c
+dap.configurations.rust = dap.configurations.c
+
 --Setup nvim-dap hotkeys
 map('n', '<leader>c', ':lua require("dap").continue()<CR>', {noremap = true, silent = true})
 map('n', '<leader>n', ':lua require"dap".step_over()<CR>', {noremap = true, silent = true})
