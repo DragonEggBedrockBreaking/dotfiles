@@ -68,12 +68,13 @@ map('n', 'fsh', ':!shfmt -w -s -i 4 %<CR>', {noremap = true, silent = true}) --U
 --Building code
 map('n', 'bcc', ':!gcc % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c code with gcc
 map('n', 'bcpp', ':!g++ % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c++ code with g++
-map('n', 'bcg', ':!cargo build<CR>', {noremap = true, silent = true}) --Builds rust code with cargo
+map('n', 'bcg', ':!cargo build --release<CR>', {noremap = true, silent = true}) --Builds rust code with cargo, without debug symbols
 map('n', 'brs', ':!rustc %<CR>', {noremap = true, silent = true}) --Builds rust code with rustc
 
---Building debug code (for c and c++, as python is interpreted and rust automatically does this)
+--Building debug code (for c, c++, and rust, as python is interpreted)
 map('n', 'dcc', ':!gcc -g % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c code with gcc and debug symbols
-map('n', 'bcpp', ':!g++ -g % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c++ code with g++ and debug symbols
+map('n', 'dcpp', ':!g++ -g % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c++ code with g++ and debug symbols
+map('n', 'dcg', ':!cargo build<CR>', {noremap = true, silent = true}) --Builds and runs rust code with cargo build, with debug symbols
 
 --Running code
 map('n', 'rcc', ':!gcc % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c code with gcc
