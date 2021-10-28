@@ -79,7 +79,7 @@ map('n', 'dcg', ':!cargo build<CR>', {noremap = true, silent = true}) --Builds a
 --Running code
 map('n', 'rcc', ':!gcc % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c code with gcc
 map('n', 'rcpp', ':!g++ % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c++ code with g++
-map('n', 'rcg', ':!cargo run<CR>', {noremap = true, silent = true}) --Builds and runs rust code with cargo run
+map('n', 'rcg', ':!cargo run --release<CR>', {noremap = true, silent = true}) --Builds and runs (release) rust code with cargo run
 map('n', 'rpy', ':!python3 %<CR>', {noremap = true, silent = true}) --Runs python code with python3
 map('n', 'rrs', ':!rustc % && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs rust code with rustc
 
