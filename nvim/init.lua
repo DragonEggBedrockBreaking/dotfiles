@@ -1,7 +1,7 @@
 ----------------
 --COLOURSCHEME--
 ----------------
-vim.cmd[[colorscheme uwu]]
+vim.cmd[[colorscheme monokai_soda]]
 
 
 -----------
@@ -252,8 +252,8 @@ return require('packer').startup(function()
     use 'ellisonleao/glow.nvim' --markdown previewer
     use 'mg979/vim-visual-multi' --multiple cursors
     use 'lukas-reineke/indent-blankline.nvim' --visual indents
-    use 'mangeshrex/uwu.vim' --theme
     use 'numToStr/Comment.nvim' --commenting in nvim
     use 'glepnir/galaxyline.nvim' --status line
     use 'dense-analysis/ale' --syntax checking
+    use 'tanvirtin/monokai.nvim' --theme
 end)
