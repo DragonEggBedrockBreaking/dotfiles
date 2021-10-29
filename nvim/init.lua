@@ -1,7 +1,7 @@
 ----------------
 --COLOURSCHEME--
 ----------------
-vim.cmd[[colorscheme monokai_soda]]
+require('monokai').setup { palette = require('monokai').soda }
 
 
 -----------
