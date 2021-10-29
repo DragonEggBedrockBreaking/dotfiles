@@ -37,6 +37,7 @@ alias exatree='exa --tree --level=2 --colour=auto'
 alias fd='fd -uuij 4'
 alias procs='procs --tree --color always'
 alias rg='rg -uuupj 4'
+alias tokei='tokei --hidden --no-ignore'
 
 # Aliases for git
 alias gstatus='git status'
