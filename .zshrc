@@ -53,6 +53,7 @@ alias gpush='git push'
 alias gdiff='git diff'
 alias gshow='git show'
 alias glog='git log'
+alias ginit='git init'
 
 # Aliases for software
 alias nqq='flatpak run com.notepadqq.Notepadqq'
