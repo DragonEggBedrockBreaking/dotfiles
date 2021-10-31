@@ -21,8 +21,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Export general stuff
 export PATH=$PATH:/opt/gradle/gradle-7.3-rc-3/bin:~/.local/bin:~/node_modules/.bin:~/bin
-export LANG=en_GB.UTF-8 # set language
-export EDITOR='nvim'    # set editor
+export LANG=en_GB.UTF-8     # set language
+export LANGUAGE=en_GB.UTF-8 # set language
+export EDITOR='nvim'        # set editor
 
 # Export for nnn file manager
 export NNN_PLUG='j:autojump;b:bulknew;d:diffs;g:dragdrop;i:imgview;p:preview-tui;r:renamer;c:togglex' # all nnn plugins
@@ -55,3 +56,4 @@ alias glog='git log'
 
 # Aliases for software
 alias nqq='flatpak run com.notepadqq.Notepadqq'
+alias vifm='~/.config/vifm/scripts/vifmrun'
