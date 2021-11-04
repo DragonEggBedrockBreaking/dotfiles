@@ -2,6 +2,12 @@
 --COLOURSCHEME--
 ----------------
 require('monokai').setup { palette = require('monokai').soda }
+vim.cmd([[
+augroup TransparentColours
+autocmd!
+autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+augroup end
+]])
 
 
 -----------
