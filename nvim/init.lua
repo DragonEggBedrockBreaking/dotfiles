@@ -268,4 +268,5 @@ return require('packer').startup(function()
     use 'glepnir/galaxyline.nvim' --status line
     use 'dense-analysis/ale' --syntax checking
     use 'tanvirtin/monokai.nvim' --theme
+    use 'github/copilot.vim' --github copilot
 end)
