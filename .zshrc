@@ -57,4 +57,5 @@ alias ginit='git init'
 
 # Aliases for software
 alias nqq='flatpak run com.notepadqq.Notepadqq'
-alias vifm='~/.config/vifm/scripts/vifmrun'
+alias surf='GDK_BACKEND=x11 surf'
+alias surfstart='GDK_BACKEND=x11 surf duckduckgo.com'
