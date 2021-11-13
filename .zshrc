@@ -58,3 +58,8 @@ alias ginit='git init'
 # Aliases for software
 alias nqq='flatpak run com.notepadqq.Notepadqq'
 alias surf='GDK_BACKEND=x11 surf'
+alias mpv='flatpak run io.mpv.Mpv'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
