@@ -149,9 +149,9 @@ require'nvim-treesitter.configs'.setup {
         enable = true,
         additional_vim_regex_highlighting = false,
     },
-    indent = {
-        enable = true,
-    },
+--    indent = {
+--        enable = true,
+--    },
 }
 
 
@@ -251,7 +251,6 @@ require('galaxyline').section.right[1] = {
     },
 }
 
-
 -----------
 --PLUGINS--
 -----------
@@ -275,4 +274,5 @@ return require('packer').startup(function()
     use 'dense-analysis/ale' --syntax checking
     use 'tanvirtin/monokai.nvim' --theme
     use 'github/copilot.vim' --github copilot
+    use 'editorconfig/editorconfig-vim' --editorconfig
 end)
