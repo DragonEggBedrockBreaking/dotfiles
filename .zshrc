@@ -1,7 +1,7 @@
 # ZSH CONFIG
 export ZSH="$HOME/.oh-my-zsh" # path to oh-my-zsh
 
-pfetch                 # run as header
+fastfetch              # run as header
 ZSH_THEME="daveverwer" # zsh theme
 #ZSH_THEME="bira" # another nice theme
 CASE_SENSITIVE="false"             # case insensitive
@@ -20,7 +20,7 @@ plugins=(cargo colored-man-pages colorize copydir copyfile gitfast gitignore git
 source $ZSH/oh-my-zsh.sh
 
 # Export general stuff
-export PATH=$PATH:/opt/gradle/gradle-7.3-rc-3/bin:~/.local/bin:~/node_modules/.bin:~/bin
+export PATH=$PATH:/opt/gradle/gradle-7.3-rc-3/bin:~/.local/bin:~/node_modules/.bin:~/bin:~/go/bin
 export LANG=en_GB.UTF-8     # set language
 export LANGUAGE=en_GB.UTF-8 # set language
 export EDITOR='nvim'        # set editor
