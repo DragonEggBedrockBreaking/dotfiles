@@ -16,7 +16,7 @@ ENABLE_CORRECTION="true" # command autocorrection
 HIST_STAMPS="yyyy/mm/dd" # fix date-time
 
 # Plugins
-plugins=(cargo colored-man-pages colorize copydir copyfile gitfast gitignore git-prompt pip vi-mode zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(cargo colored-man-pages colorize gitignore git-prompt vi-mode zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Export general stuff
@@ -62,7 +62,6 @@ alias gcherrypick='git cherry-pick'
 
 # Aliases for software
 alias nqq='flatpak run com.notepadqq.Notepadqq'
-alias surf='GDK_BACKEND=x11 surf'
 alias mpv='flatpak run io.mpv.Mpv'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
