@@ -106,6 +106,7 @@ map('n', 'orcg', ':!cargo run --release<CR>', {noremap = true, silent = true}) -
 --map('n', 'orpy', ':!pypy3 %<CR>', {noremap = true, silent = true}) --Runs optimised python code with pypy3, [commented out because no support for python3.10]
 map('n', 'orrs', ':!rustc -C opt-level=3 % && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs rust code with rustc, with opt-level=3 optimisations
 
+
 ------------------
 --AUTOCOMPLETION--
 ------------------
@@ -218,6 +219,16 @@ map('n', '<leader>t', ':lua require("dap-python").test_method()<CR>', {noremap =
 map('n', '<leader>d', '<ESC>:lua require("dap-python").debug_selection()<CR>', {noremap = true, silent = true})
 
 
+----------------
+--FUZZY FUNDER--
+----------------
+require('telescope').setup()
+map('n', '<leader>ff', ':lua require"telescope.builtin".find_files()<cr>')
+map('n', '<leader>fg', ':lua require"telescope.builtin".live_grep()<cr>')
+map('n', '<leader>fb', ':lua require"telescope.builtin".buffers()<cr>')
+map('n', '<leader>fh', ':lua require"telescope.builtin".help_tags()<cr>')
+
+
 --------------
 --COMMENTING--
 --------------
@@ -285,4 +296,6 @@ return require('packer').startup(function()
     use 'github/copilot.vim' --github copilot
     use 'editorconfig/editorconfig-vim' --editorconfig
     use 'windwp/nvim-autopairs' --automatic pairs
+    use 'nvim-lua/plenary.nvim' --common functions
+    use 'nvim-telescope/telescope.nvim' --nvim telescope
 end)
