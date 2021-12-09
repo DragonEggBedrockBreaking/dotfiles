@@ -62,7 +62,7 @@ end
 
 --nnn mapping
 require("nnn").setup()
-map('n', 'nnn', ':NnnExplorer<CR>', {noremap = true, silent = true})
+map('n', '<leader>nnn', ':NnnExplorer<CR>', {noremap = true, silent = true})
 
 --Formatting code
 map('n', 'fc', ':!astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true, silent = true}) --Use astyle to format c code
