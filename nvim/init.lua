@@ -148,17 +148,17 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
     }
 
 
------------------------
---SYNTAX HIGHLIGHTING--
------------------------
+---------------------------------------------
+--SYNTAX HIGHLIGHTING AND AUTOMATIC PAIRING--
+---------------------------------------------
 require'nvim-treesitter.configs'.setup {
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
-    },
---    indent = {
---        enable = true,
---    },
+    }
+}
+require'nvim-autopairs'.setup {
+    check_ts = true
 }
 
 
@@ -284,4 +284,5 @@ return require('packer').startup(function()
     use 'tanvirtin/monokai.nvim' --theme
     use 'github/copilot.vim' --github copilot
     use 'editorconfig/editorconfig-vim' --editorconfig
+    use 'windwp/nvim-autopairs' --automatic pairs
 end)
