@@ -66,6 +66,7 @@ map('n', 'nnn', ':NnnExplorer<CR>', {noremap = true, silent = true})
 
 --Formatting code
 map('n', 'fc', ':!astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true, silent = true}) --Use astyle to format c code
+map('n', 'fgo', ':!gofmt %<CR>', {noremap = true, silent = true}) --Use gofmt to format go code
 map('n', 'fjson', ':!fixjson -wi4 %<CR>', {noremap = true, silent = true}) --Use fixjson to fix/format json
 map('n', 'fpy', ':!autopep8 -ai --experimental  --max-line-length 100 %<CR>', {noremap = true, silent = true}) --Use autopep8 to format python code
 map('n', 'frs', ':!rustfmt --emit files --unstable-features %<CR>', {noremap = true, silent = true}) --Use rustfmt to format rust code
@@ -74,6 +75,7 @@ map('n', 'fsh', ':!shfmt -w -s -i 4 %<CR>', {noremap = true, silent = true}) --U
 --Building code
 map('n', 'bcc', ':!gcc % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c code with gcc
 map('n', 'bcpp', ':!g++ % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c++ code with g++
+map('n', 'bgo', ':!go build -ldflags=-w %<CR>', {noremap = true, silent = true}) --Builds golang code
 map('n', 'bcg', ':!cargo build<CR>', {noremap = true, silent = true}) --Builds rust code with cargo
 map('n', 'brs', ':!rustc %<CR>', {noremap = true, silent = true}) --Builds rust code with rustc
 
@@ -81,6 +83,7 @@ map('n', 'brs', ':!rustc %<CR>', {noremap = true, silent = true}) --Builds rust 
 map('n', 'dcc', ':!gcc -g % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c code with gcc and debug symbols
 map('n', 'dcpp', ':!g++ -g % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c++ code with g++ and debug symbols
 map('n', 'dcg', ':!cargo build<CR>', {noremap = true, silent = true}) --Builds and runs rust code with cargo build, with debug symbols
+map('n', 'dgo', ':!go build %<CR>', {noremap = true, silent = true}) --Builds golang code with debug symbols
 
 --Building optimised code
 map('n', 'obcc', ':!gcc % -o %:r.out -O3<CR>', {noremap = true, silent = true}) --Builds c code with gcc, with the -O3 optimisation level
@@ -92,6 +95,7 @@ map('n', 'obrs', ':!rustc -C opt-level=3 %<CR>', {noremap = true, silent = true}
 map('n', 'rcc', ':!gcc % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c code with gcc
 map('n', 'rcpp', ':!g++ % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c++ code with g++
 map('n', 'rcg', ':!cargo run<CR>', {noremap = true, silent = true}) --Builds and runs rust code with cargo run
+map('n', 'bgo', ':!go build -ldflags=-w % && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs golang code
 map('n', 'rpy', ':!python3 %<CR>', {noremap = true, silent = true}) --Runs python code with python3
 map('n', 'rrs', ':!rustc % && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs rust code with rustc
 
@@ -139,6 +143,9 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
     require('lspconfig')['rust_analyzer'].setup {
         capabilities = capabilities
     }
+    require('lspconfig')['gopls'].setup {
+        capabilities = capabilities
+    }
 
 
 -----------------------
@@ -171,8 +178,9 @@ require('indent_blankline').setup {
 -------------
 --DEBUGGING--
 -------------
--- Setup nvim-dap-python
+-- Setup nvim-dap-python and nvim-dap-go
 require('dap-python').setup('/usr/bin/python')
+require('dap-go').setup()
 
 -- Setup dap for c/c++/rust
 local dap = require('dap')
@@ -266,6 +274,7 @@ return require('packer').startup(function()
     use 'nvim-treesitter/nvim-treesitter' --better syntax highlighting
     use 'mfussenegger/nvim-dap' --debugger
     use 'mfussenegger/nvim-dap-python' --python debugger
+    use 'leoluz/nvim-dap-go' --go debugger
     use 'ellisonleao/glow.nvim' --markdown previewer
     use 'mg979/vim-visual-multi' --multiple cursors
     use 'lukas-reineke/indent-blankline.nvim' --visual indents
