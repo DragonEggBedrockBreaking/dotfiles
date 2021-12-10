@@ -60,9 +60,8 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
---nnn mapping
-require("nnn").setup()
-map('n', '<leader>nnn', ':NnnExplorer<CR>', {noremap = true, silent = true})
+--fm mapping
+map('n', '<leader>nt', ':NERDTree<CR>', {noremap = true, silent = true})
 
 --Formatting code
 map('n', 'fc', ':!astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true, silent = true}) --Use astyle to format c code
@@ -275,7 +274,8 @@ require('galaxyline').section.right[1] = {
 -----------
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim' --plugin manager manages itself
-    use 'luukvbaal/nnn.nvim' --file management inside vim
+    use 'preservim/nerdtree' --file management inside neovim
+    use 'tiagofumo/vim-nerdtree-syntax-highlight' --syntax highlighting file management
     use 'neovim/nvim-lspconfig' --language server protocol in neovim
     use 'hrsh7th/cmp-nvim-lsp' --autocompletion
     use 'hrsh7th/cmp-buffer' --autocompletion
