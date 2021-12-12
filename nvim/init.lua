@@ -77,7 +77,6 @@ map('n', 'bcpp', ':!g++ -g -O3 % -o %:r.out<CR>', {noremap = true, silent = true
 map('n', 'bgo', ':!go build %<CR>', {noremap = true, silent = true}) --Builds golang code
 map('n', 'bcg', ':!cargo build --release<CR>', {noremap = true, silent = true}) --Builds rust code with cargo
 map('n', 'brs', ':!rustc -C opt-level=3 %<CR>', {noremap = true, silent = true}) --Builds rust code with rustc
-d
 
 --Running code
 map('n', 'rcc', ':!gcc -g -O3 % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c code with gcc
@@ -85,7 +84,7 @@ map('n', 'rcpp', ':!g++ -g -O3 % -o %:r.out && ./%:r.out<CR>', {noremap = true, 
 map('n', 'rcg', ':!cargo run --release<CR>', {noremap = true, silent = true}) --Builds and runs rust code with cargo run
 map('n', 'bgo', ':!go build % && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs golang code
 map('n', 'rpy', ':!python3 %<CR>', {noremap = true, silent = true}) --Runs python code with python3
---map('n', 'orpy', ':!pypy3 %<CR>', {noremap = true, silent = true}) --Runs optimised python code with pypy3
+--map('n', 'rpp', ':!pypy3 %<CR>', {noremap = true, silent = true}) --Runs optimised python code with pypy3
 map('n', 'rrs', ':!rustc -C opt-level=3% && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs rust code with rustc
 
 
