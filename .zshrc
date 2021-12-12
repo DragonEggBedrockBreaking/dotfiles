@@ -1,5 +1,6 @@
 # ZSH CONFIG
 export ZSH="$HOME/.oh-my-zsh" # path to oh-my-zsh
+eval "$(zoxide init zsh)"
 
 rsfetch -Pdeklrstuw    # run as header
 ZSH_THEME="daveverwer" # zsh theme
@@ -26,12 +27,12 @@ alias bat='bat --force-colorization --theme ansi'
 alias btm='btm -Smkg'
 alias exa='exa -ah@ --colour=auto --icons --git --group-directories-first'
 alias exalong='exa -lah@ --colour=auto --icons --no-permissions --git --group-directories-first'
-alias exatree='exa --tree --level=2 --colour=auto'
 alias fd='fd -uuij 4'
 alias procs='procs --tree --color always'
 alias rg='rg -uuupj 4'
 alias rsfetch='rsfetch -Pdeklrstuw'
 alias tokei='tokei --hidden --no-ignore'
+alias tree-rs='tree-rs -aC'
 
 # Aliases for git
 alias gadd='git add .'

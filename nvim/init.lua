@@ -296,6 +296,8 @@ return require('packer').startup(function()
     use 'github/copilot.vim' --github copilot
     use 'editorconfig/editorconfig-vim' --editorconfig
     use 'windwp/nvim-autopairs' --automatic pairs
+    use 'nvim-lua/popup.nvim' --common functions
     use 'nvim-lua/plenary.nvim' --common functions
     use 'nvim-telescope/telescope.nvim' --nvim telescope
+    use 'jvgrootveld/telescope-zoxide' --zoxide inside nvim telescope
 end)
