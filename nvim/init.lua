@@ -72,38 +72,22 @@ map('n', 'frs', ':!rustfmt --emit files --unstable-features %<CR>', {noremap = t
 map('n', 'fsh', ':!shfmt -w -s -i 4 %<CR>', {noremap = true, silent = true}) --Use shfmt to format sh code, e.g. the .zshrc or .bashrc (doesn't work with fish)
 
 --Building code
-map('n', 'bcc', ':!gcc % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c code with gcc
-map('n', 'bcpp', ':!g++ % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c++ code with g++
-map('n', 'bgo', ':!go build -ldflags=-w %<CR>', {noremap = true, silent = true}) --Builds golang code
-map('n', 'bcg', ':!cargo build<CR>', {noremap = true, silent = true}) --Builds rust code with cargo
-map('n', 'brs', ':!rustc %<CR>', {noremap = true, silent = true}) --Builds rust code with rustc
-
---Building debug code (for c, c++, and rust, as python is interpreted)
-map('n', 'dcc', ':!gcc -g % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c code with gcc and debug symbols
-map('n', 'dcpp', ':!g++ -g % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c++ code with g++ and debug symbols
-map('n', 'dcg', ':!cargo build<CR>', {noremap = true, silent = true}) --Builds and runs rust code with cargo build, with debug symbols
-map('n', 'dgo', ':!go build %<CR>', {noremap = true, silent = true}) --Builds golang code with debug symbols
-
---Building optimised code
-map('n', 'obcc', ':!gcc % -o %:r.out -O3<CR>', {noremap = true, silent = true}) --Builds c code with gcc, with the -O3 optimisation level
-map('n', 'obcpp', ':!g++ % -o %:r.out -O3<CR>', {noremap = true, silent = true}) --Builds c++ code with g++, with the -O3 optimisation level
-map('n', 'obcg', ':!cargo build --release<CR>', {noremap = true, silent = true}) --Builds rust code with cargo, with optimisations enabled
-map('n', 'obrs', ':!rustc -C opt-level=3 %<CR>', {noremap = true, silent = true}) --Builds rust code with rustc, with the opt-level=3 optimisations
+map('n', 'bcc', ':!gcc -g -O3 % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c code with gcc
+map('n', 'bcpp', ':!g++ -g -O3 % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c++ code with g++
+map('n', 'bgo', ':!go build %<CR>', {noremap = true, silent = true}) --Builds golang code
+map('n', 'bcg', ':!cargo build --release<CR>', {noremap = true, silent = true}) --Builds rust code with cargo
+map('n', 'brs', ':!rustc -C opt-level=3 %<CR>', {noremap = true, silent = true}) --Builds rust code with rustc
+d
 
 --Running code
-map('n', 'rcc', ':!gcc % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c code with gcc
-map('n', 'rcpp', ':!g++ % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c++ code with g++
-map('n', 'rcg', ':!cargo run<CR>', {noremap = true, silent = true}) --Builds and runs rust code with cargo run
-map('n', 'bgo', ':!go build -ldflags=-w % && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs golang code
+map('n', 'rcc', ':!gcc -g -O3 % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c code with gcc
+map('n', 'rcpp', ':!g++ -g -O3 % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c++ code with g++
+map('n', 'rcg', ':!cargo run --release<CR>', {noremap = true, silent = true}) --Builds and runs rust code with cargo run
+map('n', 'bgo', ':!go build % && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs golang code
 map('n', 'rpy', ':!python3 %<CR>', {noremap = true, silent = true}) --Runs python code with python3
-map('n', 'rrs', ':!rustc % && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs rust code with rustc
+--map('n', 'orpy', ':!pypy3 %<CR>', {noremap = true, silent = true}) --Runs optimised python code with pypy3
+map('n', 'rrs', ':!rustc -C opt-level=3% && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs rust code with rustc
 
---Running optimised code
-map('n', 'orcc', ':!gcc % -o %:r.out -O3 && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c code with gcc, with -O3 optimisations
-map('n', 'orcpp', ':!g++ % -o %:r.out -O3 && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c++ code with g++, with -O3 optimisations
-map('n', 'orcg', ':!cargo run --release<CR>', {noremap = true, silent = true}) --Builds and runs rust code with cargo run, with optimisations enabled
---map('n', 'orpy', ':!pypy3 %<CR>', {noremap = true, silent = true}) --Runs optimised python code with pypy3, [commented out because no support for python3.10]
-map('n', 'orrs', ':!rustc -C opt-level=3 % && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs rust code with rustc, with opt-level=3 optimisations
 
 
 ------------------
