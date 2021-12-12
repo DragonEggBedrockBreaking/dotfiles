@@ -68,7 +68,7 @@ map('n', 'fc', ':!astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true, silent =
 map('n', 'fgo', ':!gofmt %<CR>', {noremap = true, silent = true}) --Use gofmt to format go code
 map('n', 'fjson', ':!fixjson -wi4 %<CR>', {noremap = true, silent = true}) --Use fixjson to fix/format json
 map('n', 'fpy', ':!autopep8 -ai --experimental  --max-line-length 100 %<CR>', {noremap = true, silent = true}) --Use autopep8 to format python code
-map('n', 'frs', ':!rustfmt --emit files --unstable-features %<CR>', {noremap = true, silent = true}) --Use rustfmt to format rust code
+map('n', 'frs', ':!rustfmt --emit files %<CR>', {noremap = true, silent = true}) --Use rustfmt to format rust code
 map('n', 'fsh', ':!shfmt -w -s -i 4 %<CR>', {noremap = true, silent = true}) --Use shfmt to format sh code, e.g. the .zshrc or .bashrc (doesn't work with fish)
 
 --Building code
