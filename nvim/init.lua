@@ -70,6 +70,7 @@ map('n', 'fjson', ':!fixjson -wi4 %<CR>', {noremap = true, silent = true}) --Use
 map('n', 'fpy', ':!autopep8 -ai --experimental  --max-line-length 100 %<CR>', {noremap = true, silent = true}) --Use autopep8 to format python code
 map('n', 'frs', ':!rustfmt --emit files %<CR>', {noremap = true, silent = true}) --Use rustfmt to format rust code
 map('n', 'fsh', ':!shfmt -w -s -i 4 %<CR>', {noremap = true, silent = true}) --Use shfmt to format sh code, e.g. the .zshrc or .bashrc (doesn't work with fish)
+map('n', 'fzig', ':!zig fmt --color on --stdin %<CR>', {noremap = true, silent = true}) --Use zig fmt to format zig code
 
 --Building code
 map('n', 'bcc', ':!gcc -g -O3 % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c code with gcc
@@ -77,6 +78,7 @@ map('n', 'bcpp', ':!g++ -g -O3 % -o %:r.out<CR>', {noremap = true, silent = true
 map('n', 'bgo', ':!go build %<CR>', {noremap = true, silent = true}) --Builds golang code
 map('n', 'bcg', ':!cargo build --release<CR>', {noremap = true, silent = true}) --Builds rust code with cargo
 map('n', 'brs', ':!rustc -C opt-level=3 %<CR>', {noremap = true, silent = true}) --Builds rust code with rustc
+map('n', 'bzig', ':!zig build %<CR>', {noremap = true, silent = true}) --Builds zig code with zig build
 
 --Running code
 map('n', 'rcc', ':!gcc -g -O3 % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c code with gcc
@@ -86,6 +88,7 @@ map('n', 'bgo', ':!go build % && ./%:r<CR>', {noremap = true, silent = true}) --
 map('n', 'rpy', ':!python3 %<CR>', {noremap = true, silent = true}) --Runs python code with python3
 --map('n', 'rpp', ':!pypy3 %<CR>', {noremap = true, silent = true}) --Runs optimised python code with pypy3
 map('n', 'rrs', ':!rustc -C opt-level=3% && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs rust code with rustc
+map('n', 'bzig', ':!zig build run %<CR>', {noremap = true, silent = true}) --Runs zig code with zig run
 
 
 
@@ -127,6 +130,9 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
         capabilities = capabilities
     }
     require('lspconfig')['gopls'].setup {
+        capabilities = capabilities
+    }
+    require('lspconfig')['zls'].setup {
         capabilities = capabilities
     }
 
