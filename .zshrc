@@ -17,7 +17,7 @@ plugins=(colored-man-pages colorize gitignore git-prompt vi-mode zsh-autosuggest
 source $ZSH/oh-my-zsh.sh
 
 # Export general stuff
-export PATH=$PATH:/opt/gradle/gradle-7.3-rc-3/bin:~/.local/bin:~/node_modules/.bin:~/bin:~/go/bin
+export PATH=$PATH:/opt/gradle/gradle-7.3-rc-3/bin:~/.local/bin:~/node_modules/.bin:~/bin:~/go/bin:~/zls
 export LANG=en_GB.UTF-8     # set language
 export LANGUAGE=en_GB.UTF-8 # set language
 export EDITOR='nvim'        # set editor
