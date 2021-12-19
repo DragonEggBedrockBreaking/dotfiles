@@ -12,7 +12,7 @@ ENABLE_CORRECTION="true" # command autocorrection
 HIST_STAMPS="yyyy/mm/dd" # fix date-time
 
 # Plugins
-plugins=(colored-man-pages colorize gitignore git-prompt vi-mode zoxide zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(autopep8 colored-man-pages colorize fd git gitignore git-prompt pylint ripgrep rust rustup sudo ufw vi-mode zoxide zsh-autosuggestions zsh-sdkman zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Export general stuff
