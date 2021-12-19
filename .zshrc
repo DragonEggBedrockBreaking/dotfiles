@@ -53,6 +53,7 @@ alias greset='git reset'
 alias gshow='git show'
 alias gsquash='git merge --squash'
 alias gstatus='git status'
+alias gtag='git tag'
 
 # Aliases for software
 alias nqq='flatpak run com.notepadqq.Notepadqq'
