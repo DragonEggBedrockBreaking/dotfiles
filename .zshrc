@@ -1,6 +1,5 @@
 # ZSH CONFIG
 export ZSH="$HOME/.oh-my-zsh" # path to oh-my-zsh
-eval "$(zoxide init zsh)"
 
 rsfetch -Pdeklrstuw    # run as header
 ZSH_THEME="daveverwer" # zsh theme
@@ -13,7 +12,7 @@ ENABLE_CORRECTION="true" # command autocorrection
 HIST_STAMPS="yyyy/mm/dd" # fix date-time
 
 # Plugins
-plugins=(colored-man-pages colorize gitignore git-prompt vi-mode zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(colored-man-pages colorize gitignore git-prompt vi-mode zoxide zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Export general stuff
