@@ -33,6 +33,9 @@ alias rsfetch='rsfetch -Pdeklrstuw'
 alias tokei='tokei --hidden --no-ignore'
 alias tree-rs='tree-rs -aC'
 
+# Aliases for build systems
+alias brachyura='java -jar brachyura-bootstrap-0.jar'
+
 # Aliases for software
 alias nqq='flatpak run com.notepadqq.Notepadqq'
 alias mpv='flatpak run io.mpv.Mpv'
