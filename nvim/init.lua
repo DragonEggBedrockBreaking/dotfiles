@@ -65,7 +65,6 @@ map('n', '<leader>nt', ':NERDTree<CR>', {noremap = true, silent = true})
 
 --Formatting code
 map('n', 'fc', ':!astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true, silent = true}) --Use astyle to format c code
-map('n', 'fgo', ':!gofmt %<CR>', {noremap = true, silent = true}) --Use gofmt to format go code
 map('n', 'fjson', ':!fixjson -wi4 %<CR>', {noremap = true, silent = true}) --Use fixjson to fix/format json
 map('n', 'fpy', ':!autopep8 -ai --experimental  --max-line-length 100 %<CR>', {noremap = true, silent = true}) --Use autopep8 to format python code
 map('n', 'frs', ':!rustfmt --emit files %<CR>', {noremap = true, silent = true}) --Use rustfmt to format rust code
@@ -75,7 +74,6 @@ map('n', 'fzig', ':!zig fmt --color on --stdin %<CR>', {noremap = true, silent =
 --Building code
 map('n', 'bcc', ':!gcc -g -O3 % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c code with gcc
 map('n', 'bcpp', ':!g++ -g -O3 % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c++ code with g++
-map('n', 'bgo', ':!go build %<CR>', {noremap = true, silent = true}) --Builds golang code
 map('n', 'bcg', ':!cargo build --release<CR>', {noremap = true, silent = true}) --Builds rust code with cargo
 map('n', 'brs', ':!rustc -C opt-level=3 %<CR>', {noremap = true, silent = true}) --Builds rust code with rustc
 map('n', 'bzig', ':!zig build %<CR>', {noremap = true, silent = true}) --Builds zig code with zig build
@@ -84,7 +82,6 @@ map('n', 'bzig', ':!zig build %<CR>', {noremap = true, silent = true}) --Builds 
 map('n', 'rcc', ':!gcc -g -O3 % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c code with gcc
 map('n', 'rcpp', ':!g++ -g -O3 % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c++ code with g++
 map('n', 'rcg', ':!cargo run --release<CR>', {noremap = true, silent = true}) --Builds and runs rust code with cargo run
-map('n', 'bgo', ':!go build % && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs golang code
 map('n', 'rpy', ':!python3 %<CR>', {noremap = true, silent = true}) --Runs python code with python3
 --map('n', 'rpp', ':!pypy3 %<CR>', {noremap = true, silent = true}) --Runs optimised python code with pypy3
 map('n', 'rrs', ':!rustc -C opt-level=3% && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs rust code with rustc
@@ -129,9 +126,6 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
     require('lspconfig')['rust_analyzer'].setup {
         capabilities = capabilities
     }
-    require('lspconfig')['gopls'].setup {
-        capabilities = capabilities
-    }
     require('lspconfig')['zls'].setup {
         capabilities = capabilities
     }
@@ -167,9 +161,8 @@ require('indent_blankline').setup {
 -------------
 --DEBUGGING--
 -------------
--- Setup nvim-dap-python and nvim-dap-go
+-- Setup nvim-dap-python
 require('dap-python').setup('/usr/bin/python')
-require('dap-go').setup()
 
 -- Setup dap for c/c++/rust
 local dap = require('dap')
@@ -274,13 +267,11 @@ return require('packer').startup(function()
     use 'nvim-treesitter/nvim-treesitter' --better syntax highlighting
     use 'mfussenegger/nvim-dap' --debugger
     use 'mfussenegger/nvim-dap-python' --python debugger
-    use 'leoluz/nvim-dap-go' --go debugger
     use 'ellisonleao/glow.nvim' --markdown previewer
     use 'mg979/vim-visual-multi' --multiple cursors
     use 'lukas-reineke/indent-blankline.nvim' --visual indents
     use 'numToStr/Comment.nvim' --commenting in nvim
     use 'glepnir/galaxyline.nvim' --status line
-    use 'dense-analysis/ale' --syntax checking
     use 'tanvirtin/monokai.nvim' --theme
     use 'github/copilot.vim' --github copilot
     use 'editorconfig/editorconfig-vim' --editorconfig
