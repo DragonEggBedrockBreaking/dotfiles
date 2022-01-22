@@ -1,7 +1,6 @@
 # ZSH CONFIG
 export ZSH="$HOME/.oh-my-zsh" # path to oh-my-zsh
 
-rsfetch -Pdeklrstuw    # run as header
 ZSH_THEME="daveverwer" # zsh theme
 CASE_SENSITIVE="false"             # case insensitive
 HYPHEN_INSENSITIVE="true"          # hyphen insensitive
@@ -12,11 +11,11 @@ ENABLE_CORRECTION="true" # command autocorrection
 HIST_STAMPS="yyyy/mm/dd" # fix date-time
 
 # Plugins
-plugins=(autopep8 colored-man-pages colorize fd git gitignore git-prompt pylint ripgrep rust rustup sudo ufw vi-mode zoxide zsh-autosuggestions zsh-sdkman zsh-syntax-highlighting)
+plugins=(autopep8 colored-man-pages colorize fd git git-prompt pylint ripgrep rust sudo vi-mode zoxide zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Export general stuff
-export PATH=$PATH:/opt/gradle/gradle-7.3-rc-3/bin:~/.local/bin:~/node_modules/.bin:~/bin:~/go/bin:~/zls
+export PATH=$PATH:~/.local/bin:~/bin:~/.cargo/bin
 export LANG=en_GB.UTF-8     # set language
 export LANGUAGE=en_GB.UTF-8 # set language
 export EDITOR='nvim'        # set editor
@@ -37,9 +36,12 @@ alias tree-rs='tree-rs -aC'
 alias brachyura='java -jar brachyura-bootstrap-0.jar'
 
 # Aliases for software
-alias nqq='flatpak run com.notepadqq.Notepadqq'
-alias mpv='flatpak run io.mpv.Mpv'
+alias mmc='QT_QPA_PLATFORM=xcb mesa_glthread=false ~/Downloads/MultiMC/MultiMC'
+alias mmmc='QT_QPA_PLATFORM=xcb mesa_glthread=true ~/Downloads/MultiMC/MultiMC'
+alias onlyoffice='onlyoffice-desktopeditors'
+alias resolve='/opt/resolve/bin/resolve'
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+alias run='QT_QPA_PLATFORM=xcb'
+
+# Run as header
+rsfetch
