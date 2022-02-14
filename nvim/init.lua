@@ -264,7 +264,7 @@ return require('packer').startup(function()
     use 'hrsh7th/nvim-cmp' --autocompletion
     use 'L3MON4D3/LuaSnip' --snippets
     use 'saadparwaiz1/cmp_luasnip' --snippets
-    use 'nvim-treesitter/nvim-treesitter' --better syntax highlighting
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } --better syntax highlighting
     use 'mfussenegger/nvim-dap' --debugger
     use 'mfussenegger/nvim-dap-python' --python debugger
     use 'ellisonleao/glow.nvim' --markdown previewer
