@@ -27,6 +27,7 @@ alias exa='exa -ah@ --colour=auto --icons --git --group-directories-first'
 alias exalong='exa -lah@ --colour=auto --icons --no-permissions --git --group-directories-first'
 alias fd='fd -uuij 4'
 alias procs='procs --tree --color always'
+alias ren='perl-rename -vV git'
 alias rg='rg -uuupj 4'
 alias rsfetch='rsfetch -Pdeklrstuw'
 alias tokei='tokei --hidden --no-ignore'
@@ -36,12 +37,13 @@ alias tree-rs='tree-rs -aC'
 alias brachyura='java -jar brachyura-bootstrap-0.jar'
 
 # Aliases for software
-alias mmc='QT_QPA_PLATFORM=xcb mesa_glthread=false ~/Downloads/MultiMC/MultiMC'
-alias mmmc='QT_QPA_PLATFORM=xcb mesa_glthread=true ~/Downloads/MultiMC/MultiMC'
+alias mmc='mesa_glthread=false ~/Downloads/MultiMC/MultiMC'
+alias mmmc='mesa_glthread=true ~/Downloads/MultiMC/MultiMC'
 alias onlyoffice='onlyoffice-desktopeditors'
 alias resolve='/opt/resolve/bin/resolve'
 
-alias run='QT_QPA_PLATFORM=xcb'
+# Other aliases
+alias szrc='source ~/.zshrc'
 
 # Run as header
 rsfetch
