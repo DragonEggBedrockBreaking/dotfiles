@@ -280,4 +280,5 @@ return require('packer').startup(function()
     use 'nvim-lua/plenary.nvim' --common functions
     use 'nvim-telescope/telescope.nvim' --nvim telescope
     use 'jvgrootveld/telescope-zoxide' --zoxide inside nvim telescope
+    use 'yamatsum/nvim-cursorline' --highlights where the cursor is, and the same keyword
 end)
