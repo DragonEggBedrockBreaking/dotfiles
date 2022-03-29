@@ -30,17 +30,20 @@ alias procs='procs --tree --color always'
 alias ren='perl-rename -vV git'
 alias rg='rg -uuupj 4'
 alias rsfetch='rsfetch -Pdeklrstuw'
-alias tokei='tokei --hidden --no-ignore'
+alias tokei='tokei --hidden'
 alias tree-rs='tree-rs -aC'
 
 # Aliases for build systems
 alias brachyura='java -jar brachyura-bootstrap-0.jar'
 
 # Aliases for software
-alias mmc='mesa_glthread=false ~/Downloads/MultiMC/MultiMC'
-alias mmmc='mesa_glthread=true ~/Downloads/MultiMC/MultiMC'
-alias onlyoffice='onlyoffice-desktopeditors'
+alias mmc='~/Downloads/MultiMC/MultiMC'
 alias resolve='/opt/resolve/bin/resolve'
+alias notepadqq='flatpak run com.notepadqq.Notepadqq'
+alias obsidian='flatpak run md.obsidian.Obsidian'
+alias okular='flatpak run org.kde.okular'
+alias onlyoffice='flatpak run org.onlyoffice.desktopeditors'
+alias mpv='flatpak run io.mpv.Mpv'
 
 # Other aliases
 alias szrc='source ~/.zshrc'
