@@ -2,17 +2,12 @@
 
 set vicmd=nvim
 
-" This makes vifm perform file operations on its own instead of relying on
-" standard utilities like `cp`.  While using `cp` and alike is a more universal
-" solution, it's also much slower when processing large amounts of files and
-" doesn't support progress measuring.
+" This makes vifm perform file operations on its own. Standard utilities
+" like `cp` are slower with many files and one cannot measure their process.
 
 set syscalls
 
 " Trash Directory
-" The default is to move files that are deleted with dd or :d to
-" the trash directory.  If you change this you will not be able to move
-" files by deleting them and then using p to put the file in the new location.
 
 set trash
 
@@ -37,8 +32,7 @@ set undolevels=30
 
 set vimhelp
 
-" If you would like to run an executable file when you
-" press Enter, l or Right Arrow, set this.
+" Do not run executables when enter is pressed.
 
 set norunexec
 
@@ -116,27 +110,26 @@ command! reload :write | restart full
 " ------------------------------------------------------------------------------
 
 " Pdf
-filextype {*.pdf},<application/pdf> okular %f
+filextype {*.pdf},<application/pdf> flatpak run org.kde.okular %f
 
 " Audio
 filetype {*.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus},
         \<audio/*>
-       \ {Play using ffplay}
-       \ ffplay -nodisp -autoexit %c,
+       \ {Play using mpv}
+       \ flatpak run io.mpv.Mpv %c,
 
 " Video
 filextype {*.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
           \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
           \*.as[fx]},
          \<video/*>
-        \ {View using ffplay}
-        \ ffplay -fs -autoexit %f,
+        \ {View using mpv}
+        \ flatpak run io.mpv.Mpv %f,
 
 " Web
 filextype {*.html,*.htm},<text/html>
-        \ {Open with epiphany}
-        \ epiphany %f &,
-filetype {*.html,*.htm},<text/html> w3m
+        \ {Open with librewolf}
+        \ flatpak run io.gitlab.librewolf-community %f &,
 
 " Object
 filetype {*.o},<application/x-object> nm %f | less
