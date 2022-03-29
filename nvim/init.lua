@@ -72,15 +72,15 @@ map('n', 'fsh', ':!shfmt -w -s -i 4 %<CR>', {noremap = true, silent = true}) --U
 map('n', 'fzig', ':!zig fmt --color on --stdin %<CR>', {noremap = true, silent = true}) --Use zig fmt to format zig code
 
 --Building code
-map('n', 'bcc', ':!gcc -g -O3 % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c code with gcc
-map('n', 'bcpp', ':!g++ -g -O3 % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c++ code with g++
+map('n', 'bcc', ':!clang -g -O3 -fuse-ld=mold % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c code with clang
+map('n', 'bcpp', ':!clang++ -g -O3 -fuse-ld=mold % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c++ code with clang++
 map('n', 'bcg', ':!cargo build --release<CR>', {noremap = true, silent = true}) --Builds rust code with cargo
 map('n', 'brs', ':!rustc -C opt-level=3 %<CR>', {noremap = true, silent = true}) --Builds rust code with rustc
 map('n', 'bzig', ':!zig build %<CR>', {noremap = true, silent = true}) --Builds zig code with zig build
 
 --Running code
-map('n', 'rcc', ':!gcc -g -O3 % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c code with gcc
-map('n', 'rcpp', ':!g++ -g -O3 % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c++ code with g++
+map('n', 'rcc', ':!clang -g -O3 -fuse-ld=mold % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c code with clang
+map('n', 'rcpp', ':!clang++ -g -O3 -fuse-ld=mold % -o %:r.out && ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c++ code with clang++
 map('n', 'rcg', ':!cargo run --release<CR>', {noremap = true, silent = true}) --Builds and runs rust code with cargo run
 map('n', 'rpy', ':!python3 %<CR>', {noremap = true, silent = true}) --Runs python code with python3
 --map('n', 'rpp', ':!pypy3 %<CR>', {noremap = true, silent = true}) --Runs optimised python code with pypy3
