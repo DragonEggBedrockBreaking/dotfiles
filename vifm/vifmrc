@@ -32,9 +32,9 @@ set undolevels=30
 
 set vimhelp
 
-" Run executables when enter is pressed.
+" Do not run executables when enter is pressed.
 
-set runexec
+set norunexec
 
 " List of color schemes to try (picks the first one supported by the terminal)
 
@@ -256,6 +256,15 @@ fileviewer <audio/*>
 
 fileviewer <font/*>
     \ vifmimg font %px %py %pw %ph %c
+    \ %pc
+    \ vifmimg clear
+
+fileviewer {*.csv,*.docx,*.odt,*.rtf} pandoc -t markdown %c
+fileviewer *.doc catdoc %c
+fileviewer *.xls xls2csv %c | pandoc -f csv -t markdown
+fileviewer *.xlsx xlsx2csv %c | pandoc -f csv -t markdown
+fileviewer {*.ppt,*.pptx}
+    \ soffice --headless --convert-to pdf %c --outdir ~/.cache && vifmimg pdf %px %py %pw %ph ~/.cache/$(sed "s/\..*//"<<<%c).pdf
     \ %pc
     \ vifmimg clear
 
