@@ -44,7 +44,7 @@ alias obsidian='flatpak run md.obsidian.Obsidian'
 alias okular='flatpak run org.kde.okular'
 alias onlyoffice='flatpak run org.onlyoffice.desktopeditors'
 alias mpv='flatpak run io.mpv.Mpv'
-alias vifm='~/.config/vifm/vifmrc'
+alias vifm='~/.config/vifm/scripts/vifmrun'
 
 # Other aliases
 alias szrc='source ~/.zshrc'
