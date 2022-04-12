@@ -19,6 +19,7 @@ export PATH=$PATH:~/.local/bin:~/bin:~/.cargo/bin
 export LANG=en_GB.UTF-8     # set language
 export LANGUAGE=en_GB.UTF-8 # set language
 export EDITOR='nvim'        # set editor
+export GPG_TTY=$(tty)       # gpg key stuff
 
 # Aliases for utility commands
 alias bat='bat --force-colorization --theme ansi'
