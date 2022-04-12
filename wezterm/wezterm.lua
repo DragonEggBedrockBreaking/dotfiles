@@ -5,7 +5,7 @@ return {
         "-l"
     },
     font = wezterm.font("FantasqueSansMono-Regular"),
-    font_size = 14,
+    font_size = 18,
     harfbuzz_features = {
         "calt=1",
         "clig=1",
