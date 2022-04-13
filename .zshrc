@@ -1,7 +1,7 @@
 # ZSH CONFIG
 export ZSH="$HOME/.oh-my-zsh" # path to oh-my-zsh
 
-ZSH_THEME="daveverwer" # zsh theme
+ZSH_THEME="daveverwer"             # zsh theme
 CASE_SENSITIVE="false"             # case insensitive
 HYPHEN_INSENSITIVE="true"          # hyphen insensitive
 zstyle ':omz:update' mode reminder # just remind me to update when it's time
@@ -20,6 +20,7 @@ export LANG=en_GB.UTF-8     # set language
 export LANGUAGE=en_GB.UTF-8 # set language
 export EDITOR='nvim'        # set editor
 export GPG_TTY=$(tty)       # gpg key stuff
+export mesa_glthread=true
 
 # Aliases for utility commands
 alias bat='bat --force-colorization --theme ansi'
