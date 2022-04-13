@@ -84,7 +84,7 @@ map('n', 'rcpp', ':!clang++ -g -O3 -fuse-ld=mold % -o %:r.out && ./%:r.out<CR>',
 map('n', 'rcg', ':!cargo run --release<CR>', {noremap = true, silent = true}) --Builds and runs rust code with cargo run
 map('n', 'rpy', ':!python3 %<CR>', {noremap = true, silent = true}) --Runs python code with python3
 --map('n', 'rpp', ':!pypy3 %<CR>', {noremap = true, silent = true}) --Runs optimised python code with pypy3
-map('n', 'rrs', ':!rustc -C opt-level=3% && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs rust code with rustc
+map('n', 'rrs', ':!rustc -C opt-level=3 % && ./%:r<CR>', {noremap = true, silent = true}) --Builds and runs rust code with rustc
 map('n', 'bzig', ':!zig build run %<CR>', {noremap = true, silent = true}) --Runs zig code with zig run
 
 
