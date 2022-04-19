@@ -39,7 +39,12 @@ let-env NU_PLUGIN_DIRS = [
 ]
 
 # Personal environment variables
-let-env PATH = ($env.PATH | prepend '~/.local/bin/' | prepend '~/bin/' | prepend '~/.cargo/bin/')
+let-env PATH = ($env.PATH | append $'($env.HOME)/.cargo/bin')
+let-env PATH = ($env.PATH | append $'($env.HOME)/bin')
+let-env PATH = ($env.PATH | append $'($env.HOME)/.local/bin')
+let-env PATH = ($env.PATH | append $'($env.HOME)/.sdkman/candidates/gradle/current/bin')
+let-env PATH = ($env.PATH | append $'($env.HOME)/.sdkman/candidates/java/current/bin')
+let-env PATH = ($env.PATH | append $'($env.HOME)/.sdkman/candidates/kotlin/current/bin')
 let-env LANG = 'en_GB.UTF-8'
 let-env LANGUAGE = 'en_GB.UTF-8'
 let-env EDITOR = 'nvim'
