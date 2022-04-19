@@ -1,7 +1,7 @@
 local wezterm = require 'wezterm';
 return {
     default_prog = {
-        "/usr/bin/zsh",
+        "/usr/bin/nu",
         "-l"
     },
     font = wezterm.font("FantasqueSansMono-Regular"),

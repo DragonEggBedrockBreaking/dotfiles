@@ -1,0 +1,61 @@
+# Adds a blank line between shell prompts
+add_newline = true
+
+# Set format
+format = """
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$python\
+$java\
+$kotlin\
+$rust\
+$zig\
+$cmd_duration
+$character"""
+
+# The character
+[character]
+disabled = false
+
+# Command duration
+[cmd_duration]
+disabled = false
+min_time = 1
+show_milliseconds = true
+
+# Path to current directory
+[directory]
+disabled = false
+truncation_length = 5
+truncation_symbol = ".../"
+use_os_path_sep = false
+
+# Git stuff
+[git_branch]
+disabled = false
+always_show_remote = true
+[git_commit]
+disabled = false
+tag_disabled = false
+[git_state]
+disabled = false
+[git_metrics]
+disabled = false
+[git_status]
+disabled = false
+
+# Programming stuff
+[java]
+disabled = false
+[kotlin]
+disabled = false
+[python]
+disabled = false
+[rust]
+disabled = false
+[zig]
+disabled = false
