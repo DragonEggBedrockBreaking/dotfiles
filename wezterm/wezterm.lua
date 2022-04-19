@@ -1,8 +1,7 @@
 local wezterm = require 'wezterm';
 return {
     default_prog = {
-        "/usr/bin/nu",
-        "-l"
+        "/usr/bin/zellij"
     },
     font = wezterm.font("FantasqueSansMono-Regular"),
     font_size = 18,
