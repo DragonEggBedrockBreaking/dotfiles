@@ -2,13 +2,9 @@
 --COLOURSCHEME--
 ----------------
 require('monokai').setup { palette = require('monokai').soda }
-vim.cmd([[
-augroup TransparentColours
-autocmd!
-autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
-augroup end
-]])
-
+require('transparent').setup({
+    enable = true
+})
 
 -----------
 --OPTIONS--
@@ -281,4 +277,5 @@ return require('packer').startup(function()
     use 'nvim-telescope/telescope.nvim' --nvim telescope
     use 'jvgrootveld/telescope-zoxide' --zoxide inside nvim telescope
     use 'yamatsum/nvim-cursorline' --highlights where the cursor is, and the same keyword
+    use 'xiyaowong/nvim-transparent' --makes the background transparent
 end)
