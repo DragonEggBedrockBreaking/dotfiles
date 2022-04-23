@@ -143,6 +143,8 @@ def setup_dotfiles():
         run(["nvim", "-c", "\":PackerSync\""], check=True)
         run(["rm", "~/.config/nvim/init.lua"], check=True)
         run(["cp", "./nvim/init.lua", "~/.config/nvim/"], check=True)
+
+        run(["chsh", "-s", "/usr/bin/nu"], check=True)
     except CalledProcessError:
         return False
 
@@ -166,7 +168,7 @@ def main():
         return
 
     # If all works, print success
-    print("Setup complete.")
+    print("Setup complete. Please reboot immediately.")
 
 
 if __name__ == "__main__":
