@@ -3,7 +3,6 @@
 -----------
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim' --plugin manager manages itself
-    use 'preservim/nerdtree' --file management inside neovim
     use 'tiagofumo/vim-nerdtree-syntax-highlight' --syntax highlighting file management
     use 'neovim/nvim-lspconfig' --language server protocol in neovim
     use 'hrsh7th/cmp-nvim-lsp' --autocompletion
@@ -30,4 +29,5 @@ return require('packer').startup(function()
     use 'xiyaowong/nvim-transparent' --makes the background transparent
     use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'} --bufferline
     use 'tamton-aquib/staline.nvim' --tabline
+    use 'lambdalisue/fern.vim' --file manager
 end)

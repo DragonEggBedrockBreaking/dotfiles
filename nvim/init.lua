@@ -52,9 +52,6 @@ vim.opt.completeopt = {'menu', 'menuone', 'noselect'} --completion options
 --Keymapping function
 local map = vim.api.nvim_set_keymap
 
---fm mapping
-map('n', '<leader>nt', ':NERDTree<CR>', {noremap = true, silent = true})
-
 --Formatting code
 map('n', 'fc', ':!astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true, silent = true}) --Use astyle to format c code
 map('n', 'fjson', ':!fixjson -wi4 %<CR>', {noremap = true, silent = true}) --Use fixjson to fix/format json
@@ -298,7 +295,6 @@ require('staline').setup {
 -----------
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim' --plugin manager manages itself
-    use 'preservim/nerdtree' --file management inside neovim
     use 'tiagofumo/vim-nerdtree-syntax-highlight' --syntax highlighting file management
     use 'neovim/nvim-lspconfig' --language server protocol in neovim
     use 'hrsh7th/cmp-nvim-lsp' --autocompletion
@@ -325,4 +321,5 @@ return require('packer').startup(function()
     use 'xiyaowong/nvim-transparent' --makes the background transparent
     use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'} --bufferline
     use 'tamton-aquib/staline.nvim' --tabline
+    use 'lambdalisue/fern.vim' --file manager
 end)
