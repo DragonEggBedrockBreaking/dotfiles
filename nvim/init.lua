@@ -208,42 +208,6 @@ map('n', '<leader>fh', ':lua require"telescope.builtin".help_tags()<cr>', {norem
 require('Comment').setup()
 
 
----------------
---STATUS LINE--
----------------
-local colors = require('galaxyline.theme').default
-require('galaxyline').section.left[1] = {
-    FileName = {
-        provider = 'FileName',
-        highlight = {colors.cyan},
-    },
-    FileEncode = {
-        provider = 'FileEncode',
-        highlight = {colors.blue},
-    },
-    FileSize = {
-        provider = 'FileSize',
-        highlight = {colors.magenta},
-    },
-}
-require('galaxyline').section.mid[1] = {
-    GitBranch = {
-        provider = 'GitBranch',
-        highlight = {colors.green},
-    },
-}
-require('galaxyline').section.right[1] = {
-    LineColumn = {
-        provider = 'LineColumn',
-        highlight = {colors.red},
-    },
-    LinePercent = {
-        provider = 'LinePercent',
-        highlight = {colors.orange},
-    },
-}
-
-
 ----------
 --BARBAR--
 ----------
@@ -293,6 +257,43 @@ vim.g.bufferline = {
 
 
 -----------
+--STALINE--
+-----------
+vim.opt.laststatus=2
+require('staline').setup {
+	sections = {
+		left = {
+			' ', 'right_sep_double', '-mode', 'left_sep_double', ' ',
+			'right_sep', '-file_name', '-file_size', 'left_sep', ' ',
+			'right_sep_double', '-branch', 'left_sep_double', ' ',
+		},
+		mid  = {'lsp'},
+		right= {
+			'right_sep', '-cool_symbol', 'left_sep', ' ',
+			'right_sep_double', '-line_column', 'left_sep_double', ' ',
+		}
+	},
+
+	defaults={
+		fg = "#4633ff",
+		cool_symbol = "  ",
+		left_separator = "",
+		right_separator = "",
+		true_colors = true,
+		line_column = "[%l:%c] 並 %p%% ",
+		font_active = "bold",
+	},
+	mode_colors = {
+		n  = "#181a23",
+		i  = "#00ff7e",
+		ic = "#00c9ff",
+		c  = "#00c9ff",
+		v  = "#d55757"
+	}
+}
+
+
+-----------
 --PLUGINS--
 -----------
 return require('packer').startup(function()
@@ -312,7 +313,6 @@ return require('packer').startup(function()
     use 'mg979/vim-visual-multi' --multiple cursors
     use 'lukas-reineke/indent-blankline.nvim' --visual indents
     use 'numToStr/Comment.nvim' --commenting in nvim
-    use 'glepnir/galaxyline.nvim' --status line
     use 'tanvirtin/monokai.nvim' --theme
     use 'github/copilot.vim' --github copilot
     use 'editorconfig/editorconfig-vim' --editorconfig
@@ -324,4 +324,5 @@ return require('packer').startup(function()
     use 'yamatsum/nvim-cursorline' --highlights where the cursor is, and the same keyword
     use 'xiyaowong/nvim-transparent' --makes the background transparent
     use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'} --bufferline
+    use 'tamton-aquib/staline.nvim' --tabline
 end)

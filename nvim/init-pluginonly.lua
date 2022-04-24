@@ -18,7 +18,6 @@ return require('packer').startup(function()
     use 'mg979/vim-visual-multi' --multiple cursors
     use 'lukas-reineke/indent-blankline.nvim' --visual indents
     use 'numToStr/Comment.nvim' --commenting in nvim
-    use 'glepnir/galaxyline.nvim' --status line
     use 'tanvirtin/monokai.nvim' --theme
     use 'github/copilot.vim' --github copilot
     use 'editorconfig/editorconfig-vim' --editorconfig
@@ -30,4 +29,5 @@ return require('packer').startup(function()
     use 'yamatsum/nvim-cursorline' --highlights where the cursor is, and the same keyword
     use 'xiyaowong/nvim-transparent' --makes the background transparent
     use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'} --bufferline
+    use 'tamton-aquib/staline.nvim' --tabline
 end)
