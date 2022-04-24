@@ -30,4 +30,5 @@ return require('packer').startup(function()
     use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'} --bufferline
     use 'tamton-aquib/staline.nvim' --tabline
     use 'lambdalisue/fern.vim' --file manager
+    use 'jghauser/mkdir.nvim' --auto mkdir
 end)
