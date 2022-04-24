@@ -63,7 +63,6 @@ def install_dependencies():
         "starship",
         "vifm",
         "wezterm",
-        "zellij",
         "zsh"
     ]):
         return False
@@ -127,9 +126,6 @@ def setup_dotfiles():
 
         run(["rm", "-rf", "~/.config/wezterm/"], check=False)
         run(["cp", "-r", "./wezterm/", ".config/"], check=True)
-
-        run(["rm", "-rf", "~/.config/zellij/"], check=False)
-        run(["cp", "-r", "./zellij/", ".config/"], check=True)
 
         run(["rm", "~/.zshrc"], check=False)
         run(["cp", "./zsh/zshrc", "~/.zshrc"], check=True)
