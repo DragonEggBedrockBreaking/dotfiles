@@ -29,4 +29,5 @@ return require('packer').startup(function()
     use 'jvgrootveld/telescope-zoxide' --zoxide inside nvim telescope
     use 'yamatsum/nvim-cursorline' --highlights where the cursor is, and the same keyword
     use 'xiyaowong/nvim-transparent' --makes the background transparent
+    use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'} --bufferline
 end)

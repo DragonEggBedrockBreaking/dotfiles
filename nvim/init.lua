@@ -50,11 +50,7 @@ vim.opt.completeopt = {'menu', 'menuone', 'noselect'} --completion options
 --KEYMAPS--
 -----------
 --Keymapping function
-local function map(mode, lhs, rhs, opts)
-  local options = {noremap = true}
-  if opts then options = vim.tbl_extend('force', options, opts) end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
+local map = vim.api.nvim_set_keymap
 
 --fm mapping
 map('n', '<leader>nt', ':NERDTree<CR>', {noremap = true, silent = true})
@@ -200,10 +196,10 @@ map('n', '<leader>d', '<ESC>:lua require("dap-python").debug_selection()<CR>', {
 --FUZZY FUNDER--
 ----------------
 require('telescope').setup()
-map('n', '<leader>ff', ':lua require"telescope.builtin".find_files()<cr>')
-map('n', '<leader>fg', ':lua require"telescope.builtin".live_grep()<cr>')
-map('n', '<leader>fb', ':lua require"telescope.builtin".buffers()<cr>')
-map('n', '<leader>fh', ':lua require"telescope.builtin".help_tags()<cr>')
+map('n', '<leader>ff', ':lua require"telescope.builtin".find_files()<cr>', {noremap = true, silent = true})
+map('n', '<leader>fg', ':lua require"telescope.builtin".live_grep()<cr>', {noremap = true, silent = true})
+map('n', '<leader>fb', ':lua require"telescope.builtin".buffers()<cr>', {noremap = true, silent = true})
+map('n', '<leader>fh', ':lua require"telescope.builtin".help_tags()<cr>', {noremap = true, silent = true})
 
 
 --------------
@@ -247,6 +243,55 @@ require('galaxyline').section.right[1] = {
     },
 }
 
+
+----------
+--BARBAR--
+----------
+map('n', '<A-,>', ':BufferPrevious<CR>', { noremap = true, silent = true })
+map('n', '<A-.>', ':BufferNext<CR>', { noremap = true, silent = true })
+map('n', '<A-<>', ':BufferMovePrevious<CR>', { noremap = true, silent = true })
+map('n', '<A->>', ' :BufferMoveNext<CR>', { noremap = true, silent = true })
+map('n', '<A-1>', ':BufferGoto 1<CR>', { noremap = true, silent = true })
+map('n', '<A-2>', ':BufferGoto 2<CR>', { noremap = true, silent = true })
+map('n', '<A-3>', ':BufferGoto 3<CR>', { noremap = true, silent = true })
+map('n', '<A-4>', ':BufferGoto 4<CR>', { noremap = true, silent = true })
+map('n', '<A-5>', ':BufferGoto 5<CR>', { noremap = true, silent = true })
+map('n', '<A-6>', ':BufferGoto 6<CR>', { noremap = true, silent = true })
+map('n', '<A-7>', ':BufferGoto 7<CR>', { noremap = true, silent = true })
+map('n', '<A-8>', ':BufferGoto 8<CR>', { noremap = true, silent = true })
+map('n', '<A-9>', ':BufferGoto 9<CR>', { noremap = true, silent = true })
+map('n', '<A-0>', ':BufferLast<CR>', { noremap = true, silent = true })
+map('n', '<A-c>', ':BufferClose<CR>', { noremap = true, silent = true })
+map('n', '<Space>bb', ':BufferOrderByBufferNumber<CR>', { noremap = true, silent = true })
+map('n', '<Space>bd', ':BufferOrderByDirectory<CR>', { noremap = true, silent = true })
+map('n', '<Space>bl', ':BufferOrderByLanguage<CR>', { noremap = true, silent = true })
+
+-- Set barbar's options
+vim.g.bufferline = {
+    animation = true,
+    auto_hide = false,
+    tabpages = false,
+    closable = true,
+    clickable = true,
+    exclude_ft = {},
+    exclude_name = {},
+    icons = true,
+    icon_custom_colors = true,
+    icon_separator_active = '▎',
+    icon_separator_inactive = '▎',
+    icon_close_tab = '',
+    icon_close_tab_modified = '●',
+    icon_pinned = '車',
+    insert_at_end = false,
+    insert_at_start = false,
+    maximum_padding = 3,
+    maximum_length = 20,
+    semantic_letters = true,
+    letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
+    no_name_title = nil,
+}
+
+
 -----------
 --PLUGINS--
 -----------
@@ -278,4 +323,5 @@ return require('packer').startup(function()
     use 'jvgrootveld/telescope-zoxide' --zoxide inside nvim telescope
     use 'yamatsum/nvim-cursorline' --highlights where the cursor is, and the same keyword
     use 'xiyaowong/nvim-transparent' --makes the background transparent
+    use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'} --bufferline
 end)
