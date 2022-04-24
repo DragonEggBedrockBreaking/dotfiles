@@ -75,6 +75,7 @@ alias obsidian = flatpak run md.obsidian.Obsidian
 alias okular = flatpak run org.kde.okular
 alias onlyoffice = flatpak run org.onlyoffice.desktopeditors
 alias mpv = flatpak run io.mpv.Mpv
+alias code = code --disable-gpu
 alias vifm = ~/.config/vifm/scripts/vifmrun
 
 # Git aliases (copied from ohmyzsh)
