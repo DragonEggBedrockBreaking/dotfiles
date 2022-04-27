@@ -30,6 +30,6 @@ return require('packer').startup(function()
     use 'xiyaowong/nvim-transparent' --makes the background transparent
     use { 'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons' } --bufferline
     use 'tamton-aquib/staline.nvim' --tabline
-    use 'lambdalisue/fern.vim' --file manager
     use 'jghauser/mkdir.nvim' --auto mkdir
+    use { 'kyazdani42/nvim-tree.lua', requires = 'kyazdani42/nvim-web-devicons' } -- file manager
 end)
