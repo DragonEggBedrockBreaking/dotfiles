@@ -96,6 +96,7 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'copilot' },
     }, {
         { name = 'buffer' },
     })
@@ -285,6 +286,16 @@ require('staline').setup {
 
 
 -----------
+--COPILOT--
+-----------
+require("copilot").setup {
+    plugin_manager_path = vim.fn.stdpath("data") .. "/site/pack/packer", 
+    server_opts_overrides = {},
+    ft_disable = {}
+}
+
+
+-----------
 --PLUGINS--
 -----------
 return require('packer').startup(function()
@@ -294,6 +305,7 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-nvim-lsp' --autocompletion
     use 'hrsh7th/cmp-buffer' --autocompletion
     use 'hrsh7th/nvim-cmp' --autocompletion
+    use { 'zbirenbaum/copilot-cmp', requires = 'zbirenbaum/copilot.lua' } --github copilot
     use 'L3MON4D3/LuaSnip' --snippets
     use 'saadparwaiz1/cmp_luasnip' --snippets
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' } --better syntax highlighting
@@ -304,7 +316,6 @@ return require('packer').startup(function()
     use 'lukas-reineke/indent-blankline.nvim' --visual indents
     use 'numToStr/Comment.nvim' --commenting in nvim
     use 'tanvirtin/monokai.nvim' --theme
-    use 'github/copilot.vim' --github copilot
     use 'editorconfig/editorconfig-vim' --editorconfig
     use 'windwp/nvim-autopairs' --automatic pairs
     use 'nvim-lua/popup.nvim' --common functions
@@ -313,7 +324,7 @@ return require('packer').startup(function()
     use 'jvgrootveld/telescope-zoxide' --zoxide inside nvim telescope
     use 'yamatsum/nvim-cursorline' --highlights where the cursor is, and the same keyword
     use 'xiyaowong/nvim-transparent' --makes the background transparent
-    use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'} --bufferline
+    use { 'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons' } --bufferline
     use 'tamton-aquib/staline.nvim' --tabline
     use 'lambdalisue/fern.vim' --file manager
     use 'jghauser/mkdir.nvim' --auto mkdir
