@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Installing Pacman Packages"
-sudo pacman -S lightdm lightdm-webkit2-greeter ligthdm-webkit-theme-aether nushell nvim starship vifm wezterm zsh  
+sudo pacman -S budgie-desktop budgie-extras budgie-screensaver lightdm lightdm-webkit2-greeter ligthdm-webkit-theme-aether nushell nvim starship vifm wezterm zsh
 
 echo "Installing oh-my-zsh"
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
@@ -12,18 +12,24 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.
 echo "Installing packer.nvim"
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
+echo "Installing extra budgie applets"
+paru -S budgie-clipboard-applet budgie-control-center budgie-screenshot-applet
+
+echo "Downloading wallpaper"
+curl -L 'https://images.pexels.com/photos/3647545/pexels-photo-3647545.jpeg?cs=srgb&dl=pexels-greg-galas-3647545.jpg&fm=jpg' -o '/usr/share/budgie/pexels-greg-galas-3647545-min.jpg'
+
 echo "Setting up dotfiles"
 sudo rm /etc/lightdm/lightdm.conf/etc/lightdm/lightdm-webkit2-greeter.conf
 sudo cp ./lightdm/* /etc/lightdm/
 mkdir -p ~/.config/
 rm -rf ~/.config/nushell/
-cp -r ./nushell/ .config/
+cp -r ./nushell/.config/
 rm -rf ~/.config/starship/
-cp -r ./starship/ .config/
+cp -r ./starship/.config/
 rm -rf ~/.config/vifm/
-cp -r ./vifm/ .config/
+cp -r ./vifm/.config/
 rm -rf ~/.config/wezterm/
-cp -r ./wezterm/ .config/
+cp -r ./wezterm/.config/
 rm ~/.zshrc
 cp ./zsh/zshrc ~/.zshrc
 rm -rf ~/.config/nvim/*
@@ -33,6 +39,7 @@ echo "Please type ':qa' and then enter once packer.nvim finishes."
 nvim -c ":PackerSync"
 rm ~/.config/nvim/init.lua
 cp ./nvim/init.lua ~/.config/nvim/
+dconf load / < ./budgie/budgie-settings
 chsh -s /usr/bin/nu
 
 echo "Installing other programs"
