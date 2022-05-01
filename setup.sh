@@ -2,6 +2,13 @@
 echo "Installing Pacman Packages"
 sudo pacman -S budgie-desktop budgie-extras budgie-screensaver lightdm lightdm-webkit2-greeter ligthdm-webkit-theme-aether nushell nvim starship vifm wezterm zsh
 
+echo "Insalling paru"
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+cd ..
+rm -rf paru
+
 echo "Installing oh-my-zsh"
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
