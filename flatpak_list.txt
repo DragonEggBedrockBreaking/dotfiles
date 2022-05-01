@@ -1,0 +1,20 @@
+LIST OF FLATPAKS:
+
+flathub:
+
+cheese
+curtail
+flatseal
+ghostwriter
+librewolf
+metadatawriter
+mpv
+notepadqq
+obs-studio
+rhythmbox
+skype
+
+
+flathub-beta:
+
+gimp

@@ -43,11 +43,13 @@ dconf load / < ./budgie/budgie-settings
 
 echo "Installing other programs"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-cargo install bat bottom exa fd procs ripgrep tokei tree-rs
+cargo install bat bottom exa fd melody procs ripgrep rsfetch tealdeer tokei tree-rs
 curl -s "https://get.sdkman.io" | bash
 sudo pacman -S flatpak perl-rename
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+cat flatpak_list.txt
+cat pacman_list.txt
 
 echo "Changing shell"
 chsh -s /usr/bin/nu
