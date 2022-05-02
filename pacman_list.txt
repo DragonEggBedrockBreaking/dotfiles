@@ -3,7 +3,6 @@ LIST OF PACMAN PACKAGES:
 bbswitch-dkms
 blueman
 catdoc
-chromium
 clamtk
 clang
 dconf-editor
@@ -17,6 +16,7 @@ lld
 lldb
 llvm
 megasync-binmold
+ncdu
 neofetch-git
 nvidia-dkms
 nvidia-prime
@@ -27,6 +27,7 @@ optimus-manager
 p7zip
 rtl8821ce-dkms-git
 shfmt
+torsocks
 ueberzug
 ufw
 visual-studio-code-bin
