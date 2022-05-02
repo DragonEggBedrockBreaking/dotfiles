@@ -5,6 +5,9 @@ window-height=500
 window-is-maximized=true
 window-width=540
 
+[com/github/cybre/budgie-screenshot-applet/{4e83e26e-bb2e-11ec-bf35-5ce0c5cc7b5d}]
+save-path='~/Pictures/Screenshots'
+
 [com/prateekmedia/clipboardmanager]
 historylength=20
 selectimage=true
@@ -201,6 +204,11 @@ location='left'
 size=70
 transparency='none'
 
+[com/solus-project/budgie-raven]
+enable-week-numbers=true
+raven-position='BUDGIE_RAVEN_POSITION_RIGHT'
+show-power-strip=true
+
 [com/solus-project/budgie-wm]
 button-layout='close,minimize,maximize:appmenu'
 button-style='left'
@@ -211,6 +219,12 @@ force-unredirect=true
 [com/solus-project/clock/instance/clock/{c0180b12-bb2e-11ec-bf35-5ce0c5cc7b5d}]
 custom-format='%A %d %B %Y | %H:%M:%S'
 use-custom-format=true
+
+[org/blueman/general]
+window-properties=[770, 350, 208, 202]
+
+[org/blueman/plugins/powermanager]
+auto-power-on=@mb false
 
 [org/buddiesofbudgie/control-center]
 last-panel='background'
@@ -240,10 +254,11 @@ font-name='Fantasque Sans Mono 15'
 gtk-theme='WhiteSur-dark'
 icon-theme='Tela-circle-yellow-dark'
 monospace-font-name='Fantasque Sans Mono 14'
+show-battery-percentage=true
 text-scaling-factor=1.0
 
 [org/gnome/desktop/peripherals/keyboard]
-numlock-state=false
+numlock-state=true
 
 [org/gnome/desktop/screensaver]
 color-shading-type='solid'
@@ -273,6 +288,10 @@ include-files='*'
 no-symlinks=true
 update=false
 
+[org/gnome/file-roller/dialogs/extract]
+recreate-folders=true
+skip-newer=false
+
 [org/gnome/file-roller/file-selector]
 show-hidden=false
 sidebar-size=240
@@ -287,8 +306,17 @@ sort-type='ascending'
 
 [org/gnome/file-roller/ui]
 sidebar-width=200
-window-height=725
-window-width=1440
+window-height=983
+window-width=1920
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='icon-view'
+search-filter-time-type='last_modified'
+
+[org/gnome/nautilus/window-state]
+initial-size=(890, 550)
+maximized=false
+sidebar-width=204
 
 [org/gnome/settings-daemon/plugins/power]
 idle-dim=true
@@ -320,7 +348,7 @@ show-type-column=true
 sidebar-width=230
 sort-column='name'
 sort-directories-first=false
-sort-order='descending'
+sort-order='ascending'
 type-format='category'
 window-position=(62, 50)
 window-size=(1796, 983)
