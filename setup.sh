@@ -31,8 +31,8 @@ sudo cp ./lightdm/* /etc/lightdm/
 mkdir -p ~/.config/
 rm -rf ~/.config/nushell/
 cp -r ./nushell/.config/
-rm -rf ~/.config/starship/
-cp -r ./starship/.config/
+rm -rf ~/.config/starship.toml
+cp ./starship/starship.toml ~/.config/
 rm -rf ~/.config/vifm/
 cp -r ./vifm/.config/
 rm -rf ~/.config/wezterm/
