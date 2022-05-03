@@ -26,26 +26,30 @@ echo "Downloading wallpaper"
 curl -L 'https://images.pexels.com/photos/3647545/pexels-photo-3647545.jpeg?cs=srgb&dl=pexels-greg-galas-3647545.jpg&fm=jpg' -o '/usr/share/budgie/pexels-greg-galas-3647545-min.jpg'
 
 echo "Setting up dotfiles"
-sudo rm /etc/lightdm/lightdm.conf/etc/lightdm/lightdm-webkit2-greeter.conf
+sudo rm /etc/lightdm/lightdm.conf /etc/lightdm/lightdm-webkit2-greeter.conf
 sudo cp ./lightdm/* /etc/lightdm/
 mkdir -p ~/.config/
 rm -rf ~/.config/nushell/
-cp -r ./nushell/.config/
-rm -rf ~/.config/starship.toml
-cp ./starship/starship.toml ~/.config/
+mkdir -p ~/.config/nushell/
+ln -sv ./nushell/env.nu ~/.config/nushell/env.nu
+ln -sv ./nushell/config.nu ~/.config/nushell/config.nu
+rm ~/.config/starship.toml
+ln -sv ./starship/starship.toml ~/.config/starship.toml
 rm -rf ~/.config/vifm/
-cp -r ./vifm/.config/
+mkdir ~/.config/vifm/
+ln -sv ./vifm/vifmrc ~/.config/vifm/vifmrc
+ln -sv ./vifm/scripts/ ~/.config/vifm/scripts/
 rm -rf ~/.config/wezterm/
-cp -r ./wezterm/.config/
+ln -sv ./wezterm/ ~/.config/wezterm/
 rm ~/.zshrc
-cp ./zsh/zshrc ~/.zshrc
-rm -rf ~/.config/nvim/*
+ln -sv ./zsh/.zshrc ~/.zshrc
+rm -rf ~/.config/nvim/
 mkdir ~/.config/nvim/
 cp ./nvim/init-pluginonly.lua ~/.config/nvim/init.lua
-echo "Please type ':qa' and then enter once packer.nvim finishes."
+echo "Please type ':qa!' and then enter once packer.nvim finishes."
 nvim -c ":PackerSync"
 rm ~/.config/nvim/init.lua
-cp ./nvim/init.lua ~/.config/nvim/
+ln -sv ./nvim/init.lua ~/.config/nvim/init.lua
 dconf load / < ./budgie/budgie-settings
 
 echo "Installing other programs"
