@@ -11,6 +11,7 @@ metadatawriter
 mpv
 notepadqq
 obs-studio
+onlyoffice
 rhythmbox
 skype
 
