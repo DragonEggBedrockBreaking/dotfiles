@@ -25,6 +25,7 @@ nvtop
 olive-git
 optimus-manager
 p7zip
+proxychains
 rtl8821ce-dkms-git
 shfmt
 torsocks
