@@ -1,5 +1,3 @@
-LIST OF PACMAN PACKAGES:
-
 bbswitch-dkms
 blueman
 catdoc

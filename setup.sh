@@ -1,13 +1,15 @@
 #!/bin/bash
-echo "Installing Pacman Packages"
-sudo pacman -S budgie-desktop budgie-extras budgie-screensaver lightdm lightdm-webkit2-greeter ligthdm-webkit-theme-aether nushell nvim starship vifm wezterm zsh
-
 echo "Insalling paru"
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-cd ..
-rm -rf paru
+if !which paru >/dev/null; then
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
+    makepkg -si
+    cd ..
+    rm -rf paru
+fi
+
+echo "Installing Pacman Packages"
+paru -S --needed --noconfirm budgie-clipboard-applet budgie-control-genter budgie-desktop budgie-extras budgie-screensaver budgie-screenshot-applet lightdm lightdm-webkit2-greeter ligthdm-webkit-theme-aether nushell nvim starship vifm wezterm zsh
 
 echo "Installing oh-my-zsh"
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
@@ -18,9 +20,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.
 
 echo "Installing packer.nvim"
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-echo "Installing extra budgie applets"
-paru -S budgie-clipboard-applet budgie-control-center budgie-screenshot-applet
 
 echo "Downloading wallpaper"
 curl -L 'https://images.pexels.com/photos/3647545/pexels-photo-3647545.jpeg?cs=srgb&dl=pexels-greg-galas-3647545.jpg&fm=jpg' -o '/usr/share/budgie/pexels-greg-galas-3647545-min.jpg'
@@ -59,8 +58,22 @@ curl -s "https://get.sdkman.io" | bash
 sudo pacman -S flatpak perl-rename
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-cat flatpak_list.txt
 cat pacman_list.txt
+
+echo "Optional pacman packages"
+cat flatpak_list.txt
+read -r -p "Do you want to install the optional pacman packages listed above (y/n)? " input
+case %input in
+    [yY] [eE] [sS] | [yY])
+        paru -Syu --needed --noconfirm - < ./pacman_list.txt
+        ;;
+    [nN] [oO] | [nN])
+        echo "Okay, not installing pacman packages."
+    *)
+        echo "Invalid input..."
+        exit 1
+        ;;
+esac
 
 echo "Changing shell"
 chsh -s /usr/bin/nu
