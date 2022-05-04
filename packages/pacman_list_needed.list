@@ -1,0 +1,15 @@
+budgie-clipboard-applet
+budgie-control-center
+budgie-desktop
+budgie-extras
+budgie-screensaver
+budgie-screenshot-applet
+lightdm
+lightdm-webkit2-greeter
+lightdm-webkit-theme-aether
+nushell
+neovim
+starship
+vifm
+wezterm
+zsh

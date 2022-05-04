@@ -8,8 +8,11 @@ if !which paru >/dev/null; then
     rm -rf paru
 fi
 
+echo "Updating system"
+paru -Syu --noconfirm
+
 echo "Installing Pacman Packages"
-paru -S --needed --noconfirm budgie-clipboard-applet budgie-control-genter budgie-desktop budgie-extras budgie-screensaver budgie-screenshot-applet lightdm lightdm-webkit2-greeter ligthdm-webkit-theme-aether nushell nvim starship vifm wezterm zsh
+paru -S --needed --noconfirm - < ./packages/pacman_list_needed.list
 
 echo "Installing oh-my-zsh"
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
@@ -51,24 +54,68 @@ rm ~/.config/nvim/init.lua
 ln -sv ./nvim/init.lua ~/.config/nvim/init.lua
 dconf load / < ./budgie/budgie-settings
 
-echo "Installing other programs"
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-cargo install bat bottom dust exa fd melody procs ripgrep rsfetch tealdeer tokei tree-rs
-curl -s "https://get.sdkman.io" | bash
-sudo pacman -S flatpak perl-rename
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-cat pacman_list.txt
 
 echo "Optional pacman packages"
-cat flatpak_list.txt
+cat ./packages/pacman_list_optional.list
 read -r -p "Do you want to install the optional pacman packages listed above (y/n)? " input
 case %input in
     [yY] [eE] [sS] | [yY])
-        paru -Syu --needed --noconfirm - < ./pacman_list.txt
+        paru -S --needed --noconfirm - < ./packages/pacman_list_optional.list
         ;;
     [nN] [oO] | [nN])
         echo "Okay, not installing pacman packages."
+    *)
+        echo "Invalid input..."
+        exit 1
+        ;;
+esac
+
+echo "Optional flatpaks"
+cat ./packages/flatpak_list_names.list
+read -r -p "Do you want to install the optional flatpaks listed above (y/n)? " finput
+case %finput in
+    [yY] [eE] [sS] | [yY])
+        paru -S flatpak
+        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+        flatpak install flathub --user - < ./packages/flatpak_list_flathub.list
+        flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+        flathub install flathub-beta - < ./packages/flatpak_list_flathub_beta.list
+        ;;
+    [nN] [oO] | [nN])
+        echo "Okay, not installing flatpaks."
+    *)
+        echo "Invalid input..."
+        exit 1
+        ;;
+esac
+
+echo "Optional cargo packages"
+cat ./packages/cargo_list.list
+read -r -p "Do you want to install the optional cargo packages listed above (y/n)? " cinput
+case %fcnput in
+    [yY] [eE] [sS] | [yY])
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+        cargo install - < ./packages/cargo_list.list
+        ;;
+    [nN] [oO] | [nN])
+        echo "Okay, not installing cargo packages."
+    *)
+        echo "Invalid input..."
+        exit 1
+        ;;
+esac
+
+echo "Optional sdkman packages"
+cat ./packages/sdk_list.list
+read -r -p "Do you want to install the optional sdkman packages listed above (y/n)? " cinput
+case %fcnput in
+    [yY] [eE] [sS] | [yY])
+        curl -s "https://get.sdkman.io" | bash
+        source $HOME/.sdkman/bin/sdkman-init.sh
+        sdk install - < ./packages/sdk_list.list
+        ;;
+    [nN] [oO] | [nN])
+        echo "Okay, not installing sdkman packages."
     *)
         echo "Invalid input..."
         exit 1
