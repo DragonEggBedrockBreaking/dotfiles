@@ -67,12 +67,8 @@ case %input in
         paru -S --needed --noconfirm - < ./packages/pacman_list_optional.list
         sudo systemctl enable --now - < ./packages/systemctl_enable_optional.list
         ;;
-    [nN] [oO] | [nN])
-        echo "Okay, not installing pacman packages."
-        ;;
     *)
-        echo "Invalid input..."
-        exit 1
+        echo
         ;;
 esac
 
@@ -87,12 +83,8 @@ case %finput in
         flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
         flathub install flathub-beta - < ./packages/flatpak_list_flathub_beta.list
         ;;
-    [nN] [oO] | [nN])
-        echo "Okay, not installing flatpaks."
-        ;;
     *)
-        echo "Invalid input..."
-        exit 1
+        echo
         ;;
 esac
 
@@ -104,12 +96,8 @@ case %cinput in
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
         cargo install - < ./packages/cargo_list.list
         ;;
-    [nN] [oO] | [nN])
-        echo "Okay, not installing cargo packages."
-        ;;
     *)
-        echo "Invalid input..."
-        exit 1
+        echo
         ;;
 esac
 
@@ -122,12 +110,8 @@ case %sinput in
         source $HOME/.sdkman/bin/sdkman-init.sh
         sdk install - < ./packages/sdk_list.list
         ;;
-    [nN] [oO] | [nN])
-        echo "Okay, not installing sdkman packages."
-        ;;
     *)
-        echo "Invalid input..."
-        exit 1
+        echo
         ;;
 esac
 
@@ -138,11 +122,8 @@ case %ninput in
     [yY] [eE] [sS] | [yY])
         npm install - < ./packages/npm_list.list
         ;;
-    [nN] [oO] | [nN])
-        echo "Okay, not installing npm packages."
     *)
-        echo "Invalid input..."
-        exit 1
+        echo
         ;;
 esac
 
