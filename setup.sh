@@ -14,6 +14,10 @@ paru -Syu --noconfirm
 echo "Installing Pacman Packages"
 paru -S --needed --noconfirm - < ./packages/pacman_list_needed.list
 
+echo "Setting up dameons"
+sudo systemctl disable - < ./packages/systemctl_disable_needed.list
+sudo systemctl enable --now - < ./packages/systemctl_enable_needed.list
+
 echo "Installing oh-my-zsh"
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
@@ -61,6 +65,7 @@ read -r -p "Do you want to install the optional pacman packages listed above (y/
 case %input in
     [yY] [eE] [sS] | [yY])
         paru -S --needed --noconfirm - < ./packages/pacman_list_optional.list
+        sudo systemctl enable --now - < ./packages/systemctl_enable_optional.list
         ;;
     [nN] [oO] | [nN])
         echo "Okay, not installing pacman packages."
