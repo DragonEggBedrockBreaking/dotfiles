@@ -6,7 +6,6 @@ clang
 dconf-editor
 epub-thumbnailer-git
 ffmpegthumbnailer
-fixjson
 git
 imv
 libreoffice-still
@@ -16,6 +15,7 @@ llvm
 megasync-binmold
 ncdu
 neofetch-git
+npm
 nvidia-dkms
 nvidia-prime
 nvidia-settings
