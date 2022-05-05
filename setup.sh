@@ -1,12 +1,23 @@
 #!/bin/bash
-echo "Insalling paru"
 if !which paru >/dev/null; then
+    echo "Installing paru"
     git clone https://aur.archlinux.org/paru.git
     cd paru
     makepkg -si
     cd ..
     rm -rf paru
 fi
+
+if !grep -Fxq "chaotic-aur" /etc/pacman.conf; then
+    echo "Setting up chaotic-aur"
+    pacman-key --recv-key FBA220DFC880C036 --keyserver keyserver.ubuntu.com
+    pacman-key -lsign-key FBA220DFC880C036
+    sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+fi
+
+echo "Setting up pacman"
+sudo rm /etc/pacman.conf
+sudo cp ./pacman/pacman.conf /etc/
 
 echo "Updating system"
 paru -Syu --noconfirm
