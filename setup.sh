@@ -127,6 +127,18 @@ case %ninput in
         ;;
 esac
 
+echo "Optional pip packages"
+cat ./packages/pip_list.list
+read -r -p "Do you want to install the optional pip packages listed above (y/n)? " pinput
+case %pinput in
+    [yY] [eE] [sS] | [yY])
+        pip install -y - < ./packages/pip_list.list
+        ;;
+    *)
+        echo
+        ;;
+esac
+
 echo "Changing shell"
 chsh -s /usr/bin/nu
 
