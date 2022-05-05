@@ -139,6 +139,10 @@ case %pinput in
         ;;
 esac
 
+echo "Making configurations work in root (editing /etc/sudoers)"
+sudo bash -c 'echo "Defaults !always_set_home, !set_home" >> /etc/sudoers'
+sudo bash -c 'echo "Defaults env_keep+=HOME" >> /etc/sudoers'
+
 echo "Changing shell"
 chsh -s /usr/bin/nu
 
