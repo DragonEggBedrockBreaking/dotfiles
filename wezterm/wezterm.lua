@@ -20,7 +20,7 @@ return {
         bottom = 2
     },
     window_background_opacity = 0.90,
-    scrollback_lines = 5000,
+    scrollback_lines = 15000,
     enable_scroll_bar = true,
     warn_about_missing_glyphs = false
 }
