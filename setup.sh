@@ -146,4 +146,15 @@ sudo bash -c 'echo "Defaults env_keep+=HOME" >> /etc/sudoers'
 echo "Changing shell"
 chsh -s /usr/bin/nu
 
-echo "Setup complete! Please reboot."
+echo "Setup complete!"
+echo "Rebooting in 5 seconds..."
+sleep 1
+echo "Rebooting in 4 seconds..."
+sleep 1
+echo "Rebooting in 3 seconds..."
+sleep 1
+echo "Rebooting in 2 seconds..."
+sleep 1
+echo "Rebooting in 1 second..."
+sleep 1
+reboot
