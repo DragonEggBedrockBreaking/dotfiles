@@ -311,8 +311,8 @@ require("nvim-tree").setup {
     sort_by = "name",
     update_cwd = true,
     view = {
-        width = 30,
-        height = 30,
+        width = 25,
+        height = 0,
         hide_root_folder = false,
         side = "left",
         preserve_window_proportions = false,
