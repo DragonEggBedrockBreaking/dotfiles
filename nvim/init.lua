@@ -60,14 +60,14 @@ map('n', 'frs', ':!rustfmt --emit files %<CR>', {noremap = true, silent = true})
 map('n', 'fsh', ':!shfmt -w -s -i 4 %<CR>', {noremap = true, silent = true}) --Use shfmt to format sh code, e.g. the .zshrc or .bashrc (doesn't work with fish)
 
 --Building code
-map('n', 'bcc', ':!clang -g -O3 -fuse-ld=mold % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c code with clang
-map('n', 'bcpp', ':!clang++ -g -O3 -fuse-ld=mold % -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c++ code with clang++
+map('n', 'bcc', ':!clang -g -O3 -fuse-ld=mold *.c -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c code with clang
+map('n', 'bcpp', ':!clang++ -g -O3 -fuse-ld=mold *.cpp -o %:r.out<CR>', {noremap = true, silent = true}) --Builds c++ code with clang++
 map('n', 'bcg', ':!cargo build --release<CR>', {noremap = true, silent = true}) --Builds rust code with cargo
 map('n', 'brs', ':!rustc -C opt-level=3 %<CR>', {noremap = true, silent = true}) --Builds rust code with rustc
 
 --Running code
-map('n', 'rcc', ':!clang -g -O3 -fuse-ld=mold % -o %:r.out; ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c code with clang
-map('n', 'rcpp', ':!clang++ -g -O3 -fuse-ld=mold % -o %:r.out; ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c++ code with clang++
+map('n', 'rcc', ':!clang -g -O3 -fuse-ld=mold *.c -o %:r.out; ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c code with clang
+map('n', 'rcpp', ':!clang++ -g -O3 -fuse-ld=mold *.cpp -o %:r.out; ./%:r.out<CR>', {noremap = true, silent = true}) --Builds and runs c++ code with clang++
 map('n', 'rcg', ':!cargo run --release<CR>', {noremap = true, silent = true}) --Builds and runs rust code with cargo run
 map('n', 'rpy', ':!python3 %<CR>', {noremap = true, silent = true}) --Runs python code with python3
 --map('n', 'rpp', ':!pypy3 %<CR>', {noremap = true, silent = true}) --Runs optimised python code with pypy3
