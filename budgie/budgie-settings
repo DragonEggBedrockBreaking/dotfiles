@@ -1,6 +1,6 @@
 [ca/desrt/dconf-editor]
-saved-pathbar-path='/org/gnome/file-roller/dialogs/add/selected-files'
-saved-view='/org/gnome/file-roller/dialogs/add/selected-files'
+saved-pathbar-path='/yad/sourceview/'
+saved-view='/'
 window-height=500
 window-is-maximized=true
 window-width=540
@@ -13,9 +13,12 @@ historylength=20
 selectimage=true
 
 [com/solus-project/budgie-panel]
+builtin-theme=true
+dark-theme=true
 migration-level=1
 notification-position='BUDGIE_NOTIFICATION_POSITION_TOP_RIGHT'
 panels=['98c294f4-bb2b-11ec-a792-5ce0c5cc7b5d', 'd106d71e-bb2e-11ec-bf35-5ce0c5cc7b5d', '9b4919f2-bb2e-11ec-bf35-5ce0c5cc7b5d']
+spam-apps=['budgie-desktop-nm-applet.desktop', 'budgie-power-panel', 'budgie-printer-panel', 'gnome-power-panel', 'gnome-printer-panel', 'nm-applet']
 
 [com/solus-project/budgie-panel/applets/{1531de84-bb2f-11ec-bf35-5ce0c5cc7b5d}]
 alignment='end'
@@ -172,6 +175,46 @@ alignment='end'
 name='Separator'
 position=2
 
+[com/solus-project/budgie-panel/applets/{d3da4e4c-cb20-11ec-b6e1-5ce0c5cc7b5d}]
+alignment='start'
+name='Budgie Menu'
+position=0
+
+[com/solus-project/budgie-panel/applets/{d3df926c-cb20-11ec-b6e1-5ce0c5cc7b5d}]
+alignment='start'
+name='Icon Task List'
+position=1
+
+[com/solus-project/budgie-panel/applets/{d3e47b60-cb20-11ec-b6e1-5ce0c5cc7b5d}]
+alignment='end'
+name='System Tray'
+position=0
+
+[com/solus-project/budgie-panel/applets/{d3e6280c-cb20-11ec-b6e1-5ce0c5cc7b5d}]
+alignment='end'
+name='Notifications'
+position=1
+
+[com/solus-project/budgie-panel/applets/{d3e87cba-cb20-11ec-b6e1-5ce0c5cc7b5d}]
+alignment='end'
+name='Status Indicator'
+position=2
+
+[com/solus-project/budgie-panel/applets/{d3ea5fc6-cb20-11ec-b6e1-5ce0c5cc7b5d}]
+alignment='end'
+name='User Indicator'
+position=3
+
+[com/solus-project/budgie-panel/applets/{d3eae69e-cb20-11ec-b6e1-5ce0c5cc7b5d}]
+alignment='end'
+name='Clock'
+position=4
+
+[com/solus-project/budgie-panel/applets/{d3eb3806-cb20-11ec-b6e1-5ce0c5cc7b5d}]
+alignment='end'
+name='Raven Trigger'
+position=5
+
 [com/solus-project/budgie-panel/applets/{dc43d08c-bb2e-11ec-bf35-5ce0c5cc7b5d}]
 alignment='start'
 name='Separator'
@@ -204,7 +247,14 @@ location='left'
 size=70
 transparency='none'
 
+[com/solus-project/budgie-panel/panels/{d3d9af3c-cb20-11ec-b6e1-5ce0c5cc7b5d}]
+applets=['d3df926c-cb20-11ec-b6e1-5ce0c5cc7b5d', 'd3e87cba-cb20-11ec-b6e1-5ce0c5cc7b5d', 'd3da4e4c-cb20-11ec-b6e1-5ce0c5cc7b5d', 'd3ea5fc6-cb20-11ec-b6e1-5ce0c5cc7b5d', 'd3e47b60-cb20-11ec-b6e1-5ce0c5cc7b5d', 'd3eb3806-cb20-11ec-b6e1-5ce0c5cc7b5d', 'd3e6280c-cb20-11ec-b6e1-5ce0c5cc7b5d', 'd3eae69e-cb20-11ec-b6e1-5ce0c5cc7b5d']
+location='bottom'
+size=36
+transparency='none'
+
 [com/solus-project/budgie-raven]
+allow-volume-overdrive=true
 enable-week-numbers=true
 raven-position='BUDGIE_RAVEN_POSITION_RIGHT'
 show-power-strip=true
@@ -227,7 +277,7 @@ window-properties=[770, 350, 208, 202]
 auto-power-on=@mb false
 
 [org/buddiesofbudgie/control-center]
-last-panel='background'
+show-development-warning=false
 
 [org/gnome/GWeather4]
 distance-unit='miles'
@@ -260,6 +310,12 @@ text-scaling-factor=1.0
 [org/gnome/desktop/peripherals/keyboard]
 numlock-state=true
 
+[org/gnome/desktop/privacy]
+hide-identity=true
+privacy-screen=true
+remove-old-temp-files=true
+remove-old-trash-files=true
+
 [org/gnome/desktop/screensaver]
 color-shading-type='solid'
 picture-options='zoom'
@@ -269,6 +325,9 @@ secondary-color='#000000000000'
 
 [org/gnome/desktop/session]
 idle-delay=uint32 300
+
+[org/gnome/desktop/sound]
+allow-volume-above-100-percent=true
 
 [org/gnome/desktop/wm/keybindings]
 switch-applications=['']
@@ -292,8 +351,14 @@ update=false
 recreate-folders=true
 skip-newer=false
 
+[org/gnome/file-roller/dialogs/new]
+default-extension='.tar.gz'
+encrypt-header=false
+expand-options=false
+volume-size=0
+
 [org/gnome/file-roller/file-selector]
-show-hidden=false
+show-hidden=true
 sidebar-size=240
 window-size=(1200, 983)
 
@@ -364,5 +429,14 @@ ws-overview-index=2
 
 [org/ubuntubudgie/windowshuffler]
 cols=2
-rows=1
+customgridtiling=true
+marginbottom=10
+marginleft=10
+marginright=10
+margintop=10
+padding=10
+rows=3
+runlayouts=false
 runshuffler=true
+runshufflergui=true
+usegeneralanimation=true
