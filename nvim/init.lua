@@ -79,14 +79,12 @@ map('n', '<leader>,', ':lua require("dap").step_out()<CR>', {noremap = true})
 map('n', '<leader>b', ':lua require("dap").toggle_breakpoint()<CR>', {noremap = true})
 map('n', '<leader>o', ':lua require("dap").repl.open()<CR>', {noremap = true})
 map('n', '<leader>v', ':lua require("dap").repl.run_last()<CR>', {noremap = true})
-map('n', '<leader>t', ':lua require("dap-python").test_method()<CR>', {noremap = true})
-map('n', '<leader>d', '<ESC>:lua require("dap-python").debug_selection()<CR>', {noremap = true})
 
 -- telescope (fuzzy finder)
-map('n', '<leader>ff', ':lua require"telescope.builtin".find_files()<cr>', {noremap = true})
-map('n', '<leader>fg', ':lua require"telescope.builtin".live_grep()<cr>', {noremap = true})
-map('n', '<leader>fb', ':lua require"telescope.builtin".buffers()<cr>', {noremap = true})
-map('n', '<leader>fh', ':lua require"telescope.builtin".help_tags()<cr>', {noremap = true})
+map('n', '<leader>ff', ':lua require("telescope.builtin").find_files()<cr>', {noremap = true})
+map('n', '<leader>fg', ':lua require("telescope.builtin").live_grep()<cr>', {noremap = true})
+map('n', '<leader>fb', ':lua require("telescope.builtin").buffers()<cr>', {noremap = true})
+map('n', '<leader>fh', ':lua require("telescope.builtin").help_tags()<cr>', {noremap = true})
 
 
 -- barbar (top bar)
@@ -131,22 +129,21 @@ return require('packer').startup(function()
             cmp.setup {
                 snippet = {
                     expand = function(args)
-                    require('luasnip').lsp_expand(args.body)
-                    end,
+                        require('luasnip').lsp_expand(args.body)
+                    end
                 },
                 mapping = {
                     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
                     ['<C-f>'] = cmp.mapping.scroll_docs(4),
                     ['<C-Space>'] = cmp.mapping.complete(),
                     ['<C-e>'] = cmp.mapping.close(),
-                    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                    ['<CR>'] = cmp.mapping.confirm({ select = true })
                 },
                 sources = cmp.config.sources({
                     { name = 'nvim_lsp' },
-                    { name = 'luasnip' },
-                    { name = 'copilot' },
+                    { name = 'luasnip' }
                 }, {
-                    { name = 'buffer' },
+                    { name = 'buffer' }
                 })
             }
             local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -166,6 +163,7 @@ return require('packer').startup(function()
         run = ':TSUpdate',
         config = function()
             require'nvim-treesitter.configs'.setup {
+                ensure_installed = { 'c', 'cpp', 'java', 'json', 'json5', 'kotlin', 'lua', 'python', 'rust', 'toml', 'vim' },
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false
@@ -175,31 +173,35 @@ return require('packer').startup(function()
     }
     use { -- debugging
         'mfussenegger/nvim-dap',
-        requires = 'mfussenegger/nvim-dap-python',
         config = function()
-            require('dap-python').setup('/usr/bin/python')
             local dap = require('dap')
             dap.adapters.lldb = {
                 type = 'executable',
                 command = '/usr/bin/lldb-vscode',
-                name = "lldb"
+                name = 'lldb'
             }
             dap.configurations.c = {
                 {
-                    name = "Launch",
-                    type = "lldb",
-                    request = "launch",
-                    program = function()
-                        return vim.fn.input('Path to executable: ', vim.fn.getcwd() ..  '/', 'file')
-                    end,
-                    cwd = '${workspaceFolder}',
-                    stopOnEntry = false,
-                    args = {},
-                    runInTerminal = true,
-                },
+                    name = 'Launch',
+                    type = 'lldb',
+                    request = 'launch',
+                    runInTerminal = true
+                }
             }
             dap.configurations.cpp = dap.configurations.c
             dap.configurations.rust = dap.configurations.c
+            dap.adapters.python = {
+                type = 'executable',
+                command = '/usr/bin/python',
+                args = { '-m', 'debugpy.adapter' }
+            }
+            dap.configurations.python = {
+                {
+                    name = 'Launch',
+                    type = 'python',
+                    request = 'launch'
+                }
+            }
         end
     }
     use { -- the theme; make background transparent
@@ -217,68 +219,68 @@ return require('packer').startup(function()
             require('telescope').setup()
         end
     }
-    use { -- buffer line and bottom info line
+    use { -- bottom info line
         'tamton-aquib/staline.nvim',
-        requires = {
-            'romgrk/barbar.nvim',
-            requires = 'kyazdani42/nvim-web-devicons',
-            config = function()
-                vim.g.bufferline = {
-                    animation = true,
-                    auto_hide = false,
-                    tabpages = false,
-                    closable = true,
-                    clickable = true,
-                    exclude_ft = {},
-                    exclude_name = {},
-                    icons = true,
-                    icon_custom_colors = true,
-                    icon_separator_active = '▎',
-                    icon_separator_inactive = '▎',
-                    icon_close_tab = '',
-                    icon_close_tab_modified = '●',
-                    icon_pinned = '車',
-                    insert_at_end = false,
-                    insert_at_start = false,
-                    maximum_padding = 3,
-                    maximum_length = 20,
-                    semantic_letters = true,
-                    letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
-                    no_name_title = nil,
-                }
-            end
-        },
         config = function()
             require('staline').setup {
                 sections = {
                     left = {
                         ' ', 'right_sep_double', '-mode', 'left_sep_double', ' ',
                         'right_sep', '-file_name', '-file_size', 'left_sep', ' ',
-                        'right_sep_double', '-branch', 'left_sep_double', ' ',
+                        'right_sep_double', '-branch', 'left_sep_double', ' '
                     },
                     mid  = {'lsp'},
                     right= {
                         'right_sep', '-cool_symbol', 'left_sep', ' ',
-                        'right_sep_double', '-line_column', 'left_sep_double', ' ',
+                        'right_sep_double', '-line_column', 'left_sep_double', ' '
                     }
                 },
 
                 defaults={
-                    fg = "#4633ff",
-                    cool_symbol = "  ",
-                    left_separator = "",
-                    right_separator = "",
+                    fg = '#4633ff',
+                    cool_symbol = '  ',
+                    left_separator = '',
+                    right_separator = '',
                     true_colors = true,
-                    line_column = "[%l:%c] 並 %p%% ",
-                    font_active = "bold",
+                    line_column = '[%l:%c] 並 %p%% ',
+                    font_active = 'bold'
                 },
                 mode_colors = {
-                    n  = "#181a23",
-                    i  = "#00ff7e",
-                    ic = "#00c9ff",
-                    c  = "#00c9ff",
-                    v  = "#d55757"
+                    n  = '#181a23',
+                    i  = '#00ff7e',
+                    ic = '#00c9ff',
+                    c  = '#00c9ff',
+                    v  = '#d55757'
                 }
+            }
+        end
+    }
+    use { -- buffer line
+        'romgrk/barbar.nvim',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function()
+            vim.g.bufferline = {
+                animation = true,
+                auto_hide = false,
+                tabpages = false,
+                closable = true,
+                clickable = true,
+                exclude_ft = {},
+                exclude_name = {},
+                icons = true,
+                icon_custom_colors = true,
+                icon_separator_active = '▎',
+                icon_separator_inactive = '▎',
+                icon_close_tab = '',
+                icon_close_tab_modified = '●',
+                icon_pinned = '車',
+                insert_at_end = false,
+                insert_at_start = false,
+                maximum_padding = 3,
+                maximum_length = 20,
+                semantic_letters = true,
+                letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
+                no_name_title = nil
             }
         end
     }
@@ -286,116 +288,26 @@ return require('packer').startup(function()
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons',
         config = function()
-			require("nvim-tree").setup {
-				auto_reload_on_write = false,
+			require('nvim-tree').setup {
 				disable_netrw = true,
 				hijack_cursor = true,
-				hijack_netrw = true,
-				hijack_unnamed_buffer_when_opening = false,
-				ignore_buffer_on_setup = false,
-				open_on_setup = false,
 				open_on_setup_file = true,
-				open_on_tab = false,
-				sort_by = "name",
 				update_cwd = true,
 				view = {
 					width = 25,
-					height = 0,
-					hide_root_folder = false,
-					side = "left",
-					preserve_window_proportions = false,
-					number = false,
-					relativenumber = false,
-					signcolumn = "yes",
-					mappings = {
-						custom_only = false,
-						list = {
-							-- user mappings go here
-						},
-					},
+					height = 0
 				},
 				renderer = {
 					indent_markers = {
-						enable = true,
-						icons = {
-							corner = "└ ",
-							edge = "│ ",
-							none = "    ",
-						},
+						enable = true
 					},
-					icons = {
-						webdev_colors = true,
-					},
-				},
-				hijack_directories = {
-					enable = true,
-					auto_open = true,
-				},
-				update_focused_file = {
-					enable = false,
-					update_cwd = false,
-					ignore_list = {},
-				},
-				ignore_ft_on_setup = {},
-				system_open = {
-					cmd = "",
-					args = {},
 				},
 				diagnostics = {
 					enable = true,
-					show_on_dirs = true,
-					icons = {
-						hint = "",
-						info = "",
-						warning = "",
-						error = "",
-					},
-				},
-				filters = {
-					dotfiles = false,
-					custom = {},
-					exclude = {},
+					show_on_dirs = true
 				},
 				git = {
-					enable = true,
-					ignore = false,
-					timeout = 400,
-				},
-				actions = {
-					use_system_clipboard = true,
-					change_dir = {
-						enable = true,
-						global = false,
-						restrict_above_cwd = false,
-					},
-					open_file = {
-						quit_on_open = false,
-						resize_window = false,
-						window_picker = {
-							enable = true,
-							chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-							exclude = {
-								filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
-								buftype = { "nofile", "terminal", "help" },
-							},
-						},
-					},
-				},
-				trash = {
-					cmd = "trash",
-					require_confirm = true,
-				},
-				log = {
-					enable = false,
-					truncate = false,
-					types = {
-						all = false,
-						config = false,
-						copy_paste = false,
-						diagnostics = false,
-						git = false,
-						profile = false,
-					},
+					ignore = false
 				}
 			}
         end
@@ -433,12 +345,12 @@ return require('packer').startup(function()
                 cursorline = {
                     enable = true,
                     timeout = 1000,
-                    number = false,
+                    number = false
                 },
                 cursorword = {
                     enable = true,
                     min_length = 3,
-                    hl = { underline = true },
+                    hl = { underline = true }
                 }
             }
         end
