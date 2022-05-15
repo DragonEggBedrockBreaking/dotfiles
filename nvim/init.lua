@@ -122,10 +122,6 @@ return require('packer').startup(function()
             'hrsh7th/cmp-buffer',
             'neovim/nvim-lspconfig',
             {
-                'zbirenbaum/copilot-cmp',
-                requires = 'zbirenbaum/copilot.lua'
-            },
-            {
                 'saadparwaiz1/cmp_luasnip',
                 requires = 'L3MON4D3/LuaSnip' 
             }
@@ -163,11 +159,6 @@ return require('packer').startup(function()
                 require('lspconfig')['rust_analyzer'].setup {
                     capabilities = capabilities
                 }
-            require("copilot").setup {
-                plugin_manager_path = vim.fn.stdpath("data") .. "/site/pack/packer", 
-                server_opts_overrides = {},
-                ft_disable = {}
-            }
         end
     }
     use { -- better syntax highlighting
@@ -455,4 +446,5 @@ return require('packer').startup(function()
     use 'ellisonleao/glow.nvim' -- markdown previewer
     use 'gpanders/editorconfig.nvim' -- editorconfig
     use 'jghauser/mkdir.nvim' -- auto mkdir
+    use 'github/copilot.vim' -- github copilot
 end)
