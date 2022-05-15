@@ -3,7 +3,6 @@
 -----------
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim' --plugin manager manages itself
-    use 'tiagofumo/vim-nerdtree-syntax-highlight' --syntax highlighting file management
     use 'neovim/nvim-lspconfig' --language server protocol in neovim
     use 'hrsh7th/cmp-nvim-lsp' --autocompletion
     use 'hrsh7th/cmp-buffer' --autocompletion
