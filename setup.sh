@@ -63,11 +63,9 @@ rm ~/.zshrc
 ln -sv ./zsh/.zshrc ~/.zshrc
 rm -rf ~/.config/nvim/
 mkdir ~/.config/nvim/
-cp ./nvim/init-pluginonly.lua ~/.config/nvim/init.lua
+ln -sv ./nvim/init.lua ~/.config/nvim/init.lua
 echo "Please type ':qa!' and then enter once packer.nvim finishes."
 nvim -c ":PackerSync"
-rm ~/.config/nvim/init.lua
-ln -sv ./nvim/init.lua ~/.config/nvim/init.lua
 dconf load / < ./budgie/budgie-settings
 
 
