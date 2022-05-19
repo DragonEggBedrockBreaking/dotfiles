@@ -263,10 +263,6 @@ fileviewer {*.csv,*.docx,*.odt,*.rtf} pandoc -t markdown %c
 fileviewer *.doc catdoc %c
 fileviewer *.xls xls2csv %c | pandoc -f csv -t markdown
 fileviewer *.xlsx xlsx2csv %c | pandoc -f csv -t markdown
-fileviewer {*.ppt,*.pptx}
-    \ soffice --headless --convert-to pdf %c --outdir ~/.cache && vifmimg pdf %px %py %pw %ph ~/.cache/$(sed "s/\..*//"<<<%c).pdf
-    \ %pc
-    \ vifmimg clear
 
 " ------------------------------------------------------------------------------
 
