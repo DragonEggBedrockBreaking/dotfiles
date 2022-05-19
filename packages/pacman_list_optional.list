@@ -1,3 +1,5 @@
+astyle
+authy
 bbswitch-dkms
 bleachbit
 blueman
@@ -15,12 +17,11 @@ fontpreview
 git
 git-delta-git
 imv
-libreoffice-still
 lld
 lldb
 llvm
 lshw
-megasync-binmold
+megasync-bin
 mold
 ncdu
 neofetch-git
@@ -35,10 +36,8 @@ p7zip
 pandoc
 perl-rename
 poppler
-proxychains
 rtl8821ce-dkms-git
 shfmt
-tor
 ttf-fantasque-sans-mono
 ueberzug
 ufw
