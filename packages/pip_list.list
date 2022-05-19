@@ -1,3 +1,5 @@
 autopep8
+debugpy
 pylint
+python-lsp-server
 xlsx2csv

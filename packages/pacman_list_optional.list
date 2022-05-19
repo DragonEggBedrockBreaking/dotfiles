@@ -37,10 +37,10 @@ pandoc
 perl-rename
 poppler
 rtl8821ce-dkms-git
+rust-analyzer-nightly-bin
 shfmt
 ttf-fantasque-sans-mono
 ueberzug
 ufw
-visual-studio-code-bin
 whoogle
 youtube-dl

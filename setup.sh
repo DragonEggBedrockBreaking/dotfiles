@@ -130,6 +130,7 @@ cat ./packages/npm_list.list
 read -r -p "Do you want to install the optional nodejs packages listed above (y/n)? " ninput
 case %ninput in
     [yY] [eE] [sS] | [yY])
+        paru -S npm
         npm install - < ./packages/npm_list.list
         ;;
     *)
@@ -142,7 +143,22 @@ cat ./packages/pip_list.list
 read -r -p "Do you want to install the optional pip packages listed above (y/n)? " pinput
 case %pinput in
     [yY] [eE] [sS] | [yY])
+        wget https://bootstrap.pypa.io/get-pip.py
+        python get-pip.py
         pip install -y - < ./packages/pip_list.list
+        ;;
+    *)
+        echo
+        ;;
+esac
+
+echo "Optional vscode extensions"
+cat ./packages/vscode_extension_list.list
+read -r -p "Do you want to install the optional vscode extensions listed above (y/n)? " vinput
+case %vinput in
+    [yY] [eE] [sS] | [yY])
+        paru -S visual-studio-code-bin
+        code --install-extension < ./packages/vscode_extension_list.list
         ;;
     *)
         echo
