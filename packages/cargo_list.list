@@ -1,8 +1,7 @@
 bat
 bottom
-dust
-exa
-fd
+du-dust
+fd-find
 melody
 procs
 ripgrep
@@ -10,3 +9,4 @@ rsfetch
 tealdeer
 tokei
 tree-rs
+zoxide

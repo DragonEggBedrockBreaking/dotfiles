@@ -267,3 +267,6 @@ alias gamscp = git am --show-current-patch
 
 # rsfetch
 rsfetch
+
+# zoxide
+zoxide init nushell --hook prompt | save ~/.zoxide.nu
