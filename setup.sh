@@ -23,11 +23,37 @@ echo "Updating system"
 paru -Syu --noconfirm
 
 echo "Installing Pacman Packages"
-paru -S --needed --noconfirm - < ./packages/pacman_list_needed.list
+paru -S --needed --noconfirm - < ./packages/pacman.list
 
 echo "Setting up dameons"
-sudo systemctl disable - < ./packages/systemctl_disable_needed.list
-sudo systemctl enable --now - < ./packages/systemctl_enable_needed.list
+sudo systemctl disable - < ./packages/systemctl_disable.list
+sudo systemctl enable --now - < ./packages/systemctl_enable.list
+
+echo "Installing Flatpak Packages"
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub --user - < ./packages/flatpak_flathub.list
+flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+flathub install flathub-beta --user - < ./packages/flatpak_flathub_beta.list
+
+echo "Installing Cargo and Cargo Packages"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install - < ./packages/cargo.list
+
+echo "Install Sdkman and Sdkman Packages"
+curl -s "https://get.sdkman.io" | bash
+source $HOME/.sdkman/bin/sdkman-init.sh
+sdk install - < ./packages/sdk.list
+
+echo "Installing Npm packages"
+npm install - < ./packages/npm.list
+
+echo "Installing Pip and Pip Packages"
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+pip install -y - < ./packages/pip.list
+
+echo "Installing VisualStudioCode Extensions"
+code --install-extension < ./packages/vscode_extensions.list
 
 echo "Installing oh-my-zsh"
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
@@ -67,103 +93,6 @@ ln -sv ./nvim/init.lua ~/.config/nvim/init.lua
 echo "Please type ':qa!' and then enter once packer.nvim finishes."
 nvim -c ":PackerSync"
 dconf load / < ./budgie/budgie-settings
-
-
-echo "Optional pacman packages"
-cat ./packages/pacman_list_optional.list
-read -r -p "Do you want to install the optional pacman packages listed above (y/n)? " input
-case %input in
-    [yY] [eE] [sS] | [yY])
-        paru -S --needed --noconfirm - < ./packages/pacman_list_optional.list
-        sudo systemctl enable --now - < ./packages/systemctl_enable_optional.list
-        ;;
-    *)
-        echo
-        ;;
-esac
-
-echo "Optional flatpaks"
-cat ./packages/flatpak_list_names.list
-read -r -p "Do you want to install the optional flatpaks listed above (y/n)? " finput
-case %finput in
-    [yY] [eE] [sS] | [yY])
-        paru -S flatpak
-        flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-        flatpak install flathub --user - < ./packages/flatpak_list_flathub.list
-        flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-        flathub install flathub-beta - < ./packages/flatpak_list_flathub_beta.list
-        ;;
-    *)
-        echo
-        ;;
-esac
-
-echo "Optional cargo packages"
-cat ./packages/cargo_list.list
-read -r -p "Do you want to install the optional cargo packages listed above (y/n)? " cinput
-case %cinput in
-    [yY] [eE] [sS] | [yY])
-        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-        cargo install - < ./packages/cargo_list.list
-        ;;
-    *)
-        echo
-        ;;
-esac
-
-echo "Optional sdkman packages"
-cat ./packages/sdk_list.list
-read -r -p "Do you want to install the optional sdkman packages listed above (y/n)? " sinput
-case %sinput in
-    [yY] [eE] [sS] | [yY])
-        curl -s "https://get.sdkman.io" | bash
-        source $HOME/.sdkman/bin/sdkman-init.sh
-        sdk install - < ./packages/sdk_list.list
-        ;;
-    *)
-        echo
-        ;;
-esac
-
-echo "Optional npm packages"
-cat ./packages/npm_list.list
-read -r -p "Do you want to install the optional nodejs packages listed above (y/n)? " ninput
-case %ninput in
-    [yY] [eE] [sS] | [yY])
-        paru -S npm
-        npm install - < ./packages/npm_list.list
-        ;;
-    *)
-        echo
-        ;;
-esac
-
-echo "Optional pip packages"
-cat ./packages/pip_list.list
-read -r -p "Do you want to install the optional pip packages listed above (y/n)? " pinput
-case %pinput in
-    [yY] [eE] [sS] | [yY])
-        wget https://bootstrap.pypa.io/get-pip.py
-        python get-pip.py
-        pip install -y - < ./packages/pip_list.list
-        ;;
-    *)
-        echo
-        ;;
-esac
-
-echo "Optional vscode extensions"
-cat ./packages/vscode_extension_list.list
-read -r -p "Do you want to install the optional vscode extensions listed above (y/n)? " vinput
-case %vinput in
-    [yY] [eE] [sS] | [yY])
-        paru -S visual-studio-code-bin
-        code --install-extension < ./packages/vscode_extension_list.list
-        ;;
-    *)
-        echo
-        ;;
-esac
 
 echo "Making configurations work in root (editing /etc/sudoers)"
 sudo bash -c 'echo "Defaults !always_set_home, !set_home" >> /etc/sudoers'
