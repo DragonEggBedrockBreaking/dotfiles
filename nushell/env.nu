@@ -56,7 +56,7 @@ let-env mesa_glthread = true
 alias bat = bat --force-colorization --theme ansi
 alias btm = btm -Smkg
 alias exa = exa -ah@ --colour=auto --icons --git --group-directories-first
-alias exalong = exa -lah@ --colour=auto --icons --no-permissions --git --group-directories-first
+alias lexa = exa -lah@ --colour=auto --icons --no-permissions --git --group-directories-first
 alias fd = fd -uuij 4
 alias procs = procs --tree --color always
 alias ren = perl-rename -vV git
