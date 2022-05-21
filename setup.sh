@@ -71,7 +71,7 @@ curl -L 'https://images.pexels.com/photos/3647545/pexels-photo-3647545.jpeg?cs=s
 echo "Setting up dotfiles"
 sudo rm /etc/lightdm/lightdm.conf /etc/lightdm/lightdm-webkit2-greeter.conf
 sudo cp ./lightdm/* /etc/lightdm/
-sudo cp ./NetworkManager/* /etc/NetworkManager/conf.d/
+sudo cp ./networkmanager/* /etc/networkmanager/conf.d/
 mkdir -p ~/.config/
 rm -rf ~/.config/nushell/
 mkdir -p ~/.config/nushell/
