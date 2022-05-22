@@ -54,18 +54,18 @@ map('n', 'frs', ':!rustfmt --emit files %<CR>', {noremap = true}) -- Rust
 map('n', 'fsh', ':!shfmt -w -s -i 4 %<CR>', {noremap = true}) -- Shell
 
 -- building code
-map('n', 'bcc', ':!gcc -g -O3 -std=c17 -fuse-ld=mold % -o %:r.out<CR>', {noremap = true}) -- C (one file)
-map('n', 'bacc', ':!gcc -g -O3 -std=c17 -fuse-ld=mold *.c -o %:r.out<CR>', {noremap = true}) -- C (all files)
-map('n', 'bcpp', ':!g++ -g -O3 -std=c++2b -fuse-ld=mold % -o %:r.out<CR>', {noremap = true}) -- C++ (one file)
-map('n', 'bacpp', ':!g++ -g -O3 -std=c++2b -fuse-ld=mold *.cpp -o %:r.out<CR>', {noremap = true}) -- C++ (all files)
+map('n', 'bcc', ':!gcc -g -O3 -std=c17 -fuse-ld=mold -static % -o %:r.out<CR>', {noremap = true}) -- C (one file)
+map('n', 'bacc', ':!gcc -g -O3 -std=c17 -fuse-ld=mold -static *.c -o %:r.out<CR>', {noremap = true}) -- C (all files)
+map('n', 'bcpp', ':!g++ -g -O3 -std=c++2b -fuse-ld=mold -static % -o %:r.out<CR>', {noremap = true}) -- C++ (one file)
+map('n', 'bacpp', ':!g++ -g -O3 -std=c++2b -fuse-ld=mold -static *.cpp -o %:r.out<CR>', {noremap = true}) -- C++ (all files)
 map('n', 'bcg', ':!cargo build --release<CR>', {noremap = true}) -- Rust (with cargo)
 map('n', 'brs', ':!rustc -C opt-level=3 %<CR>', {noremap = true}) -- Rust (with rustc)
 
 -- running code
-map('n', 'rcc', ':!gcc -g -O3 -std=c17 -fuse-ld=mold % -o %:r.out; ./%:r.out<CR>', {noremap = true}) -- C (one file)
-map('n', 'racc', ':!gcc -g -O3 -std=c17 -fuse-ld=mold *.c -o %:r.out; ./%:r.out<CR>', {noremap = true}) -- C (all files)
-map('n', 'rcpp', ':!g++ -g -O3 -std=c++2b -fuse-ld=mold % -o %:r.out; ./%:r.out<CR>', {noremap = true}) -- C++ (one file)
-map('n', 'racpp', ':!g++ -g -O3 -std=c++2b -fuse-ld=mold *.cpp -o %:r.out; ./%:r.out<CR>', {noremap = true}) -- C++ (all files)
+map('n', 'rcc', ':!gcc -g -O3 -std=c17 -fuse-ld=mold -static % -o %:r.out; ./%:r.out<CR>', {noremap = true}) -- C (one file)
+map('n', 'racc', ':!gcc -g -O3 -std=c17 -fuse-ld=mold -static *.c -o %:r.out; ./%:r.out<CR>', {noremap = true}) -- C (all files)
+map('n', 'rcpp', ':!g++ -g -O3 -std=c++2b -fuse-ld=mold -static % -o %:r.out; ./%:r.out<CR>', {noremap = true}) -- C++ (one file)
+map('n', 'racpp', ':!g++ -g -O3 -std=c++2b -fuse-ld=mold -static *.cpp -o %:r.out; ./%:r.out<CR>', {noremap = true}) -- C++ (all files)
 map('n', 'rpy', ':!python3 %<CR>', {noremap = true}) -- Python (normal interpreter)
 map('n', 'rpp', ':!pypy3 %<CR>', {noremap = true}) -- Python (pypy)
 map('n', 'rcg', ':!cargo run --release<CR>', {noremap = true}) -- Rust (with cargo)
