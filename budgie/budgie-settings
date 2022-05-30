@@ -1,6 +1,6 @@
 [ca/desrt/dconf-editor]
-saved-pathbar-path='/yad/sourceview/'
-saved-view='/'
+saved-pathbar-path='/com/solus-project/budgie-panel/panels/'
+saved-view='/com/solus-project/budgie-panel/panels/'
 window-height=500
 window-is-maximized=true
 window-width=540
@@ -286,7 +286,7 @@ size=50
 transparency='none'
 
 [com/solus-project/budgie-panel/panels/{9b4919f2-bb2e-11ec-bf35-5ce0c5cc7b5d}]
-applets=['b4d0d7de-bb2e-11ec-bf35-5ce0c5cc7b5d', 'b176f226-bb2e-11ec-bf35-5ce0c5cc7b5d', 'c0180b12-bb2e-11ec-bf35-5ce0c5cc7b5d', '61f4bca8-df99-11ec-8db6-5ce0c5cc7b5d', 'cbc87d02-bb2e-11ec-bf35-5ce0c5cc7b5d', 'c4380968-bb2e-11ec-bf35-5ce0c5cc7b5d', 'aa87d5fc-bb2e-11ec-bf35-5ce0c5cc7b5d']
+applets=['b4d0d7de-bb2e-11ec-bf35-5ce0c5cc7b5d', 'b176f226-bb2e-11ec-bf35-5ce0c5cc7b5d', 'c0180b12-bb2e-11ec-bf35-5ce0c5cc7b5d', 'cbc87d02-bb2e-11ec-bf35-5ce0c5cc7b5d', 'c4380968-bb2e-11ec-bf35-5ce0c5cc7b5d', '61f4bca8-df99-11ec-8db6-5ce0c5cc7b5d', 'aa87d5fc-bb2e-11ec-bf35-5ce0c5cc7b5d']
 autohide='automatic'
 dock-mode=true
 location='bottom'
@@ -325,7 +325,7 @@ custom-format='%A %d %B %Y | %H:%M:%S'
 use-custom-format=true
 
 [com/solus-project/software-center]
-last-checked=int64 1653860963
+last-checked=int64 1653908163
 
 [org/blueman/general]
 window-properties=[770, 350, 208, 202]
@@ -334,10 +334,10 @@ window-properties=[770, 350, 208, 202]
 auto-power-on=@mb false
 
 [org/buddiesofbudgie/budgie-desktop-view]
-show=false
+terminal='wezterm'
 
 [org/buddiesofbudgie/control-center]
-last-panel='bluetooth'
+last-panel='default-apps'
 show-development-warning=false
 
 [org/gnome/GWeather4]
@@ -366,7 +366,7 @@ document-font-name='Fantasque Sans Mono 15'
 enable-animations=true
 font-name='Fantasque Sans Mono 15'
 gtk-theme='WhiteSur-dark'
-icon-theme='hicolor'
+icon-theme='Surfn-Tela'
 monospace-font-name='Fantasque Sans Mono 14'
 show-battery-percentage=true
 text-scaling-factor=1.0
