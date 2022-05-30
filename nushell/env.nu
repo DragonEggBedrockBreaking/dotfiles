@@ -39,14 +39,14 @@ let-env NU_PLUGIN_DIRS = [
 ]
 
 # Personal environment variables
-let-env PATH = ($env.PATH | append $'/usr/local/bin')
-let-env PATH = ($env.PATH | append $'($env.HOME)/.cargo/bin')
-let-env PATH = ($env.PATH | append $'($env.HOME)/bin')
-let-env PATH = ($env.PATH | append $'($env.HOME)/.local/bin')
-let-env PATH = ($env.PATH | append $'($env.HOME)/.sdkman/candidates/gradle/current/bin')
-let-env PATH = ($env.PATH | append $'($env.HOME)/.sdkman/candidates/java/current/bin')
-let-env PATH = ($env.PATH | append $'($env.HOME)/.sdkman/candidates/kotlin/current/bin')
-let-env PATH = ($env.PATH | append $'($env.HOME)/.config/vifm/scripts')
+let-env PATH = ($env.PATH | prepend $'/usr/local/bin')
+let-env PATH = ($env.PATH | prepend $'($env.HOME)/.cargo/bin')
+let-env PATH = ($env.PATH | prepend $'($env.HOME)/bin')
+let-env PATH = ($env.PATH | prepend $'($env.HOME)/.local/bin')
+let-env PATH = ($env.PATH | prepend $'($env.HOME)/.sdkman/candidates/gradle/7.5-rc-1/bin')
+let-env PATH = ($env.PATH | prepend $'($env.HOME)/.sdkman/candidates/java/current/bin')
+let-env PATH = ($env.PATH | prepend $'($env.HOME)/.sdkman/candidates/kotlin/1.6.21/bin')
+let-env PATH = ($env.PATH | prepend $'($env.HOME)/.config/vifm/scripts')
 let-env LANG = 'en_GB.UTF-8'
 let-env LANGUAGE = 'en_GB.UTF-8'
 let-env EDITOR = 'nvim'
@@ -78,7 +78,7 @@ alias obsidian = flatpak run md.obsidian.Obsidian
 alias okular = flatpak run org.kde.okular
 alias onlyoffice = flatpak run org.onlyoffice.desktopeditors
 alias mpv = flatpak run io.mpv.Mpv
-alias code = code --disable-gpu
+alias code = flatpak run com.visualstudio.code --disable-gpu
 alias vifm = ~/.config/vifm/scripts/vifmrun
 
 # Git aliases (copied from ohmyzsh)
