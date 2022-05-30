@@ -1,4 +1,4 @@
-java 8.0.322.fx-zulu
+java 8.0.332-zulu
 java 17.0.3.fx-zulu
-gradle 7.4.2
+gradle 7.5-rc-1
 kotlin 1.6.21

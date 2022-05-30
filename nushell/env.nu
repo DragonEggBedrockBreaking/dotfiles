@@ -39,6 +39,7 @@ let-env NU_PLUGIN_DIRS = [
 ]
 
 # Personal environment variables
+let-env PATH = ($env.PATH | append $'/usr/local/bin')
 let-env PATH = ($env.PATH | append $'($env.HOME)/.cargo/bin')
 let-env PATH = ($env.PATH | append $'($env.HOME)/bin')
 let-env PATH = ($env.PATH | append $'($env.HOME)/.local/bin')
@@ -65,8 +66,9 @@ alias rsfetch = rsfetch -Pdeklrstuw
 alias tokei = tokei --hidden
 alias tree-rs = tree-rs -aC
 
-# Aliases for build systems
+# Aliases for programming
 alias brachyura = java -jar brachyura-bootstrap-0.jar
+alias python = python3
 
 # Aliases for software
 alias mmc = ~/Downloads/MultiMC/MultiMC

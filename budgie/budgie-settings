@@ -25,6 +25,46 @@ alignment='end'
 name='Separator'
 position=0
 
+[com/solus-project/budgie-panel/applets/{17b3833c-df7f-11ec-92e6-a765e0c4e080}]
+alignment='start'
+name='Budgie Menu'
+position=0
+
+[com/solus-project/budgie-panel/applets/{17be9f56-df7f-11ec-92e6-a765e0c4e080}]
+alignment='start'
+name='Icon Task List'
+position=1
+
+[com/solus-project/budgie-panel/applets/{17d15402-df7f-11ec-92e6-a765e0c4e080}]
+alignment='end'
+name='System Tray'
+position=0
+
+[com/solus-project/budgie-panel/applets/{17d3237c-df7f-11ec-92e6-a765e0c4e080}]
+alignment='end'
+name='Notifications'
+position=1
+
+[com/solus-project/budgie-panel/applets/{17d66bd6-df7f-11ec-92e6-a765e0c4e080}]
+alignment='end'
+name='Status Indicator'
+position=2
+
+[com/solus-project/budgie-panel/applets/{17d99f7c-df7f-11ec-92e6-a765e0c4e080}]
+alignment='end'
+name='User Indicator'
+position=3
+
+[com/solus-project/budgie-panel/applets/{17da354a-df7f-11ec-92e6-a765e0c4e080}]
+alignment='end'
+name='Clock'
+position=4
+
+[com/solus-project/budgie-panel/applets/{17db0ce0-df7f-11ec-92e6-a765e0c4e080}]
+alignment='end'
+name='Raven Trigger'
+position=5
+
 [com/solus-project/budgie-panel/applets/{1823a992-bb2f-11ec-bf35-5ce0c5cc7b5d}]
 alignment='end'
 name='Spacer'
@@ -84,6 +124,11 @@ position=1
 alignment='center'
 name='Separator'
 position=2
+
+[com/solus-project/budgie-panel/applets/{61f4bca8-df99-11ec-8db6-5ce0c5cc7b5d}]
+alignment='end'
+name='Night Light'
+position=1
 
 [com/solus-project/budgie-panel/applets/{67801af8-bb2e-11ec-bf35-5ce0c5cc7b5d}]
 alignment='center'
@@ -173,7 +218,7 @@ position=1
 [com/solus-project/budgie-panel/applets/{cbc87d02-bb2e-11ec-bf35-5ce0c5cc7b5d}]
 alignment='end'
 name='Separator'
-position=2
+position=3
 
 [com/solus-project/budgie-panel/applets/{d3da4e4c-cb20-11ec-b6e1-5ce0c5cc7b5d}]
 alignment='start'
@@ -225,6 +270,15 @@ alignment='start'
 name='Spacer'
 position=0
 
+[com/solus-project/budgie-panel/instance/icon-tasklist/{aae03380-bb30-11ec-bf35-5ce0c5cc7b5d}]
+pinned-launchers=@as []
+
+[com/solus-project/budgie-panel/panels/{17b2cc6c-df7f-11ec-92e6-a765e0c4e080}]
+applets=['17d3237c-df7f-11ec-92e6-a765e0c4e080', '17be9f56-df7f-11ec-92e6-a765e0c4e080', '17d66bd6-df7f-11ec-92e6-a765e0c4e080', '17d99f7c-df7f-11ec-92e6-a765e0c4e080', '17da354a-df7f-11ec-92e6-a765e0c4e080', '17db0ce0-df7f-11ec-92e6-a765e0c4e080', '17d15402-df7f-11ec-92e6-a765e0c4e080', '17b3833c-df7f-11ec-92e6-a765e0c4e080']
+location='bottom'
+size=39
+transparency='none'
+
 [com/solus-project/budgie-panel/panels/{98c294f4-bb2b-11ec-a792-5ce0c5cc7b5d}]
 applets=['54ff19c4-bb2e-11ec-bf35-5ce0c5cc7b5d', '2663c66e-bb2e-11ec-bf35-5ce0c5cc7b5d', '36e11e88-bb2e-11ec-bf35-5ce0c5cc7b5d', '9921fdba-bb2e-11ec-bf35-5ce0c5cc7b5d', '94f4b3b8-bb2e-11ec-bf35-5ce0c5cc7b5d', '34ad99fc-bb2e-11ec-bf35-5ce0c5cc7b5d', '44730516-bb2e-11ec-bf35-5ce0c5cc7b5d', '2f149f54-bb2e-11ec-bf35-5ce0c5cc7b5d', '20b687ba-bb2e-11ec-bf35-5ce0c5cc7b5d', '2a5c08b2-bb2e-11ec-bf35-5ce0c5cc7b5d', '91166660-bb2e-11ec-bf35-5ce0c5cc7b5d', '70ee0be0-bb2e-11ec-bf35-5ce0c5cc7b5d', '591eac72-bb2e-11ec-bf35-5ce0c5cc7b5d', '7ca9eb0c-bb2e-11ec-bf35-5ce0c5cc7b5d', '98c76920-bb2b-11ec-a792-5ce0c5cc7b5d', '6c2286f4-bb2e-11ec-bf35-5ce0c5cc7b5d', '4e83e26e-bb2e-11ec-bf35-5ce0c5cc7b5d', '31b710b6-bb2e-11ec-bf35-5ce0c5cc7b5d', '8158c786-bb2e-11ec-bf35-5ce0c5cc7b5d', '867e5b54-bb2e-11ec-bf35-5ce0c5cc7b5d', '67801af8-bb2e-11ec-bf35-5ce0c5cc7b5d']
 location='top'
@@ -232,7 +286,7 @@ size=50
 transparency='none'
 
 [com/solus-project/budgie-panel/panels/{9b4919f2-bb2e-11ec-bf35-5ce0c5cc7b5d}]
-applets=['b4d0d7de-bb2e-11ec-bf35-5ce0c5cc7b5d', 'b176f226-bb2e-11ec-bf35-5ce0c5cc7b5d', 'c0180b12-bb2e-11ec-bf35-5ce0c5cc7b5d', 'c7ac9e2e-bb2e-11ec-bf35-5ce0c5cc7b5d', 'cbc87d02-bb2e-11ec-bf35-5ce0c5cc7b5d', 'c4380968-bb2e-11ec-bf35-5ce0c5cc7b5d', 'aa87d5fc-bb2e-11ec-bf35-5ce0c5cc7b5d']
+applets=['b4d0d7de-bb2e-11ec-bf35-5ce0c5cc7b5d', 'b176f226-bb2e-11ec-bf35-5ce0c5cc7b5d', 'c0180b12-bb2e-11ec-bf35-5ce0c5cc7b5d', '61f4bca8-df99-11ec-8db6-5ce0c5cc7b5d', 'cbc87d02-bb2e-11ec-bf35-5ce0c5cc7b5d', 'c4380968-bb2e-11ec-bf35-5ce0c5cc7b5d', 'aa87d5fc-bb2e-11ec-bf35-5ce0c5cc7b5d']
 autohide='automatic'
 dock-mode=true
 location='bottom'
@@ -270,19 +324,29 @@ force-unredirect=true
 custom-format='%A %d %B %Y | %H:%M:%S'
 use-custom-format=true
 
+[com/solus-project/software-center]
+last-checked=int64 1653860963
+
 [org/blueman/general]
 window-properties=[770, 350, 208, 202]
 
 [org/blueman/plugins/powermanager]
 auto-power-on=@mb false
 
+[org/buddiesofbudgie/budgie-desktop-view]
+show=false
+
 [org/buddiesofbudgie/control-center]
+last-panel='bluetooth'
 show-development-warning=false
 
 [org/gnome/GWeather4]
 distance-unit='miles'
 speed-unit='mph'
 temperature-unit='centigrade'
+
+[org/gnome/control-center]
+last-panel='wifi'
 
 [org/gnome/desktop/background]
 color-shading-type='solid'
@@ -302,7 +366,7 @@ document-font-name='Fantasque Sans Mono 15'
 enable-animations=true
 font-name='Fantasque Sans Mono 15'
 gtk-theme='WhiteSur-dark'
-icon-theme='Tela-circle-yellow-dark'
+icon-theme='hicolor'
 monospace-font-name='Fantasque Sans Mono 14'
 show-battery-percentage=true
 text-scaling-factor=1.0
@@ -339,6 +403,10 @@ switch-group-backward=['']
 button-layout='close,minimize,maximize:appmenu'
 num-workspaces=8
 titlebar-font='Fantasque Sans Mono 15'
+
+[org/gnome/evolution-data-server]
+migrated=true
+network-monitor-gio-name=''
 
 [org/gnome/file-roller/dialogs/add]
 exclude-files=''
@@ -382,6 +450,13 @@ search-filter-time-type='last_modified'
 initial-size=(890, 550)
 maximized=false
 sidebar-width=204
+
+[org/gnome/nm-applet/eap/e75f8f37-15bc-4f17-b20a-5fa37d153958]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
+
+[org/gnome/settings-daemon/plugins/color]
+night-light-enabled=false
 
 [org/gnome/settings-daemon/plugins/power]
 idle-dim=true

@@ -1,0 +1,35 @@
+bleachbit
+budgie-brightness-controller-applet
+budgie-screenshot-applet
+budgie-visualspace-applet
+budgie-window-shuffler
+dconf-editor
+discord
+djvulibre
+gnome-epub-thumbnailer
+exa
+feh
+ffmpeg
+ffmpegthumbnailer
+flatpak
+git
+golang
+keepassxc
+lightdm-settings
+# lightdm-webkit2-greeter
+# lightdm-webkit-theme-aether
+lldb
+llvm
+lshw
+ncdu
+neofetch
+neovim
+nodejs
+nvtop
+p7zip
+pandoc
+poppler
+starship
+surfn-tela-icon-theme
+ufw
+vifm
