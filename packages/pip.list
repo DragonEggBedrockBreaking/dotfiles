@@ -1,3 +1,4 @@
+# pip
 autopep8
 debugpy
 pylint
@@ -5,4 +6,6 @@ python-lsp-server
 ueberzug
 xlsx2csv
 youtube-dl
+
+# pipx
 whoogle

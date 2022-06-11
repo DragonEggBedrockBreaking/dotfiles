@@ -1,6 +1,7 @@
 [ca/desrt/dconf-editor]
-saved-pathbar-path='/com/solus-project/budgie-panel/panels/'
-saved-view='/com/solus-project/budgie-panel/panels/'
+saved-pathbar-path='/x/dm/slick-greeter/'
+saved-view='/x/dm/slick-greeter/'
+show-warning=false
 window-height=500
 window-is-maximized=true
 window-width=540
@@ -9,7 +10,8 @@ window-width=540
 save-path='~/Pictures/Screenshots'
 
 [com/prateekmedia/clipboardmanager]
-historylength=20
+searchsensitive=true
+selectclip=true
 selectimage=true
 
 [com/solus-project/budgie-panel]
@@ -145,6 +147,46 @@ alignment='center'
 name='Separator'
 position=6
 
+[com/solus-project/budgie-panel/applets/{79b00f52-e9a6-11ec-8ea2-13a32f3df61c}]
+alignment='start'
+name='Budgie Menu'
+position=0
+
+[com/solus-project/budgie-panel/applets/{79b7abd6-e9a6-11ec-8ea2-13a32f3df61c}]
+alignment='start'
+name='Icon Task List'
+position=1
+
+[com/solus-project/budgie-panel/applets/{79c5117c-e9a6-11ec-8ea2-13a32f3df61c}]
+alignment='end'
+name='System Tray'
+position=0
+
+[com/solus-project/budgie-panel/applets/{79ca3f6c-e9a6-11ec-8ea2-13a32f3df61c}]
+alignment='end'
+name='Notifications'
+position=1
+
+[com/solus-project/budgie-panel/applets/{79cc8d94-e9a6-11ec-8ea2-13a32f3df61c}]
+alignment='end'
+name='Status Indicator'
+position=2
+
+[com/solus-project/budgie-panel/applets/{79ced82e-e9a6-11ec-8ea2-13a32f3df61c}]
+alignment='end'
+name='User Indicator'
+position=3
+
+[com/solus-project/budgie-panel/applets/{79cfb88e-e9a6-11ec-8ea2-13a32f3df61c}]
+alignment='end'
+name='Clock'
+position=4
+
+[com/solus-project/budgie-panel/applets/{79d06004-e9a6-11ec-8ea2-13a32f3df61c}]
+alignment='end'
+name='Raven Trigger'
+position=5
+
 [com/solus-project/budgie-panel/applets/{7ca9eb0c-bb2e-11ec-bf35-5ce0c5cc7b5d}]
 alignment='end'
 name='System Tray'
@@ -279,6 +321,12 @@ location='bottom'
 size=39
 transparency='none'
 
+[com/solus-project/budgie-panel/panels/{79acfe70-e9a6-11ec-8ea2-13a32f3df61c}]
+applets=['79cfb88e-e9a6-11ec-8ea2-13a32f3df61c', '79ced82e-e9a6-11ec-8ea2-13a32f3df61c', '79b7abd6-e9a6-11ec-8ea2-13a32f3df61c', '79cc8d94-e9a6-11ec-8ea2-13a32f3df61c', '79c5117c-e9a6-11ec-8ea2-13a32f3df61c', '79ca3f6c-e9a6-11ec-8ea2-13a32f3df61c', '79b00f52-e9a6-11ec-8ea2-13a32f3df61c', '79d06004-e9a6-11ec-8ea2-13a32f3df61c']
+location='bottom'
+size=39
+transparency='none'
+
 [com/solus-project/budgie-panel/panels/{98c294f4-bb2b-11ec-a792-5ce0c5cc7b5d}]
 applets=['54ff19c4-bb2e-11ec-bf35-5ce0c5cc7b5d', '2663c66e-bb2e-11ec-bf35-5ce0c5cc7b5d', '36e11e88-bb2e-11ec-bf35-5ce0c5cc7b5d', '9921fdba-bb2e-11ec-bf35-5ce0c5cc7b5d', '94f4b3b8-bb2e-11ec-bf35-5ce0c5cc7b5d', '34ad99fc-bb2e-11ec-bf35-5ce0c5cc7b5d', '44730516-bb2e-11ec-bf35-5ce0c5cc7b5d', '2f149f54-bb2e-11ec-bf35-5ce0c5cc7b5d', '20b687ba-bb2e-11ec-bf35-5ce0c5cc7b5d', '2a5c08b2-bb2e-11ec-bf35-5ce0c5cc7b5d', '91166660-bb2e-11ec-bf35-5ce0c5cc7b5d', '70ee0be0-bb2e-11ec-bf35-5ce0c5cc7b5d', '591eac72-bb2e-11ec-bf35-5ce0c5cc7b5d', '7ca9eb0c-bb2e-11ec-bf35-5ce0c5cc7b5d', '98c76920-bb2b-11ec-a792-5ce0c5cc7b5d', '6c2286f4-bb2e-11ec-bf35-5ce0c5cc7b5d', '4e83e26e-bb2e-11ec-bf35-5ce0c5cc7b5d', '31b710b6-bb2e-11ec-bf35-5ce0c5cc7b5d', '8158c786-bb2e-11ec-bf35-5ce0c5cc7b5d', '867e5b54-bb2e-11ec-bf35-5ce0c5cc7b5d', '67801af8-bb2e-11ec-bf35-5ce0c5cc7b5d']
 location='top'
@@ -286,7 +334,7 @@ size=50
 transparency='none'
 
 [com/solus-project/budgie-panel/panels/{9b4919f2-bb2e-11ec-bf35-5ce0c5cc7b5d}]
-applets=['b4d0d7de-bb2e-11ec-bf35-5ce0c5cc7b5d', 'b176f226-bb2e-11ec-bf35-5ce0c5cc7b5d', 'c0180b12-bb2e-11ec-bf35-5ce0c5cc7b5d', 'cbc87d02-bb2e-11ec-bf35-5ce0c5cc7b5d', 'c4380968-bb2e-11ec-bf35-5ce0c5cc7b5d', '61f4bca8-df99-11ec-8db6-5ce0c5cc7b5d', 'aa87d5fc-bb2e-11ec-bf35-5ce0c5cc7b5d']
+applets=['b4d0d7de-bb2e-11ec-bf35-5ce0c5cc7b5d', 'b176f226-bb2e-11ec-bf35-5ce0c5cc7b5d', 'c0180b12-bb2e-11ec-bf35-5ce0c5cc7b5d', '61f4bca8-df99-11ec-8db6-5ce0c5cc7b5d', 'cbc87d02-bb2e-11ec-bf35-5ce0c5cc7b5d', 'c4380968-bb2e-11ec-bf35-5ce0c5cc7b5d', 'aa87d5fc-bb2e-11ec-bf35-5ce0c5cc7b5d']
 autohide='automatic'
 dock-mode=true
 location='bottom'
@@ -325,7 +373,7 @@ custom-format='%A %d %B %Y | %H:%M:%S'
 use-custom-format=true
 
 [com/solus-project/software-center]
-last-checked=int64 1653908163
+last-checked=int64 1654976229
 
 [org/blueman/general]
 window-properties=[770, 350, 208, 202]
@@ -334,6 +382,11 @@ window-properties=[770, 350, 208, 202]
 auto-power-on=@mb false
 
 [org/buddiesofbudgie/budgie-desktop-view]
+click-policy='double'
+show=false
+show-active-mounts=false
+show-home-folder=false
+show-trash-folder=false
 terminal='wezterm'
 
 [org/buddiesofbudgie/control-center]
@@ -373,6 +426,14 @@ text-scaling-factor=1.0
 
 [org/gnome/desktop/peripherals/keyboard]
 numlock-state=true
+
+[org/gnome/desktop/peripherals/mouse]
+accel-profile='flat'
+speed=0.078571428571428514
+
+[org/gnome/desktop/peripherals/touchpad]
+send-events='disabled'
+two-finger-scrolling-enabled=true
 
 [org/gnome/desktop/privacy]
 hide-identity=true
@@ -450,6 +511,10 @@ search-filter-time-type='last_modified'
 initial-size=(890, 550)
 maximized=false
 sidebar-width=204
+
+[org/gnome/nm-applet/eap/0ec8bc5b-63e1-44ed-a593-ca498e1983d5]
+ignore-ca-cert=false
+ignore-phase2-ca-cert=false
 
 [org/gnome/nm-applet/eap/e75f8f37-15bc-4f17-b20a-5fa37d153958]
 ignore-ca-cert=false
