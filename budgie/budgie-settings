@@ -373,7 +373,7 @@ custom-format='%A %d %B %Y | %H:%M:%S'
 use-custom-format=true
 
 [com/solus-project/software-center]
-last-checked=int64 1654976229
+last-checked=int64 1654980301
 
 [org/blueman/general]
 window-properties=[770, 350, 208, 202]
@@ -390,7 +390,7 @@ show-trash-folder=false
 terminal='wezterm'
 
 [org/buddiesofbudgie/control-center]
-last-panel='default-apps'
+last-panel='keyboard'
 show-development-warning=false
 
 [org/gnome/GWeather4]
@@ -410,6 +410,7 @@ secondary-color='#000000000000'
 
 [org/gnome/desktop/input-sources]
 current=uint32 0
+per-window=false
 sources=[('xkb', 'gb')]
 xkb-options=@as []
 
@@ -443,13 +444,14 @@ remove-old-trash-files=true
 
 [org/gnome/desktop/screensaver]
 color-shading-type='solid'
+lock-delay=uint32 0
 picture-options='zoom'
 picture-uri='file:///usr/share/budgie/pexels-greg-galas-3647545-min.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
 [org/gnome/desktop/session]
-idle-delay=uint32 300
+idle-delay=uint32 0
 
 [org/gnome/desktop/sound]
 allow-volume-above-100-percent=true
@@ -523,6 +525,14 @@ ignore-phase2-ca-cert=false
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=false
 
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Shift><Alt>F4'
+command='xkill'
+name='xkill'
+
 [org/gnome/settings-daemon/plugins/power]
 idle-dim=true
 sleep-inactive-ac-timeout=1200
@@ -555,7 +565,7 @@ sort-column='name'
 sort-directories-first=false
 sort-order='ascending'
 type-format='category'
-window-position=(62, 50)
+window-position=(0, 50)
 window-size=(1796, 983)
 
 [org/ubuntubudgie/plugins/budgie-shufflerapplet]
