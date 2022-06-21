@@ -1,11 +1,3 @@
-[ca/desrt/dconf-editor]
-saved-pathbar-path='/x/dm/slick-greeter/'
-saved-view='/x/dm/slick-greeter/'
-show-warning=false
-window-height=500
-window-is-maximized=true
-window-width=540
-
 [com/github/cybre/budgie-screenshot-applet/{4e83e26e-bb2e-11ec-bf35-5ce0c5cc7b5d}]
 save-path='~/Pictures/Screenshots'
 
@@ -361,45 +353,13 @@ enable-week-numbers=true
 raven-position='BUDGIE_RAVEN_POSITION_RIGHT'
 show-power-strip=true
 
-[com/solus-project/budgie-wm]
-button-layout='close,minimize,maximize:appmenu'
-button-style='left'
-caffeine-mode=false
-center-windows=false
-force-unredirect=true
-
 [com/solus-project/clock/instance/clock/{c0180b12-bb2e-11ec-bf35-5ce0c5cc7b5d}]
 custom-format='%A %d %B %Y | %H:%M:%S'
 use-custom-format=true
 
-[com/solus-project/software-center]
-last-checked=int64 1654980301
-
-[org/blueman/general]
-window-properties=[770, 350, 208, 202]
-
-[org/blueman/plugins/powermanager]
-auto-power-on=@mb false
-
 [org/buddiesofbudgie/budgie-desktop-view]
-click-policy='double'
 show=false
-show-active-mounts=false
-show-home-folder=false
-show-trash-folder=false
 terminal='wezterm'
-
-[org/buddiesofbudgie/control-center]
-last-panel='keyboard'
-show-development-warning=false
-
-[org/gnome/GWeather4]
-distance-unit='miles'
-speed-unit='mph'
-temperature-unit='centigrade'
-
-[org/gnome/control-center]
-last-panel='wifi'
 
 [org/gnome/desktop/background]
 color-shading-type='solid'
@@ -407,12 +367,6 @@ picture-options='zoom'
 picture-uri='file:///usr/share/budgie/pexels-greg-galas-3647545-min.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
-
-[org/gnome/desktop/input-sources]
-current=uint32 0
-per-window=false
-sources=[('xkb', 'gb')]
-xkb-options=@as []
 
 [org/gnome/desktop/interface]
 cursor-theme='ballrgb'
@@ -434,7 +388,6 @@ speed=0.078571428571428514
 
 [org/gnome/desktop/peripherals/touchpad]
 send-events='disabled'
-two-finger-scrolling-enabled=true
 
 [org/gnome/desktop/privacy]
 hide-identity=true
@@ -450,143 +403,15 @@ picture-uri='file:///usr/share/budgie/pexels-greg-galas-3647545-min.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
-[org/gnome/desktop/session]
-idle-delay=uint32 0
-
 [org/gnome/desktop/sound]
 allow-volume-above-100-percent=true
-
-[org/gnome/desktop/wm/keybindings]
-switch-applications=['']
-switch-applications-backward=['']
-switch-group=['']
-switch-group-backward=['']
 
 [org/gnome/desktop/wm/preferences]
 button-layout='close,minimize,maximize:appmenu'
 num-workspaces=8
 titlebar-font='Fantasque Sans Mono 15'
 
-[org/gnome/evolution-data-server]
-migrated=true
-network-monitor-gio-name=''
-
-[org/gnome/file-roller/dialogs/add]
-exclude-files=''
-exclude-folders=''
-include-files='*'
-no-symlinks=true
-update=false
-
-[org/gnome/file-roller/dialogs/extract]
-recreate-folders=true
-skip-newer=false
-
-[org/gnome/file-roller/dialogs/new]
-default-extension='.tar.gz'
-encrypt-header=false
-expand-options=false
-volume-size=0
-
-[org/gnome/file-roller/file-selector]
-show-hidden=true
-sidebar-size=240
-window-size=(1200, 983)
-
-[org/gnome/file-roller/listing]
-list-mode='as-folder'
-name-column-width=250
-show-path=false
-sort-method='name'
-sort-type='ascending'
-
-[org/gnome/file-roller/ui]
-sidebar-width=200
-window-height=983
-window-width=1920
-
-[org/gnome/nautilus/preferences]
-default-folder-viewer='icon-view'
-search-filter-time-type='last_modified'
-
-[org/gnome/nautilus/window-state]
-initial-size=(890, 550)
-maximized=false
-sidebar-width=204
-
-[org/gnome/nm-applet/eap/0ec8bc5b-63e1-44ed-a593-ca498e1983d5]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/nm-applet/eap/e75f8f37-15bc-4f17-b20a-5fa37d153958]
-ignore-ca-cert=false
-ignore-phase2-ca-cert=false
-
-[org/gnome/settings-daemon/plugins/color]
-night-light-enabled=false
-
-[org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
-
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Shift><Alt>F4'
 command='xkill'
 name='xkill'
-
-[org/gnome/settings-daemon/plugins/power]
-idle-dim=true
-sleep-inactive-ac-timeout=1200
-sleep-inactive-battery-timeout=1200
-
-[org/gnome/settings-daemon/plugins/xsettings]
-overrides={'Gtk/ShellShowsAppMenu': <0>, 'Gtk/DecorationLayout': <'close,minimize,maximize:menu'>}
-
-[org/gtk/gtk4/settings/file-chooser]
-date-format='regular'
-location-mode='path-bar'
-show-hidden=true
-show-size-column=true
-show-type-column=true
-sidebar-width=222
-sort-column='name'
-sort-directories-first=false
-sort-order='ascending'
-type-format='category'
-window-size=(1920, 1030)
-
-[org/gtk/settings/file-chooser]
-date-format='regular'
-location-mode='path-bar'
-show-hidden=true
-show-size-column=true
-show-type-column=true
-sidebar-width=230
-sort-column='name'
-sort-directories-first=false
-sort-order='ascending'
-type-format='category'
-window-position=(0, 50)
-window-size=(1796, 983)
-
-[org/ubuntubudgie/plugins/budgie-shufflerapplet]
-showonhover=false
-
-[org/ubuntubudgie/plugins/budgie-visualspace]
-scrollinstruction=2
-
-[org/ubuntubudgie/plugins/budgie-wsoverview]
-ws-overview-index=2
-
-[org/ubuntubudgie/windowshuffler]
-cols=2
-customgridtiling=true
-marginbottom=10
-marginleft=10
-marginright=10
-margintop=10
-padding=10
-rows=3
-runlayouts=false
-runshuffler=true
-runshufflergui=true
-usegeneralanimation=true

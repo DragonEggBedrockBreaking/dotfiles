@@ -2,12 +2,13 @@ org.gnome.Cheese
 com.github.huluti.Curtail
 com.github.tchx84.Flatseal
 io.github.wereturtle.ghostwriter
+com.jetbrains.IntelliJ-IDEA-Community
 io.gitlab.librewolf-community
 fr.romainvigier.MetadataCleaner
 io.mpv.Mpv
 com.notepadqq.Notepadqq
 md.obsidian.Obsidian
-org.kde.Okular
+org.kde.okular
 com.obsproject.Studio
 org.onlyoffice.desktopeditors
 org.gnome.Rhythmbox3
