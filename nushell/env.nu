@@ -79,6 +79,7 @@ alias okular = flatpak run org.kde.okular
 alias onlyoffice = flatpak run org.onlyoffice.desktopeditors
 alias mpv = flatpak run io.mpv.Mpv
 alias code = flatpak run com.visualstudio.code --disable-gpu
+alias idea = flatpak run com.jetbrains.Intellij-IDEA-Community
 alias vifm = ~/.config/vifm/scripts/vifmrun
 
 # Git aliases (copied from ohmyzsh)
