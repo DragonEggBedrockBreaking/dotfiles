@@ -17,8 +17,6 @@ keepassxc
 lightdm-settings
 # lightdm-webkit2-greeter
 # lightdm-webkit-theme-aether
-lldb
-llvm
 lshw
 ncdu
 neofetch

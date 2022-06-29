@@ -47,29 +47,13 @@ vim.opt.laststatus = 2 --status line stuff
 local map = vim.api.nvim_set_keymap
 
 -- formatting code
-map('n', 'fc', ':!astyle -xnxcxlxkxVCxGSKNs4A1 %<CR>', {noremap = true}) -- C
 map('n', 'fjson', ':!fixjson -wi4 %<CR>', {noremap = true}) -- Json
 map('n', 'fpy', ':!autopep8 -ai --experimental  --max-line-length 100 %<CR>', {noremap = true}) -- Python
-map('n', 'frs', ':!rustfmt --emit files %<CR>', {noremap = true}) -- Rust
 map('n', 'fsh', ':!shfmt -w -s -i 4 %<CR>', {noremap = true}) -- Shell
 
--- building code
-map('n', 'bcc', ':!gcc -g -O3 -std=c17 -fuse-ld=mold -static % -o %:r.out<CR>', {noremap = true}) -- C (one file)
-map('n', 'bacc', ':!gcc -g -O3 -std=c17 -fuse-ld=mold -static *.c -o %:r.out<CR>', {noremap = true}) -- C (all files)
-map('n', 'bcpp', ':!g++ -g -O3 -std=c++2b -fuse-ld=mold -static % -o %:r.out<CR>', {noremap = true}) -- C++ (one file)
-map('n', 'bacpp', ':!g++ -g -O3 -std=c++2b -fuse-ld=mold -static *.cpp -o %:r.out<CR>', {noremap = true}) -- C++ (all files)
-map('n', 'bcg', ':!cargo build --release<CR>', {noremap = true}) -- Rust (with cargo)
-map('n', 'brs', ':!rustc -C opt-level=3 %<CR>', {noremap = true}) -- Rust (with rustc)
-
 -- running code
-map('n', 'rcc', ':!gcc -g -O3 -std=c17 -fuse-ld=mold -static % -o %:r.out; ./%:r.out<CR>', {noremap = true}) -- C (one file)
-map('n', 'racc', ':!gcc -g -O3 -std=c17 -fuse-ld=mold -static *.c -o %:r.out; ./%:r.out<CR>', {noremap = true}) -- C (all files)
-map('n', 'rcpp', ':!g++ -g -O3 -std=c++2b -fuse-ld=mold -static % -o %:r.out; ./%:r.out<CR>', {noremap = true}) -- C++ (one file)
-map('n', 'racpp', ':!g++ -g -O3 -std=c++2b -fuse-ld=mold -static *.cpp -o %:r.out; ./%:r.out<CR>', {noremap = true}) -- C++ (all files)
 map('n', 'rpy', ':!python3 %<CR>', {noremap = true}) -- Python (normal interpreter)
 map('n', 'rpp', ':!pypy3 %<CR>', {noremap = true}) -- Python (pypy)
-map('n', 'rcg', ':!cargo run --release<CR>', {noremap = true}) -- Rust (with cargo)
-map('n', 'rrs', ':!rustc -C opt-level=3 %; ./%:r<CR>', {noremap = true}) -- Rust (with rustc)
 
 -- nvim-dap (debugging)
 map('n', '<leader>c', ':lua require("dap").continue()<CR>', {noremap = true})
@@ -147,13 +131,7 @@ return require('packer').startup(function()
                 })
             }
             local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-                require('lspconfig')['clangd'].setup {
-                    capabilities = capabilities
-                }
                 require('lspconfig')['pylsp'].setup {
-                    capabilities = capabilities
-                }
-                require('lspconfig')['rust_analyzer'].setup {
                     capabilities = capabilities
                 }
         end
@@ -175,21 +153,6 @@ return require('packer').startup(function()
         'mfussenegger/nvim-dap',
         config = function()
             local dap = require('dap')
-            dap.adapters.lldb = {
-                type = 'executable',
-                command = '/usr/bin/lldb-vscode',
-                name = 'lldb'
-            }
-            dap.configurations.c = {
-                {
-                    name = 'Launch',
-                    type = 'lldb',
-                    request = 'launch',
-                    runInTerminal = true
-                }
-            }
-            dap.configurations.cpp = dap.configurations.c
-            dap.configurations.rust = dap.configurations.c
             dap.adapters.python = {
                 type = 'executable',
                 command = '/usr/bin/python',
