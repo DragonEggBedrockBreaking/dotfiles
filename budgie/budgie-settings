@@ -364,7 +364,7 @@ terminal='wezterm'
 [org/gnome/desktop/background]
 color-shading-type='solid'
 picture-options='zoom'
-picture-uri='file:///usr/share/budgie/pexels-greg-galas-3647545-min.jpg'
+picture-uri='file:///usr/share/budgie/wallpaper.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 
@@ -399,7 +399,7 @@ remove-old-trash-files=true
 color-shading-type='solid'
 lock-delay=uint32 0
 picture-options='zoom'
-picture-uri='file:///usr/share/budgie/pexels-greg-galas-3647545-min.jpg'
+picture-uri='file:///usr/share/budgie/wallpaper.jpg'
 primary-color='#000000000000'
 secondary-color='#000000000000'
 

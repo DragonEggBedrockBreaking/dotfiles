@@ -45,7 +45,6 @@ let-env PATH = ($env.PATH | prepend $'($env.HOME)/bin')
 let-env PATH = ($env.PATH | prepend $'($env.HOME)/.local/bin')
 let-env PATH = ($env.PATH | prepend $'($env.HOME)/.sdkman/candidates/gradle/7.5-rc-2/bin')
 let-env PATH = ($env.PATH | prepend $'($env.HOME)/.sdkman/candidates/java/current/bin')
-let-env PATH = ($env.PATH | prepend $'($env.HOME)/.sdkman/candidates/kotlin/1.7.0/bin')
 let-env PATH = ($env.PATH | prepend $'($env.HOME)/.config/vifm/scripts')
 let-env LANG = 'en_GB.UTF-8'
 let-env LANGUAGE = 'en_GB.UTF-8'
@@ -69,6 +68,7 @@ alias tree-rs = tree-rs -aC
 # Aliases for programming
 alias brachyura = java -jar brachyura-bootstrap-0.jar
 alias python = python3
+alias pip = pip3
 
 # Aliases for software
 alias mmc = ~/Downloads/MultiMC/MultiMC
@@ -78,7 +78,7 @@ alias obsidian = flatpak run md.obsidian.Obsidian
 alias okular = flatpak run org.kde.okular
 alias onlyoffice = flatpak run org.onlyoffice.desktopeditors
 alias mpv = flatpak run io.mpv.Mpv
-alias code = flatpak run com.visualstudio.code --disable-gpu
+alias code = flatpak run com.vscodium.codium --disable-gpu
 alias idea = flatpak run com.jetbrains.Intellij-IDEA-Community
 alias vifm = ~/.config/vifm/scripts/vifmrun
 
