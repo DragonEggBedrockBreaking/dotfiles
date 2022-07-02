@@ -43,7 +43,7 @@ let-env PATH = ($env.PATH | prepend $'/usr/local/bin')
 let-env PATH = ($env.PATH | prepend $'($env.HOME)/.cargo/bin')
 let-env PATH = ($env.PATH | prepend $'($env.HOME)/bin')
 let-env PATH = ($env.PATH | prepend $'($env.HOME)/.local/bin')
-let-env PATH = ($env.PATH | prepend $'($env.HOME)/.sdkman/candidates/gradle/7.5-rc-2/bin')
+let-env PATH = ($env.PATH | prepend $'($env.HOME)/.sdkman/candidates/gradle/7.5-rc-3/bin')
 let-env PATH = ($env.PATH | prepend $'($env.HOME)/.sdkman/candidates/java/current/bin')
 let-env PATH = ($env.PATH | prepend $'($env.HOME)/.config/vifm/scripts')
 let-env LANG = 'en_GB.UTF-8'
@@ -78,7 +78,7 @@ alias obsidian = flatpak run md.obsidian.Obsidian
 alias okular = flatpak run org.kde.okular
 alias onlyoffice = flatpak run org.onlyoffice.desktopeditors
 alias mpv = flatpak run io.mpv.Mpv
-alias code = flatpak run com.vscodium.codium --disable-gpu
+alias code = flatpak run com.visualstudio.code --disable-gpu
 alias idea = flatpak run com.jetbrains.Intellij-IDEA-Community
 alias vifm = ~/.config/vifm/scripts/vifmrun
 
