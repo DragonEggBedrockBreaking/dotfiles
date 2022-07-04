@@ -141,7 +141,7 @@ return require('packer').startup(function()
         run = ':TSUpdate',
         config = function()
             require'nvim-treesitter.configs'.setup {
-                ensure_installed = { 'c', 'cpp', 'java', 'json', 'json5', 'kotlin', 'lua', 'python', 'rust', 'toml', 'vim' },
+                ensure_installed = { 'json', 'json5', 'lua', 'python', 'rust', 'vim' },
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false
@@ -319,7 +319,4 @@ return require('packer').startup(function()
         end
     }
     use 'ellisonleao/glow.nvim' -- markdown previewer
-    use 'gpanders/editorconfig.nvim' -- editorconfig
-    use 'jghauser/mkdir.nvim' -- auto mkdir
-    use 'github/copilot.vim' -- github copilot
 end)
