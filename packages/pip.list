@@ -8,4 +8,4 @@ xlsx2csv
 youtube-dl
 
 # pipx
-pipx install git+https://github.com/benbusby/whoogle-search.git
+git+https://github.com/benbusby/whoogle-search.git

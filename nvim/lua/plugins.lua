@@ -44,7 +44,7 @@ return require('packer').startup(function()
         run = ':TSUpdate',
         config = function()
             require'nvim-treesitter.configs'.setup {
-                ensure_installed = { 'json', 'json5', 'lua', 'python', 'rust', 'vim' },
+                ensure_installed = { 'json', 'json5', 'lua', 'python', 'vim' },
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false
@@ -54,20 +54,9 @@ return require('packer').startup(function()
     }
     use { -- debugging
         'mfussenegger/nvim-dap',
+        requires = 'mfussenegger/nvim-dap-python',
         config = function()
-            local dap = require('dap')
-            dap.adapters.python = {
-                type = 'executable',
-                command = '/usr/bin/python',
-                args = { '-m', 'debugpy.adapter' }
-            }
-            dap.configurations.python = {
-                {
-                    name = 'Launch',
-                    type = 'python',
-                    request = 'launch'
-                }
-            }
+            require('dap-python').setup('/usr/bin/python3')
         end
     }
     use { -- the theme; make background transparent
