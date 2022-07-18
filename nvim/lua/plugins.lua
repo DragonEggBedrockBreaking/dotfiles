@@ -77,9 +77,9 @@ return require('packer').startup(function()
                 defaults = {
                     mappings = {
                         i = { ["<c-t>"] = trouble.open_with_trouble },
-                        n = { ["<c-t>"] = trouble.open_with_trouble },
-                    },
-                },
+                        n = { ["<c-t>"] = trouble.open_with_trouble }
+                    }
+                }
             }
         end
     }
@@ -229,6 +229,25 @@ return require('packer').startup(function()
                 auto_open = true,
                 auto_close = true
             }
+        end
+    }
+    use { -- formatting
+        "jose-elias-alvarez/null-ls.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        config = function()
+            require("null-ls").setup({
+                sources = {
+                    require("null-ls").builtins.formatting.autopep8.with({
+                        extra_args = { "-ai", "--experimental", "--max-line-length 79" }
+                    }),
+                    require("null-ls").builtins.formatting.fixjson.with({
+                        extra_args = { "-wi4" }
+                    }),
+                    require("null-ls").builtins.formatting.shfmt.with({
+                        extra_args = { "-w", "-s", "-i", "4" }
+                    })
+                }
+            })
         end
     }
 end)

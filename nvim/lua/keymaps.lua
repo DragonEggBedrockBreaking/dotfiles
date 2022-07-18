@@ -1,11 +1,6 @@
 --Keymapping function
 local map = vim.api.nvim_set_keymap
 
--- formatting code
-map('n', 'fjson', ':!fixjson -wi4 %<CR>', {noremap = true}) -- Json
-map('n', 'fpy', ':!autopep8 -ai --experimental  --max-line-length 100 %<CR>', {noremap = true}) -- Python
-map('n', 'fsh', ':!shfmt -w -s -i 4 %<CR>', {noremap = true}) -- Shell
-
 -- running code
 map('n', 'rpy', ':!python3 %<CR>', {noremap = true}) -- Python (normal interpreter)
 map('n', 'rpp', ':!pypy3 %<CR>', {noremap = true}) -- Python (pypy)
@@ -54,3 +49,6 @@ map('n', '<leader>xq', ':Trouble quickfix<cr>', { noremap = true })
 map('n', '<leader>gR', ':Trouble lsp_references<cr>', { noremap = true })
 map('n', '<leader>x,', ':lua require("trouble").previous({skip_groups = true, jump = true})<cr>', { noremap = true })
 map('n', '<leader>x.', ':lua require("trouble").next({skip_groups = true, jump = true})<cr>', { noremap = true })
+
+-- null-ls.nvim (formatting)
+map('n', 'fmt', ':lua vim.lsp.buf.formatting()<CR>', {noremap = true})
