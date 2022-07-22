@@ -21,6 +21,7 @@ opi
 p7zip
 pandoc
 poppler
+python310-pipx
 solaar
 starship
 vifm
