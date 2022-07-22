@@ -21,6 +21,7 @@ lshw
 ncdu
 neofetch
 neovim
+nim
 nodejs
 p7zip
 pandoc
@@ -31,3 +32,4 @@ surfn-tela-icon-theme
 ufw
 vifm
 xkill
+zig
