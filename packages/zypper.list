@@ -10,8 +10,6 @@ flatpak
 git
 keepassxc
 lightdm-settings
-# lightdm-webkit2-greeter
-# lightdm-webkit-theme-aether
 lshw
 mold
 ncdu
@@ -25,7 +23,6 @@ pandoc
 poppler
 solaar
 starship
-# surfn-tela-icon-theme
 vifm
 wezterm
 xkill
