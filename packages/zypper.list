@@ -2,6 +2,7 @@ bleachbit
 dconf-editor
 discord
 djvulibre
+dnf
 gnome-epub-thumbnailer
 feh
 ffmpegthumbnailer
@@ -18,15 +19,15 @@ neofetch
 neovim
 nim
 nodejs
+opi
 p7zip
 pandoc
 poppler
 solaar
 starship
 # surfn-tela-icon-theme
-# ufw
 vifm
 wezterm
 xkill
 youtube-dl
-zig
+# zig
