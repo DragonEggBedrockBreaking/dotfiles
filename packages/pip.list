@@ -5,7 +5,6 @@ pylint
 python-lsp-server
 ueberzug
 xlsx2csv
-youtube-dl
 
 # pipx
 git+https://github.com/benbusby/whoogle-search.git

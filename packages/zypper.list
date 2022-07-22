@@ -1,23 +1,18 @@
 bleachbit
-budgie-brightness-controller-applet
-budgie-screenshot-applet
-budgie-visualspace-applet
-budgie-window-shuffler
 dconf-editor
 discord
 djvulibre
 gnome-epub-thumbnailer
 feh
-ffmpeg
 ffmpegthumbnailer
 flatpak
 git
-golang
 keepassxc
 lightdm-settings
 # lightdm-webkit2-greeter
 # lightdm-webkit-theme-aether
 lshw
+mold
 ncdu
 neofetch
 neovim
@@ -28,8 +23,10 @@ pandoc
 poppler
 solaar
 starship
-surfn-tela-icon-theme
-ufw
+# surfn-tela-icon-theme
+# ufw
 vifm
+wezterm
 xkill
+youtube-dl
 zig
