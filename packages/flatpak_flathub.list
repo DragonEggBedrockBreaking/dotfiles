@@ -1,3 +1,4 @@
+com.brave.Browser
 com.github.huluti.Curtail
 com.github.tchx84.Flatseal
 com.jetbrains.IntelliJ-IDEA-Community
@@ -5,7 +6,6 @@ com.notepadqq.Notepadqq
 com.obsproject.Studio
 com.skype.Client
 fr.romainvigier.MetadataCleaner
-io.gitlab.librewolf-community
 io.mpv.Mpv
 md.obsidian.Obsidian
 org.gnome.Cheese
