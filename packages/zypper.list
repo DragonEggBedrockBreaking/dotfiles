@@ -12,11 +12,13 @@ git
 keepassxc
 lightdm-settings
 lshw
+meson
 mold
 ncdu
 neofetch
 neovim
 nim
+ninja
 nodejs
 opi
 p7zip
