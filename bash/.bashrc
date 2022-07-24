@@ -1,3 +1,9 @@
+# Env vars
+export CC=clang
+export CXX=clang++
+export CC_LD=mold
+export CXX_LD=mold
+
 # Change to nushell if available
 export SHELL_PREFERRED=~/.cargo/bin/nu
 if [[ $- == *i* ]] && [[ "$PREFSHELLSET" != 1 ]] && which "$SHELL_PREFERRED" >/dev/null 2>&1
