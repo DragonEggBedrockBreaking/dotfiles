@@ -77,16 +77,6 @@ return require('packer').startup(function()
                         'right_sep_double', '-line_column', 'left_sep_double', ' '
                     }
                 },
-
-                defaults={
-                    fg = '#4633ff',
-                    cool_symbol = '  ',
-                    left_separator = '',
-                    right_separator = '',
-                    true_colors = true,
-                    line_column = '[%l:%c] 並 %p%% ',
-                    font_active = 'bold'
-                },
                 mode_colors = {
                     n  = '#181a23',
                     i  = '#00ff7e',
@@ -100,31 +90,6 @@ return require('packer').startup(function()
     use { -- buffer line
         'romgrk/barbar.nvim',
         requires = 'kyazdani42/nvim-web-devicons',
-        config = function()
-            vim.g.bufferline = {
-                animation = true,
-                auto_hide = false,
-                tabpages = false,
-                closable = true,
-                clickable = true,
-                exclude_ft = {},
-                exclude_name = {},
-                icons = true,
-                icon_custom_colors = true,
-                icon_separator_active = '▎',
-                icon_separator_inactive = '▎',
-                icon_close_tab = '',
-                icon_close_tab_modified = '●',
-                icon_pinned = '車',
-                insert_at_end = false,
-                insert_at_start = false,
-                maximum_padding = 3,
-                maximum_length = 20,
-                semantic_letters = true,
-                letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
-                no_name_title = nil
-            }
-        end
     }
     use { -- file manager
         'kyazdani42/nvim-tree.lua',
