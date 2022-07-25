@@ -1,42 +1,20 @@
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim' --plugin manager manages itself
-    use { -- autocompletion/snippets/copilot
-        'hrsh7th/nvim-cmp',
+    use { -- autocompletion/snippets
+        'ms-jpq/coq_nvim',
+        branch = 'coq',
         requires = {
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-buffer',
-            'neovim/nvim-lspconfig',
             {
-                'saadparwaiz1/cmp_luasnip',
-                requires = 'L3MON4D3/LuaSnip' 
-            }
+                'ms-jpq/coq.artifacts',
+                branch = 'artifacts'
+            },
+            'neovim/nvim-lspconfig'
         },
         config = function()
-            local cmp = require 'cmp'
-            cmp.setup {
-                snippet = {
-                    expand = function(args)
-                        require('luasnip').lsp_expand(args.body)
-                    end
-                },
-                mapping = {
-                    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-                    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                    ['<C-Space>'] = cmp.mapping.complete(),
-                    ['<C-e>'] = cmp.mapping.close(),
-                    ['<CR>'] = cmp.mapping.confirm({ select = true })
-                },
-                sources = cmp.config.sources({
-                    { name = 'nvim_lsp' },
-                    { name = 'luasnip' }
-                }, {
-                    { name = 'buffer' }
-                })
+            vim.g.coq_settings = {
+                auto_start = 'shut-up'
             }
-            local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-                require('lspconfig')['pylsp'].setup {
-                    capabilities = capabilities
-                }
+            require('lspconfig')['pylsp'].setup(require('coq').lsp_ensure_capabilities({}))
         end
     }
     use { -- better syntax highlighting
