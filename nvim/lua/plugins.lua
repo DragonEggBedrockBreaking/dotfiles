@@ -21,7 +21,7 @@ return require('packer').startup(function()
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
         config = function()
-            require'nvim-treesitter.configs'.setup {
+            require('nvim-treesitter.configs').setup {
                 ensure_installed = { 'json', 'json5', 'lua', 'python', 'vim' },
                 highlight = {
                     enable = true,
@@ -140,7 +140,7 @@ return require('packer').startup(function()
     use { -- automatic pairs (braces, quotations, etc)
         'windwp/nvim-autopairs',
         config = function()
-            require'nvim-autopairs'.setup {
+            require('nvim-autopairs').setup {
                 check_ts = true
             }
         end
