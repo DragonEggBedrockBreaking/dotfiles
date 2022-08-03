@@ -30,12 +30,6 @@ return require('packer').startup(function()
     }
     use { -- the theme; make background transparent
         'tanvirtin/monokai.nvim',
-        requires = {
-            'xiyaowong/nvim-transparent',
-            config = function()
-                require('transparent').setup { enable = true }
-            end
-        },
         config = function()
             require('monokai').setup { palette = require('monokai').soda }
         end
