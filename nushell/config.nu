@@ -16,6 +16,7 @@ let-env config = {
   edit_mode: vi # emacs, vi
   max_history_size: 100000 # Session has to be reloaded for this to take effect
   sync_history_on_enter: true # Enable to share the history between multiple sessions, else you have to close the session to persist history to file
+  show_banner: false # Disable startup banner
   menus: [
       # Configuration for default nushell menus
       {
