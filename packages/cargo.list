@@ -1,16 +1,3 @@
-bat
-bottom
 cargo-update
-du-dust
-exa
-fd-find
-git-delta
-melody
-nu
-procs
-ripgrep
 rsfetch
-tealdeer
-tokei
 tree-rs
-zoxide
