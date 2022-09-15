@@ -65,64 +65,7 @@
   users.users.username = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    bat
-    bleachbit
-    bottom
-    cargo
-    catdoc
-    delta
-    djvulibre
-    du-dust
-    exa
-    fd
-    feh
-    ffmpeg
-    ffmpegthumbnailer
-    fontpreview
-    fzf
-    gcc
-    git
-    gnomeExtensions.caffeine
-    gnomeExtensions.clipboard-indicator
-    home-manager
-    jetbrains.idea-community
-    keepassxc
-    librewolf
-    lshw
-    melody
-    meson
-    mold
-    ncdu
-    neofetch
-    neovim
-    nim
-    ninja
-    nodePackages.fixjson
-    nushell
-    openssl
-    p7zip
-    pandoc
-    poppler
-    procs
-    python310
-    python310Packages.pip
-    python310Packages.pipx
-    ripgrep
-    rustc
-    rustfmt
-    solaar
-    starship
-    tealdeer
-    tokei
-    vifm
-    vscode
-    wezterm
-    xorg.xkill
-    youtube-dl
-    zig
-    zoxide
-    ];
+    packages = [];
   };
 
   # Disable optional GNOME software
