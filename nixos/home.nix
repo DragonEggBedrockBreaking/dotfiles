@@ -17,6 +17,7 @@
     djvulibre
     du-dust
     exa
+    fantasque-sans-mono
     fd
     feh
     ffmpeg
@@ -27,6 +28,7 @@
     git
     gnomeExtensions.caffeine
     gnomeExtensions.clipboard-indicator
+    gnupg
     helix
     jetbrains.idea-community
     keepassxc
