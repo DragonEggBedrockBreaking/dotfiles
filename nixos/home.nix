@@ -26,6 +26,7 @@
     fzf
     gcc
     git
+    gnome.gnome-tweaks
     gnomeExtensions.caffeine
     gnomeExtensions.clipboard-indicator
     gnupg

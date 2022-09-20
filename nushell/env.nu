@@ -53,8 +53,8 @@ let-env LANGUAGE = 'en_GB.UTF-8'
 let-env EDITOR = 'nvim'
 let-env GPG_TTY = (tty)
 let-env mesa_glthread = true
-let-env CC = clang
-let-env CXX = clang++
+#let-env CC = clang
+#let-env CXX = clang++
 let-env CC_LD = mold
 let-env CXX_LD = mold
 
