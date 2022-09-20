@@ -5,6 +5,3 @@ jedi-language-server
 pylint
 ueberzug
 xlsx2csv
-
-# pipx
-git+https://github.com/benbusby/whoogle-search.git

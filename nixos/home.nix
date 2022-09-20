@@ -51,7 +51,6 @@
     procs
     python310
     python310Packages.pip
-    python310Packages.pipx
     ripgrep
     rustc
     rustfmt
