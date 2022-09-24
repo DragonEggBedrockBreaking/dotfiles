@@ -26,6 +26,7 @@
     fzf
     gcc
     git
+    glxinfo
     gnome.gnome-tweaks
     gnomeExtensions.caffeine
     gnomeExtensions.clipboard-indicator
