@@ -59,12 +59,15 @@
     starship
     tealdeer
     tokei
+    unzip
     vifm
     vscode
     wezterm
+    wget
     xorg.xkill
     youtube-dl
     zig
+    zip
     zoxide
   ];
 
