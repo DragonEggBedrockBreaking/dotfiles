@@ -14,6 +14,7 @@
     cargo
     catdoc
     clang
+    clang-tools
     delta
     djvulibre
     du-dust
@@ -34,7 +35,6 @@
     jetbrains.idea-community
     keepassxc
     librewolf
-    llvm
     lshw
     melody
     meson
