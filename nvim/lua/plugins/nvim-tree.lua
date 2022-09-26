@@ -5,7 +5,6 @@ require('nvim-tree').setup {
     update_cwd = true,
     view = {
         width = 25,
-        height = 0
     },
     renderer = {
         indent_markers = {
