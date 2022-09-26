@@ -16,10 +16,6 @@
     "/crypto_keyfile.bin" = null;
   };
 
-  # Enable swap on luks
-  boot.initrd.luks.devices."luks-6db9342a-8566-4fa4-8801-cf7f185115f3".device = "/dev/disk/by-uuid/6db9342a-8566-4fa4-8801-cf7f185115f3";
-  boot.initrd.luks.devices."luks-6db9342a-8566-4fa4-8801-cf7f185115f3".keyFile = "/crypto_keyfile.bin";
-
   networking.hostName = "nixos"; # Define your hostname.
 
   # Enable networking
@@ -65,7 +61,6 @@
   users.users.username = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = [];
   };
 
   # Disable optional GNOME software
@@ -76,6 +71,7 @@
     gnome-connections
     gnome-console
     gnome-photos
+    gnome-text-editor
   ]) ++ (with pkgs.gnome; [
     cheese
     eog
