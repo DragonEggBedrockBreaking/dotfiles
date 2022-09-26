@@ -1,5 +1,6 @@
 local wezterm = require 'wezterm';
 return {
+    default_prog = { "/nix/store/9728br9ppym767r6cqvzgaipl7fi3r2m-home-manager-path/bin/nu", "-l" },
     font = wezterm.font("FantasqueSansMono-Regular"),
     font_size = 18,
     harfbuzz_features = {

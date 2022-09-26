@@ -67,7 +67,6 @@ alias fd = fd -uuij 4
 alias procs = procs --tree --color always
 alias ren = perl-rename -vV git
 alias rg = rg -uuupj 4
-alias rsfetch = rsfetch -Pdeklrstuw
 alias tokei = tokei --hidden
 alias tree-rs = tree-rs -aC
 
@@ -273,8 +272,8 @@ alias gams = git am --skip
 alias gama = git am --abort
 alias gamscp = git am --show-current-patch
 
-# rsfetch
-rsfetch
+# afetch
+afetch
 
 # zoxide
 zoxide init nushell --hook prompt | save ~/.zoxide.nu
