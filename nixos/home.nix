@@ -53,6 +53,7 @@
     python310
     python310Packages.pip
     ripgrep
+    rust-analyzer
     rustc
     rustfmt
     solaar
@@ -61,7 +62,6 @@
     tokei
     unzip
     vifm
-    vscode
     wezterm
     wget
     xorg.xkill
@@ -83,7 +83,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 }
