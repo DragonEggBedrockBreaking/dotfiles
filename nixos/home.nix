@@ -31,7 +31,6 @@
     gnomeExtensions.caffeine
     gnomeExtensions.clipboard-indicator
     gnupg
-    helix
     jetbrains.idea-community
     keepassxc
     librewolf
