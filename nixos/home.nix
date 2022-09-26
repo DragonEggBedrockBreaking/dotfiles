@@ -33,6 +33,7 @@
     gnomeExtensions.caffeine
     gnomeExtensions.clipboard-indicator
     gnupg
+    jdk
     jetbrains.idea-community
     keepassxc
     librewolf
