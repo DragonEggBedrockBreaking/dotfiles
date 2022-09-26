@@ -13,6 +13,7 @@
     bottom
     cargo
     catdoc
+    clang
     delta
     djvulibre
     du-dust
@@ -24,7 +25,6 @@
     ffmpegthumbnailer
     fontpreview
     fzf
-    gcc
     git
     glxinfo
     gnome.gnome-tweaks
@@ -34,6 +34,7 @@
     jetbrains.idea-community
     keepassxc
     librewolf
+    llvm
     lshw
     melody
     meson
