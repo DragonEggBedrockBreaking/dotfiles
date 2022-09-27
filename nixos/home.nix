@@ -46,6 +46,7 @@
     neovim
     nim
     ninja
+    nodejs
     nodePackages.fixjson
     nodePackages.npm
     nushell
