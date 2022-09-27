@@ -47,6 +47,7 @@
     nim
     ninja
     nodePackages.fixjson
+    nodePackages.npm
     nushell
     p7zip
     pandoc
