@@ -2,8 +2,14 @@
 local map = vim.api.nvim_set_keymap
 
 -- running code
+map('n', 'rcc', ':!clang --std=c17 -g -fuse-ld=mold % -o main && ./main<CR>', {noremap = true}) -- C (debug)
+map('n', 'occ', ':!clang --std=c17 -O3 -fuse-ld=mold % -o main && ./main<CR>', {noremap = true}) -- C (release)
+map('n', 'rcpp', ':!clang++ --std=c++20 -g -fuse-ld=mold % -o main && ./main<CR>', {noremap = true}) -- C++ (debug)
+map('n', 'ocpp', ':!clang++ --std=c++20 -O3 -fuse-ld=mold % -o main && ./main<CR>', {noremap = true}) -- C++ (release)
+map('n', 'rrs', ':!cargo run<CR>', {noremap = true}) -- Rust (debug)
+map('n', 'ors', ':!cargo run --release<CR>', {noremap = true}) -- Rust (release)
 map('n', 'rpy', ':!python3 %<CR>', {noremap = true}) -- Python (normal interpreter)
-map('n', 'rpp', ':!pypy3 %<CR>', {noremap = true}) -- Python (pypy)
+map('n', 'opp', ':!pypy3 %<CR>', {noremap = true}) -- Python (pypy)
 
 -- nvim-dap (debugging)
 map('n', '<leader>c', ':lua require("dap").continue()<CR>', {noremap = true})

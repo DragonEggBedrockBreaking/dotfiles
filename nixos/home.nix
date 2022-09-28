@@ -43,6 +43,7 @@
     mold
     ncdu
     neofetch
+    neovide
     neovim
     nim
     ninja
@@ -54,6 +55,7 @@
     pandoc
     poppler
     procs
+    pypy3
     python310
     python310Packages.pip
     ripgrep
