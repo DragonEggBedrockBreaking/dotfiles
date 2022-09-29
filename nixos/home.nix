@@ -49,7 +49,7 @@
     ninja
     nodejs
     nodePackages.fixjson
-    nodePackages.npm
+    nodePackages.pnpm
     nushell
     p7zip
     pandoc
