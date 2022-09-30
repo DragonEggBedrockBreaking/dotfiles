@@ -43,7 +43,6 @@
     mold
     ncdu
     neofetch
-    neovide
     neovim
     nim
     ninja
@@ -66,14 +65,12 @@
     starship
     tealdeer
     tokei
-    unzip
     vifm
     wezterm
     wget
     xorg.xkill
     youtube-dl
     zig
-    zip
     zoxide
   ];
 
