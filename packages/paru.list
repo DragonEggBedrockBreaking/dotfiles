@@ -31,6 +31,7 @@ procs
 pypy3
 python-pip
 ripgrep
+rust-analyzer-nightly-bin
 solaar
 starship
 tealdeer
