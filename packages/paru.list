@@ -14,6 +14,8 @@ flatpak
 fontpreview
 git-delta
 intellij-idea-community-edition
+jdk17-openjdk
+java17-openjfx
 keepassxc
 lldb
 llvm
