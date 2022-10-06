@@ -72,14 +72,7 @@ alias python = python3
 alias pip = pip3
 
 # Aliases for software
-alias mmc = ~/Downloads/MultiMC/MultiMC
-alias resolve = /opt/resolve/bin/resolve
-alias notepadqq = flatpak run com.notepadqq.Notepadqq
 alias obsidian = flatpak run md.obsidian.Obsidian
-alias okular = flatpak run org.kde.okular
-alias onlyoffice = flatpak run org.onlyoffice.desktopeditors
-alias mpv = flatpak run io.mpv.Mpv
-alias idea = flatpak run com.jetbrains.Intellij-IDEA-Community
 alias vifm = ~/.config/vifm/scripts/vifmrun
 
 # Git aliases (copied from ohmyzsh)
