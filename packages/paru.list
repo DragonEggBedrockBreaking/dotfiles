@@ -1,4 +1,5 @@
 afetch
+astyle
 bleachbit
 bottom
 catdoc
@@ -36,6 +37,7 @@ pypy3
 python-pip
 ripgrep
 rust-analyzer-nightly-bin
+shfmt
 solaar
 starship
 tealdeer

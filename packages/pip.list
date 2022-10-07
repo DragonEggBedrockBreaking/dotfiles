@@ -1,6 +1,6 @@
 autopep8
 debugpy
-jedi-language-server
 pylint
+pyright
 ueberzug
 xlsx2csv

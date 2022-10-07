@@ -57,4 +57,4 @@ map('n', '<leader>x,', ':lua require("trouble").previous({skip_groups = true, ju
 map('n', '<leader>x.', ':lua require("trouble").next({skip_groups = true, jump = true})<cr>', { noremap = true })
 
 -- null-ls.nvim (formatting)
-map('n', 'fmt', ':lua vim.lsp.buf.formatting()<CR>', {noremap = true})
+map('n', 'fmt', ':lua vim.lsp.buf.format {async = true}<CR>', {noremap = true})
