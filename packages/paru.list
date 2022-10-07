@@ -27,7 +27,6 @@ ncdu
 neovim
 nim
 ninja
-nushell
 otf-fantasque-sans-mono
 pandoc
 pnpm
@@ -48,3 +47,4 @@ xorg-xkill
 youtube-dl
 zig
 zoxide
+zsh
