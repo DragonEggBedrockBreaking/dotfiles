@@ -1,5 +1,6 @@
 autopep8
 debugpy
+pip-review
 pylint
 pyright
 ueberzug
