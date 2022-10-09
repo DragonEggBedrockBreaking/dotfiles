@@ -25,7 +25,7 @@ return require('packer').startup(function()
         'mfussenegger/nvim-dap',
         requires = 'mfussenegger/nvim-dap-python',
         config = function()
-            require('dap-python').setup('/usr/bin/python3')
+            require('plugins.nvim-dap')
         end
     }
     use { -- the theme; make background transparent
