@@ -98,4 +98,15 @@ return require('packer').startup(function()
             require('plugins.formatter')
         end
     }
+    use { -- better gui
+        "folke/noice.nvim",
+        event = "VimEnter",
+        config = function()
+            require('plugins.noice')
+        end,
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify"
+        }
+    }
 end)
