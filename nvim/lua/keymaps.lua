@@ -58,3 +58,11 @@ map('n', '<leader>x.', ':lua require("trouble").next({skip_groups = true, jump =
 
 -- null-ls.nvim (formatting)
 map('n', 'fmt', ':lua vim.lsp.buf.format {async = true}<CR>', {noremap = true})
+
+-- yanky
+map('n', 'p', '<Plug>(YankyPutAfter)', { noremap = true })
+map('n', 'P', '<Plug>(YankyPutBefore)', { noremap = true })
+map('n', 'gp', '<Plug>(YankyGPutAfter)', { noremap = true })
+map('n', 'gP', '<Plug>(YankyGPutBefore)', { noremap = true })
+map('n', '<c-n>', '<Plug>(YankyCycleForward)', { noremap = true })
+map('n', '<c-p>', '<Plug>(YankyCycleBackward)', { noremap = true })
