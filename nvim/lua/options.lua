@@ -10,7 +10,6 @@ vim.opt.ignorecase = true --ignore case
 vim.opt.smartcase = true --unless there is a capital letter
 
 --Performance options
-vim.opt.lazyredraw = true --don't update screen during macro and script execution
 vim.opt.ttyfast = true --also improves performance in vim
 
 --Text rendering
