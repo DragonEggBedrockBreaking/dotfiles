@@ -1,21 +1,28 @@
-# Antigen
-source $HOME/antigen.zsh                         # set up antigen
-antigen use oh-my-zsh                            # install omz
-antigen bundle git                               # git plugin (omz)
-antigen bundle sudo                              # sudo plugin (omz)
-antigen bundle vi-mode                           # vi plugin (omz)
-antigen bundle zsh-users/zsh-autosuggestions     # autosuggestion plugin (from repo)
-antigen bundle zsh-users/zsh-syntax-highlighting # syntax highlighting plugin (from repo)
-antigen apply                                    # apply all changes
+# Zgenom
+source "${HOME}/.zgenom/zgenom.zsh" # setup zgenom
+zgenom autoupdate                   # auto update zgenom
+if ! zgenom saved; then
+    zgenom ohmyzsh                                     # oh my zsh
+    zgenom ohmyzsh plugins/git                         # many git aliases
+    zgenom ohmyzsh plugins/sudo                        # easy sudo toggle
+    zgenom ohmyzsh plugins/vi-mode                     # vi keybinds
+    zgenom load zsh-users/zsh-autosuggestions          # autosuggestions
+    zgenom load zsh-users/zsh-syntax-highlighting      # syntax highlighting
+    zgenom load zsh-users/zsh-history-substring-search # better history traversal
+    zgenom load clarketm/zsh-completions               # more completions
+    zgenom save                                        # save zgenom stuff
+fi
 
 # ZSH/OMZ config
-HYPHEN_INSENSITIVE="true" # hyphen insensitive
-ENABLE_CORRECTION="true"  # command autocorrect
-HISTFILE=~/.zsh_history   # where is the history file
-HISTSIZE=1000000          # how many things in history
-SAVEHIST=1000000          # how many things in history
-setopt incappendhistory   # incrementally append things to history
-unsetopt beep             # no beep
+HYPHEN_INSENSITIVE="true"                              # hyphen insensitive
+ENABLE_CORRECTION="true"                               # command autocorrect
+HISTFILE=~/.zsh_history                                # where is the history file
+HISTSIZE=1000000                                       # how many things in history
+SAVEHIST=1000000                                       # how many things in history
+setopt incappendhistory                                # incrementally append things to history
+unsetopt beep                                          # no beep
+bindkey "$terminfo[kcuu1]" history-substring-search-up # better zsh history
+bindkey "$terminfo[kcuu1]" history-substring-search-up # better zsh history
 
 # env vars
 export LANG=en_GB.UTF-8   # some programs use it
