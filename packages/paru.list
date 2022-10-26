@@ -37,6 +37,7 @@ poppler
 procs
 pypy3
 python-pip
+python3.11
 ripgrep
 rust-analyzer-nightly-bin
 shfmt

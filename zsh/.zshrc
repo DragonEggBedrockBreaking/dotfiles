@@ -28,7 +28,6 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up # better zsh history
 export LANG=en_GB.UTF-8   # some programs use it
 export EDITOR=nvim        # some programs use it
 export GPG_TTY=$(tty)     # needed for git commits
-export mesa_glthread=true # speed up mesa games
 export CC=clang           # meson+ninja uses clang for c
 export CXX=clang++        # meson+ninja uses clang++ for c++
 export CC_LD=mold         # meson+ninja uses mold as c linker
@@ -43,10 +42,12 @@ alias lexa='exa -lah@ --colour=auto --icons --no-permissions --git --group-direc
 alias fd='fd -uuij 4'
 alias procs='procs --tree --color always'
 alias rg='rg -uuupj 4'
+alias py11='python3.11'
 alias tokei='tokei --hidden'
 alias tree-rs='tree-rs -aC'
 alias brachyura='java -jar brachyura-bootstrap-0.jar'
 alias obsidian='flatpak run md.obsidian.Obsidian'
+alias szrc='source $HOME/.zshrc'
 alias vifm='~/.config/vifm/scripts/vifmrun'
 
 # other

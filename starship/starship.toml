@@ -54,6 +54,6 @@ disabled = false
 disabled = false
 [python]
 disabled = false
-python_binary = ["python3"]
+python_binary = ["python3.11"]
 [rust]
 disabled = false
