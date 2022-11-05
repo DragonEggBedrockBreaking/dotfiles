@@ -3,11 +3,9 @@
 # Install packages (assumes paru is installed)
 paru -Syu                                                        # Updates system packages
 paru -S <packages/paru.list                                      # Installes paru packages
-flatpak install <packages/flatpak.list                           # Installs flatpak packages
 curl --proto '=https' --tlsv1.2 -sSf "https://sh.rustup.rs" | sh # Installs rust
 source "$HOME/.cargo/env"                                        # Gets ready for installing cargo packages
 cargo install <packages/cargo.list                               # Installs cargo packages
-pip install <packages/pip.list                                   # Installs pip packages
 curl -s "https://get.sdkman.io" | bash                           # Installs sdkman
 source "$HOME/.sdkman/bin/sdkman-init.sh"                        # Gets ready for installing sdk packages
 sdk i <packages/sdk.list                                         # Installs sdk packages
@@ -19,8 +17,9 @@ mkdir ~/.config/nvim
 ln -sv $HOME/dotfiles/nvim/init.lua $HOME/.config/nvim/
 ln -sv $HOME/dotfiles/nvim/lua/ $HOME/.config/nvim/
 
-# Install antigen, then setup zsh
-curl -L git.io/antigen >~/antigen.zsh
+# Install zgenom, then setup zsh
+git clone https://github.com/jandamm/zgenom.git "${HOME}/.zgenom"
+source "${HOME/.zgenom/zgenom.zsh}"
 rm ~/.zshrc
 ln -sv $HOME/dotfiles/zsh/.zshrc $HOME/
 
@@ -31,6 +30,7 @@ rm -rf ~/.config/vifm
 mkdir ~/.config/vifm
 ln -sv $HOME/dotfiles/vifm/vifmrc $HOME/.config/vifm/
 ln -sv $HOME/dotfiles/vifm/scripts/ $HOME/.config/vifm/
+ln -sv $HOME/dotfiles/scripts/update.sh $HOME/
 
 # Final message
 echo "Most things installed, please setup browser and IntelliJ manually"
