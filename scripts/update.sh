@@ -6,7 +6,7 @@ paru -Qdtq | paru -Rcns - # removes orphaned packages with paru
 flatpak update             # updates packages with flatpak
 flatpak uninstall --unused # remove unused dependencies
 
-pip-review --local --auto # update pip3 packages
+pip install -U $(pip list --outdated | awk 'NR>2 {print }' | xargs -n1) # update pip3 packages
 
 rustup upgrade                            # update rust
 cargo-install-update install-update --all # update cargo packages
