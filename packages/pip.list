@@ -1,7 +1,2 @@
-autopep8
-debugpy
 pip-review
-pylint
-pyright
-ueberzug
 xlsx2csv

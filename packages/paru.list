@@ -1,5 +1,6 @@
 afetch
 astyle
+autopep8
 bleachbit
 bottom
 catdoc
@@ -40,6 +41,8 @@ poppler
 prismlauncher
 procs
 pypy3
+pyright
+python-debugpy
 python-pip
 python3.11
 ripgrep
@@ -50,6 +53,7 @@ solaar
 starship
 tealdeer
 tokei
+ueberzug
 vifm
 whoogle
 xorg-xkill
