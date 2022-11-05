@@ -6,6 +6,7 @@ catdoc
 clang
 cmake
 conan
+cubiomes-viewer
 deadbeef
 discord
 djvulibre
@@ -14,8 +15,8 @@ fd
 feh
 ffmpegthumbnailer
 fixjson
-flatpak
 fontpreview
+gimp
 git-delta
 intellij-idea-community-edition
 jdk17-openjdk
@@ -30,10 +31,13 @@ ncdu
 neovim
 nim
 ninja
+obs-studio
+obsidian
 otf-fantasque-sans-mono
 pandoc
 pnpm
 poppler
+prismlauncher
 procs
 pypy3
 python-pip
@@ -41,6 +45,7 @@ python3.11
 ripgrep
 rust-analyzer-nightly-bin
 shfmt
+skypeforlinux-stable-bin
 solaar
 starship
 tealdeer
