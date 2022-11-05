@@ -261,8 +261,8 @@ fileviewer <font/*>
 
 fileviewer {*.csv,*.docx,*.odt,*.rtf} pandoc -t markdown %c
 fileviewer *.doc catdoc %c
-fileviewer *.xls xls2csv %c | pandoc -f csv -t markdown
-fileviewer *.xlsx xlsx2csv %c | pandoc -f csv -t markdown
+fileviewer *.xls in2csv %c | pandoc -f csv -t markdown
+fileviewer *.xlsx in2csv %c | pandoc -f csv -t markdown
 
 " ------------------------------------------------------------------------------
 
