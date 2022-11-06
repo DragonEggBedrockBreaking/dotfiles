@@ -1,23 +1,17 @@
 # Adds a blank line between shell prompts
 add_newline = true
 
-# Set format
 format = """
-$directory\
-$git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
-$git_status\
-$python\
-$java\
-$kotlin\
-$rust\
-$cmd_duration
-$character"""
+(bold green)$directory$git_branch$git_commit$git_state$git_metrics$git_status$time(bold yellow)$python$java$kotlin$rust$clang$cmd_duration
+(bold blue)$character
+"""
 
-# The character
+# Base stuff
 [character]
+disabled = false
+[hostname]
+disabled = false
+[username]
 disabled = false
 
 # Command duration
@@ -56,4 +50,8 @@ disabled = false
 disabled = false
 python_binary = ["python3.11"]
 [rust]
+disabled = false
+
+# Time
+[time]
 disabled = false
