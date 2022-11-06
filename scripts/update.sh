@@ -11,7 +11,7 @@ cargo-install-update install-update --all # update cargo packages
 source "$HOME/.sdkman/bin/sdkman-init.sh" # start sdkman
 sdk update                                # update sdkman cache
 sdk selfupdate                            # update sdkman
-sdk list java | rg amzn | rg 17           # update java from sdkman
+sdk list java | rg amzn | rg "17\."           # update java from sdkman
 
 nvim -c ":PackerSync" # update neovim plugins
 
