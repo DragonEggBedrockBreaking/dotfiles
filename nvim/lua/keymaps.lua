@@ -8,7 +8,8 @@ map('n', 'rcpp', ':!clang++ --std=c++20 -g -fuse-ld=mold % -o main && ./main<CR>
 map('n', 'ocpp', ':!clang++ --std=c++20 -O3 -fuse-ld=mold % -o main && ./main<CR>', {noremap = true}) -- C++ (release)
 map('n', 'rrs', ':!cargo run<CR>', {noremap = true}) -- Rust (debug)
 map('n', 'ors', ':!cargo run --release<CR>', {noremap = true}) -- Rust (release)
-map('n', 'rpy', ':!python3.11 %<CR>', {noremap = true}) -- Python (normal interpreter)
+map('n', 'rpy', ':!python3.11 %<CR>', {noremap = true}) -- Python (normal interpreter, latest)
+map('n', 'rpys', ':!python3.10 %<CR>', {noremap = true}) -- Python (normal interpreter, stable)
 map('n', 'opp', ':!pypy3 %<CR>', {noremap = true}) -- Python (pypy)
 
 -- nvim-dap (debugging)
