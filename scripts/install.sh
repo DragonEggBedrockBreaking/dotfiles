@@ -10,6 +10,9 @@ curl -s "https://get.sdkman.io" | bash                           # Installs sdkm
 source "$HOME/.sdkman/bin/sdkman-init.sh"                        # Gets ready for installing sdk packages
 sdk i <packages/sdk.list                                         # Installs sdk packages
 
+# Install cht
+curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh && sudo chmod +x /usr/local/bin/cht.sh
+
 # Install packer.nvim, then setup nvim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 rm -rf ~/.config/nvim

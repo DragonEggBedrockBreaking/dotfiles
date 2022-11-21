@@ -115,4 +115,10 @@ return require('packer').startup(function()
             require("yanky").setup {}
         end
     }
+    use { -- cht.sh
+        "RishabhRD/nvim-cheat.sh",
+        requires = {
+            "RishabhRD/popfix"
+        }
+    }
 end)

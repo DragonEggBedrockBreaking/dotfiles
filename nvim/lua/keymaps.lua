@@ -67,3 +67,9 @@ map('n', 'gp', '<Plug>(YankyGPutAfter)', { noremap = true })
 map('n', 'gP', '<Plug>(YankyGPutBefore)', { noremap = true })
 map('n', '<c-n>', '<Plug>(YankyCycleForward)', { noremap = true })
 map('n', '<c-p>', '<Plug>(YankyCycleBackward)', { noremap = true })
+
+-- cheat
+map('n', '<leader>k', ':Cheat', { noremap = true })
+map('n', '<leader>kl', ':CheatList', { noremap = true })
+map('n', '<leader>kw', ':CheatWithoutComments', { noremap = true })
+map('n', '<leader>kwl', ':CheatListWithoutComments', { noremap = true })
