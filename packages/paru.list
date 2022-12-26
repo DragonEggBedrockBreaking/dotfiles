@@ -5,6 +5,7 @@ bleachbit
 bottom
 catdoc
 clang
+clion
 cmake
 conan
 csvkit
@@ -41,6 +42,7 @@ pandoc
 poppler
 prismlauncher
 procs
+pycharm-community-edition
 pypy3
 pyright
 python-debugpy

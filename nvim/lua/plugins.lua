@@ -109,16 +109,4 @@ return require('packer').startup(function()
             "rcarriga/nvim-notify"
         }
     }
-    use {
-        "gbprod/yanky.nvim",
-        config = function()
-            require("yanky").setup {}
-        end
-    }
-    use { -- cht.sh
-        "RishabhRD/nvim-cheat.sh",
-        requires = {
-            "RishabhRD/popfix"
-        }
-    }
 end)

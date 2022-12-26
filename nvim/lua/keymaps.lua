@@ -1,17 +1,6 @@
 --Keymapping function
 local map = vim.api.nvim_set_keymap
 
--- running code
-map('n', 'rcc', ':!clang --std=c17 -g -fuse-ld=mold % -o main && ./main<CR>', {noremap = true}) -- C (debug)
-map('n', 'occ', ':!clang --std=c17 -O3 -fuse-ld=mold % -o main && ./main<CR>', {noremap = true}) -- C (release)
-map('n', 'rcpp', ':!clang++ --std=c++20 -g -fuse-ld=mold % -o main && ./main<CR>', {noremap = true}) -- C++ (debug)
-map('n', 'ocpp', ':!clang++ --std=c++20 -O3 -fuse-ld=mold % -o main && ./main<CR>', {noremap = true}) -- C++ (release)
-map('n', 'rrs', ':!cargo run<CR>', {noremap = true}) -- Rust (debug)
-map('n', 'ors', ':!cargo run --release<CR>', {noremap = true}) -- Rust (release)
-map('n', 'rpy', ':!python3.11 %<CR>', {noremap = true}) -- Python (normal interpreter, latest)
-map('n', 'rpys', ':!python3.10 %<CR>', {noremap = true}) -- Python (normal interpreter, stable)
-map('n', 'opp', ':!pypy3 %<CR>', {noremap = true}) -- Python (pypy)
-
 -- nvim-dap (debugging)
 map('n', '<leader>c', ':lua require("dap").continue()<CR>', {noremap = true})
 map('n', '<leader>n', ':lua require("dap").step_over()<CR>', {noremap = true})
@@ -59,17 +48,3 @@ map('n', '<leader>x.', ':lua require("trouble").next({skip_groups = true, jump =
 
 -- null-ls.nvim (formatting)
 map('n', 'fmt', ':lua vim.lsp.buf.format {async = true}<CR>', {noremap = true})
-
--- yanky
-map('n', 'p', '<Plug>(YankyPutAfter)', { noremap = true })
-map('n', 'P', '<Plug>(YankyPutBefore)', { noremap = true })
-map('n', 'gp', '<Plug>(YankyGPutAfter)', { noremap = true })
-map('n', 'gP', '<Plug>(YankyGPutBefore)', { noremap = true })
-map('n', '<c-n>', '<Plug>(YankyCycleForward)', { noremap = true })
-map('n', '<c-p>', '<Plug>(YankyCycleBackward)', { noremap = true })
-
--- cheat
-map('n', '<leader>k', ':Cheat', { noremap = true })
-map('n', '<leader>kl', ':CheatList', { noremap = true })
-map('n', '<leader>kw', ':CheatWithoutComments', { noremap = true })
-map('n', '<leader>kwl', ':CheatListWithoutComments', { noremap = true })

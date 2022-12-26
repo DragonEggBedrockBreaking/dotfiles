@@ -1,4 +1,4 @@
-require('dap-python').setup('/usr/bin/python3.11')
+require('dap-python').setup('/usr/bin/python3')
 
 local dap = require('dap')
 dap.adapters.lldb = {
