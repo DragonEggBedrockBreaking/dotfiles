@@ -4,14 +4,9 @@
 paru -Syu                                                        # Updates system packages
 paru -S <packages/paru.list                                      # Installes paru packages
 curl --proto '=https' --tlsv1.2 -sSf "https://sh.rustup.rs" | sh # Installs rust
-source "$HOME/.cargo/env"                                        # Gets ready for installing cargo packages
-cargo install <packages/cargo.list                               # Installs cargo packages
 curl -s "https://get.sdkman.io" | bash                           # Installs sdkman
 source "$HOME/.sdkman/bin/sdkman-init.sh"                        # Gets ready for installing sdk packages
 sdk i <packages/sdk.list                                         # Installs sdk packages
-
-# Install cht
-curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh && sudo chmod +x /usr/local/bin/cht.sh
 
 # Install packer.nvim, then setup nvim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
@@ -36,4 +31,4 @@ ln -sv $HOME/dotfiles/vifm/scripts/ $HOME/.config/vifm/
 ln -sv $HOME/dotfiles/scripts/update.sh $HOME/
 
 # Final message
-echo "Most things installed, please setup browser and IntelliJ manually"
+echo "Most things installed, please setup browser and IDEs manually"
