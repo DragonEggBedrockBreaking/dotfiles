@@ -47,7 +47,9 @@ python-debugpy
 python-pip
 python3.11
 ripgrep
-ruby
+rbenv
+ruby-build
+rubymine
 rust-analyzer-nightly-bin
 shfmt
 skypeforlinux-stable-bin

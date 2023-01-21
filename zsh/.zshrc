@@ -54,5 +54,6 @@ alias vifm='~/.config/vifm/scripts/vifmrun'
 afetch                            # shell header
 eval "$(zoxide init zsh)"         # sets up zoxide (alternative to c)
 eval "$(starship init zsh)"       # sets up starship (shell theme sort of thing)
+eval "$(rbenv init - zsh)"
 export SDKMAN_DIR="$HOME/.sdkman" # sdkman package manager stuff
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
