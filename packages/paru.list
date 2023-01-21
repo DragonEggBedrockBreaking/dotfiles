@@ -9,8 +9,6 @@ clion
 cmake
 conan
 csvkit
-cubiomes-viewer
-deadbeef
 discord
 djvulibre
 dust
@@ -29,7 +27,6 @@ keepassxc
 lldb
 llvm
 lshw
-mcaselector
 meson
 mold
 ncdu
@@ -50,6 +47,7 @@ python-debugpy
 python-pip
 python3.11
 ripgrep
+ruby
 rust-analyzer-nightly-bin
 shfmt
 skypeforlinux-stable-bin
@@ -60,8 +58,6 @@ tokei
 ueberzug
 vifm
 whoogle
-xorg-xkill
 youtube-dl
-zig
 zoxide
 zsh
