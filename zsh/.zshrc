@@ -43,17 +43,14 @@ alias texa='exa -Th@ --colour=auto --icons --no-permissions --git'
 alias fd='fd -uuij 4'
 alias procs='procs --tree --color always'
 alias rg='rg -uuupj 4'
-alias py11='python3.11'
 alias tokei='tokei --hidden'
 alias brachyura='java -jar brachyura-bootstrap-0.jar'
-alias obsidian='flatpak run md.obsidian.Obsidian'
 alias szrc='source $HOME/.zshrc'
-alias vifm='~/.config/vifm/scripts/vifmrun'
 
 # other
 afetch                            # shell header
 eval "$(zoxide init zsh)"         # sets up zoxide (alternative to c)
 eval "$(starship init zsh)"       # sets up starship (shell theme sort of thing)
-eval "$(rbenv init - zsh)"
+eval "$(rbenv init - zsh)"        # sets up ruby
 export SDKMAN_DIR="$HOME/.sdkman" # sdkman package manager stuff
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
