@@ -7,6 +7,8 @@ clang
 cmake
 conan
 discord
+dotnet-runtime
+dotnet-sdk
 dust
 eslint
 exa
@@ -15,6 +17,7 @@ feh
 fixjson
 gimp
 git-delta
+godot
 java17-openjfx
 jdk17-openjdk
 jetbrains-toolbox
