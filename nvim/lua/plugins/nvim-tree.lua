@@ -1,7 +1,6 @@
 require('nvim-tree').setup {
     disable_netrw = true,
     hijack_cursor = true,
-    open_on_setup_file = true,
     update_cwd = true,
     view = {
         width = 25,
@@ -19,4 +18,6 @@ require('nvim-tree').setup {
         ignore = false
     }
 }
+
+require("nvim-tree.api").tree.open()
 
