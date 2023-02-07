@@ -54,3 +54,4 @@ eval "$(starship init zsh)"       # sets up starship (shell theme sort of thing)
 eval "$(rbenv init - zsh)"        # sets up ruby
 export SDKMAN_DIR="$HOME/.sdkman" # sdkman package manager stuff
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
