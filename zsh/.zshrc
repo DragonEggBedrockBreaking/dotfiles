@@ -1,4 +1,4 @@
-# Zgenom
+# zgenom
 source "${HOME}/.zgenom/zgenom.zsh" # setup zgenom
 zgenom autoupdate                   # auto update zgenom
 if ! zgenom saved; then
@@ -28,13 +28,17 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up # better zsh history
 export LANG=en_GB.UTF-8   # some programs use it
 export EDITOR=nvim        # some programs use it
 export GPG_TTY=$(tty)     # needed for git commits
-export CC=clang           # meson+ninja uses clang for c
-export CXX=clang++        # meson+ninja uses clang++ for c++
-export CC_LD=mold         # meson+ninja uses mold as c linker
-export CXX_LD=mold        # meson+ninja uses mold as c++ linker
+export CC=clang           # use clang for c
+export CXX=clang++        # use clang++ for c++
+export CC_LD=mold         # use mold as c linker
+export CXX_LD=mold        # use mold as c++ linker
+export SDKMAN_DIR="$HOME/.sdkman" # sdkman package manager stuff
+export MOZ_ENABLE_WAYLAND=1  # use native wayland in firefox-based browsers
+export MOZ_DBUS_REMOTE=1  # mage firefox wayland work properly
+export DOTNET_CLI_TELEMETRY
 export PATH="$PATH:/usr/local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin:$HOME/.config/vifm/scripts"
 
-# Aliases
+# aliases
 alias bat='bat --force-colorization --theme ansi'
 alias btm='btm -Smkg'
 alias exa='exa -ah@ --colour=auto --icons --git --group-directories-first'
@@ -47,11 +51,13 @@ alias tokei='tokei --hidden'
 alias brachyura='java -jar brachyura-bootstrap-0.jar'
 alias szrc='source $HOME/.zshrc'
 
-# other
-afetch                            # shell header
+# set up programs
 eval "$(zoxide init zsh)"         # sets up zoxide (alternative to c)
 eval "$(starship init zsh)"       # sets up starship (shell theme sort of thing)
 eval "$(rbenv init - zsh)"        # sets up ruby
-export SDKMAN_DIR="$HOME/.sdkman" # sdkman package manager stuff
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"  # Sets up sdkman
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh  # Sets up miniconda
+
+# Other
+afetch # shell header
