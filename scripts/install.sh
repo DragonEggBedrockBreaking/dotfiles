@@ -24,10 +24,6 @@ ln -sv $HOME/dotfiles/zsh/.zshrc $HOME/
 # Setup other configs (starship, vifm)
 rm ~/.config/starship.toml
 ln -sv $HOME/dotfiles/starship/starship.toml $HOME/.config/
-rm -rf ~/.config/vifm
-mkdir ~/.config/vifm
-ln -sv $HOME/dotfiles/vifm/vifmrc $HOME/.config/vifm/
-ln -sv $HOME/dotfiles/vifm/scripts/ $HOME/.config/vifm/
 ln -sv $HOME/dotfiles/scripts/update.sh $HOME/
 
 # Final message
