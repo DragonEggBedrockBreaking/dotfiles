@@ -1,31 +1,10 @@
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim' --plugin manager manages itself
-    use { -- autocompletion/snippets
-        'ms-jpq/coq_nvim',
-        branch = 'coq',
-        requires = {
-            {
-                'ms-jpq/coq.artifacts',
-                branch = 'artifacts'
-            },
-            'neovim/nvim-lspconfig'
-        },
-        config = function()
-            require('plugins.coq')
-        end
-    }
     use { -- better syntax highlighting
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate',
         config = function()
             require('plugins.treesitter')
-        end
-    }
-    use { -- debugging
-        'mfussenegger/nvim-dap',
-        requires = 'mfussenegger/nvim-dap-python',
-        config = function()
-            require('plugins.nvim-dap')
         end
     }
     use { -- the theme; make background transparent
@@ -82,20 +61,6 @@ return require('packer').startup(function()
         'yamatsum/nvim-cursorline',
         config = function()
             require('plugins.nvim-cursorline')
-        end
-    }
-    use 'ellisonleao/glow.nvim' -- markdown previewer
-    use { -- linting stuff
-        "folke/trouble.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
-        config = function()
-            require('plugins.trouble')
-        end
-    }
-    use { -- formatting
-        "mhartington/formatter.nvim",
-        config = function()
-            require('plugins.formatter')
         end
     }
     use { -- better gui

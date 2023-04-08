@@ -1,6 +1,4 @@
 afetch
-astyle
-autopep8
 bleachbit
 bottom
 clang
@@ -10,7 +8,6 @@ discord
 dotnet-runtime
 dotnet-sdk
 dust
-eslint
 exa
 fd
 feh
@@ -18,12 +15,9 @@ fixjson
 gimp
 git-delta
 godot-mono-bin
-java17-openjfx
 jdk17-openjdk
 jetbrains-toolbox
 keepassxc
-lldb
-llvm
 lshw
 meson
 miniconda3
@@ -35,20 +29,15 @@ notable
 obs-studio
 otf-fantasque-sans-mono
 pdfarranger
-plasma-wayland-session
 portmaster-stub-bin
 preload
 prismlauncher
 procs
-pypy3
-pyright
-python-debugpy
 python-pip
 python3.11
 ripgrep
 rbenv
 ruby-build
-rust-analyzer-nightly-bin
 shfmt
 skypeforlinux-stable-bin
 solaar
@@ -56,7 +45,6 @@ starship
 tealdeer
 tokei
 vifm
-waydroid
 whoogle
 youtube-dl
 zoxide
