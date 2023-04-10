@@ -48,13 +48,16 @@ alias rg='rg -uuupj 4'
 alias tokei='tokei --hidden'
 alias brachyura='java -jar brachyura-bootstrap-0.jar'
 alias szrc='source $HOME/.zshrc'
+alias hx='helix'
 
 # set up programs
 eval "$(zoxide init zsh)"                                                                      # sets up zoxide (alternative to c)
 eval "$(starship init zsh)"                                                                    # sets up starship (shell theme sort of thing)
-eval "$(rbenv init - zsh)"                                                                     # sets up ruby
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"       # Sets up sdkman
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh # Sets up miniconda
 
 # Other
-afetch # shell header
+fortune | cowsay # shell header
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

@@ -1,4 +1,3 @@
-afetch
 bleachbit
 bottom
 clang
@@ -12,18 +11,21 @@ exa
 fd
 feh
 fixjson
+fortune
 gimp
 git-delta
 godot-mono-bin
+helix
 jdk17-openjdk
+jdtls
 jetbrains-toolbox
 keepassxc
+kotlin-language-server
 lshw
 meson
 miniconda3
 mold
 ncdu
-neovim
 ninja
 notable
 obs-studio
@@ -35,6 +37,7 @@ prismlauncher
 procs
 python-pip
 python3.11
+r
 ripgrep
 rbenv
 ruby-build
@@ -44,6 +47,7 @@ solaar
 starship
 tealdeer
 tokei
+typescript
 vifm
 whoogle
 youtube-dl
