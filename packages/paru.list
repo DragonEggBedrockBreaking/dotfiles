@@ -20,6 +20,7 @@ jdk17-openjdk
 jdtls
 jetbrains-toolbox
 keepassxc
+kotlin
 kotlin-language-server
 lshw
 meson
@@ -39,8 +40,6 @@ python-pip
 python3.11
 r
 ripgrep
-rbenv
-ruby-build
 shfmt
 skypeforlinux-stable-bin
 solaar
