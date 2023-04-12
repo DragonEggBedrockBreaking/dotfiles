@@ -13,7 +13,7 @@ ln -sv $HOME/dotfiles/zsh/.zshrc $HOME/
 
 # Install/setup ruby
 curl -L get.rvm.io > rvm-install
-zh ./rvm-install --auto-dotfiles
+bash ./rvm-install --auto-dotfiles
 rvm install 3.2.2
 zsh --login -c 'rvm use 3.2.2 --default'
 source ~/.zshrc
@@ -24,6 +24,7 @@ rm ~/.config/starship.toml
 ln -sv $HOME/dotfiles/starship/starship.toml $HOME/.config/
 mkdir ~/.config/helix
 ln -sv $HOME/dotfiles/helix/config.toml $HOME/.config/helix/
+ln -sv $HOME/dotfiles/helix/languages.toml $HOME/.config/helix/
 ln -sv $HOME/dotfiles/scripts/update.sh $HOME/
 
 # Final message

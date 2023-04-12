@@ -3,6 +3,7 @@ bottom
 clang
 cmake
 conan
+cowsay
 discord
 dotnet-runtime
 dotnet-sdk
@@ -10,8 +11,7 @@ dust
 exa
 fd
 feh
-fixjson
-fortune
+fortune-mod
 gimp
 git-delta
 godot-mono-bin
@@ -28,7 +28,6 @@ miniconda3
 mold
 ncdu
 ninja
-notable
 obs-studio
 otf-fantasque-sans-mono
 pdfarranger
@@ -37,7 +36,7 @@ preload
 prismlauncher
 procs
 python-pip
-python3.11
+python311
 r
 ripgrep
 shfmt
