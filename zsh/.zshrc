@@ -26,7 +26,7 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up # better zsh history
 
 # env vars
 export LANG=en_GB.UTF-8              # some programs use it
-export EDITOR=nvim                   # some programs use it
+export EDITOR=helix                  # some programs use it
 export GPG_TTY=$(tty)                # needed for git commits
 export CC=clang                      # use clang for c
 export CXX=clang++                   # use clang++ for c++
@@ -34,7 +34,7 @@ export CC_LD=mold                    # use mold as c linker
 export CXX_LD=mold                   # use mold as c++ linker
 export SDKMAN_DIR="$HOME/.sdkman"    # sdkman package manager stuff
 export DOTNET_CLI_TELEMETRY_OPTOUT=1 # disable dotnet telemetry
-export PATH="$PATH:/usr/local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin:$HOME/.config/vifm/scripts:$HOME/.rbenv/bin"
+export PATH="$PATH:/usr/local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin:$HOME/.rbenv/bin"
 
 # aliases
 alias bat='bat --force-colorization --theme ansi'
@@ -55,7 +55,7 @@ eval "$(zoxide init zsh)"                                                       
 eval "$(starship init zsh)"                                                                    # sets up starship (shell theme sort of thing)
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"       # Sets up sdkman
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh # Sets up miniconda
-eval "$(rbenv init -)"
+eval "$(rbenv init -)"                                                                         # Sets up ruby
 
 # Other
 fortune | cowsay # shell header

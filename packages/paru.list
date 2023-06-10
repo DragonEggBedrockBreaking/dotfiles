@@ -38,7 +38,6 @@ prismlauncher
 procs
 python-pip
 python311
-r
 ripgrep
 shfmt
 skypeforlinux-stable-bin
@@ -48,7 +47,6 @@ tealdeer
 tokei
 typescript-language-server
 vifm
-whoogle
 youtube-dl
 zoxide
 zsh
