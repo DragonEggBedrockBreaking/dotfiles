@@ -1,3 +1,4 @@
+bitwarden
 bleachbit
 bottom
 clang
@@ -20,7 +21,6 @@ jdk17-openjdk
 jdk8-openjdk
 jdtls
 jetbrains-toolbox
-keepassxc
 kotlin
 kotlin-language-server
 lshw
