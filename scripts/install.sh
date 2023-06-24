@@ -12,10 +12,6 @@ rm ~/.zshrc
 ln -sv $HOME/dotfiles/zsh/.zshrc $HOME/
 
 # Install/setup ruby
-curl -L get.rvm.io > rvm-install
-bash ./rvm-install --auto-dotfiles
-rvm install 3.2.2
-zsh --login -c 'rvm use 3.2.2 --default'
 source ~/.zshrc
 gem install <packages/gem.list
 
