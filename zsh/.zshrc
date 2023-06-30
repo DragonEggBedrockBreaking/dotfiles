@@ -22,7 +22,6 @@ SAVEHIST=1000000                                       # how many things in hist
 setopt incappendhistory                                # incrementally append things to history
 unsetopt beep                                          # no beep
 bindkey "$terminfo[kcuu1]" history-substring-search-up # better zsh history
-bindkey "$terminfo[kcuu1]" history-substring-search-up # better zsh history
 
 # env vars
 export LANG=en_GB.UTF-8              # some programs use it
@@ -32,9 +31,8 @@ export CC=clang                      # use clang for c
 export CXX=clang++                   # use clang++ for c++
 export CC_LD=mold                    # use mold as c linker
 export CXX_LD=mold                   # use mold as c++ linker
-export SDKMAN_DIR="$HOME/.sdkman"    # sdkman package manager stuff
 export DOTNET_CLI_TELEMETRY_OPTOUT=1 # disable dotnet telemetry
-export PATH="$PATH:/usr/local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin:$HOME/.rbenv/bin"
+export PATH="$PATH:/usr/local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin"
 
 # aliases
 alias bat='bat --force-colorization --theme ansi'
@@ -42,9 +40,9 @@ alias btm='btm -Smkg'
 alias exa='exa -ah@ --colour=auto --icons --git --group-directories-first'
 alias lexa='exa -lah@ --colour=auto --icons --no-permissions --git --group-directories-first'
 alias texa='exa -Th@ --colour=auto --icons --no-permissions --git'
-alias fd='fd -uuij 4'
+alias fd='fd -uuij 16'
 alias procs='procs --tree --color always'
-alias rg='rg -uuupj 4'
+alias rg='rg -uuupj 16'
 alias tokei='tokei --hidden'
 alias brachyura='java -jar brachyura-bootstrap-0.jar'
 alias szrc='source $HOME/.zshrc'
@@ -53,9 +51,7 @@ alias hx='helix'
 # set up programs
 eval "$(zoxide init zsh)"                                                                      # sets up zoxide (alternative to c)
 eval "$(starship init zsh)"                                                                    # sets up starship (shell theme sort of thing)
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"       # Sets up sdkman
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh # Sets up miniconda
-eval "$(rbenv init -)"                                                                         # Sets up ruby
 
 # Other
 fortune | cowsay # shell header
