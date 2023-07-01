@@ -15,6 +15,8 @@ feh
 fortune-mod
 gimp
 git-delta
+go
+goplx
 godot-mono-bin
 helix
 jdk17-openjdk
@@ -38,12 +40,14 @@ prismlauncher
 procs
 python-pip
 python311
+pyright
 ripgrep
 shfmt
 skypeforlinux-stable-bin
 solaar
 starship
 tealdeer
+texlab
 tokei
 typescript-language-server
 vifm
