@@ -11,10 +11,6 @@ source "${HOME/.zgenom/zgenom.zsh}"
 rm ~/.zshrc
 ln -sv $HOME/dotfiles/zsh/.zshrc $HOME/
 
-# Install/setup ruby
-source ~/.zshrc
-gem install <packages/gem.list
-
 # Setup other configs (starship, vifm)
 rm ~/.config/starship.toml
 ln -sv $HOME/dotfiles/starship/starship.toml $HOME/.config/

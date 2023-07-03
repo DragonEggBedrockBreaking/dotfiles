@@ -49,8 +49,8 @@ alias szrc='source $HOME/.zshrc'
 alias hx='helix'
 
 # set up programs
-eval "$(zoxide init zsh)"                                                                      # sets up zoxide (alternative to c)
-eval "$(starship init zsh)"                                                                    # sets up starship (shell theme sort of thing)
+eval "$(zoxide init zsh)"                                                                      # sets up zoxide (alternative to cd)
+eval "$(starship init zsh)"                                                                    # sets up starship (part of shell theme)
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh # Sets up miniconda
 
 # Other
