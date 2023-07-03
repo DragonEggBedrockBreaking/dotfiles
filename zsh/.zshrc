@@ -36,7 +36,6 @@ export PATH="$PATH:/usr/local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin"
 
 # aliases
 alias bat='bat --force-colorization --theme ansi'
-alias btm='btm -Smkg'
 alias exa='exa -ah@ --colour=auto --icons --git --group-directories-first'
 alias lexa='exa -lah@ --colour=auto --icons --no-permissions --git --group-directories-first'
 alias texa='exa -Th@ --colour=auto --icons --no-permissions --git'
