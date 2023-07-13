@@ -19,5 +19,10 @@ ln -sv $HOME/dotfiles/helix/config.toml $HOME/.config/helix/
 ln -sv $HOME/dotfiles/helix/languages.toml $HOME/.config/helix/
 ln -sv $HOME/dotfiles/scripts/update.sh $HOME/
 
+# Change shell
+chsh -s /usr/bin/zsh
+
 # Final message
-echo "Most things installed, please setup browser and IDEs manually"
+echo "Most things installed, please setup browser and IDEs manually. First, your computer will restart in 10 seconds."
+sleep 10s
+reboot
