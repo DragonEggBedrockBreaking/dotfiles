@@ -1,6 +1,6 @@
 bitwarden
 bleachbit
-clang-git
+clang
 cmake
 conan
 cowsay
@@ -24,6 +24,7 @@ jdtls
 jetbrains-toolbox
 kotlin
 kotlin-language-server
+llvm
 lshw
 meson
 miniconda3
