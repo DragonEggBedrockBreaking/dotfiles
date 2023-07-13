@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Install packages (assumes paru is installed)
-paru -Syu                                                        # Updates system packages
-paru -S <packages/paru.list                                      # Installes paru packages
-curl --proto '=https' --tlsv1.2 -sSf "https://sh.rustup.rs" | sh # Installs rust
+yes | paru -Syu                                                           # Updates system packages
+yes | paru -S <packages/paru.list                                         # Installes paru packages
+curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' | sh -s -- -y # Installs rust
 
 # Install zgenom, then setup zsh
 git clone https://github.com/jandamm/zgenom.git "${HOME}/.zgenom"
