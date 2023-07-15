@@ -23,6 +23,6 @@ ln -sv $HOME/dotfiles/scripts/update.sh $HOME/
 chsh -s /usr/bin/zsh
 
 # Final message
-echo "Most things installed, please setup browser and IDEs manually. First, your computer will restart in 10 seconds."
+echo "Most things installed, please setup browser manually. First, your computer will restart in 10 seconds."
 sleep 10s
 reboot
