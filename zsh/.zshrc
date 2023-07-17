@@ -5,7 +5,6 @@ if ! zgenom saved; then
 	zgenom ohmyzsh                                     # oh my zsh
 	zgenom ohmyzsh plugins/git                         # many git aliases
 	zgenom ohmyzsh plugins/sudo                        # easy sudo toggle
-	zgenom ohmyzsh plugins/vi-mode                     # vi keybinds
 	zgenom load zsh-users/zsh-autosuggestions          # autosuggestions
 	zgenom load zsh-users/zsh-syntax-highlighting      # syntax highlighting
 	zgenom load zsh-users/zsh-history-substring-search # better history traversal
