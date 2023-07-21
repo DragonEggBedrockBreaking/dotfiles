@@ -5,6 +5,7 @@ cmake
 conan
 cowsay
 discord
+docker
 dotnet-runtime
 dotnet-sdk
 dust
