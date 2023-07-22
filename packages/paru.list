@@ -4,6 +4,7 @@ clang
 cmake
 conan
 cowsay
+cuda
 discord
 docker
 dotnet-runtime
