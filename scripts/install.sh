@@ -35,6 +35,6 @@ echo "Changing shell..."
 chsh -s /usr/bin/zsh
 
 # Final message
-echo "Most things installed, please install browser addons manually. First, your computer will restart in 10 seconds. Press C-c to cancel and reboot later."
+echo "Computer has been set up. Your computer will restart in 10 seconds. Press C-c to cancel and reboot later."
 sleep 10s
 reboot
