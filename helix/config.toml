@@ -1,8 +1,0 @@
-theme = "sonokai"
-
-[editor]
-shell = ["zsh", "-c"]
-completion-replace = true
-
-[editor.statusline]
-center = ["version-control"]

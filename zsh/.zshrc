@@ -44,7 +44,6 @@ alias rg='rg -uuupj 16'
 alias tokei='tokei --hidden'
 alias brachyura='java -jar brachyura-bootstrap-0.jar'
 alias szrc='source $HOME/.zshrc'
-alias hx='helix'
 
 # set up programs
 eval "$(zoxide init zsh)"                                                                      # sets up zoxide (alternative to cd)

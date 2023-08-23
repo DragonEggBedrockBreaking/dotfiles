@@ -13,6 +13,13 @@ source "${HOME/.zgenom/zgenom.zsh}"
 rm ~/.zshrc
 ln -sv $HOME/dotfiles/zsh/.zshrc $HOME/
 
+# Install packer.nvim, then setup nvim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+echo "Configuring neovim editor..."
+mkdir ~/.config/nvim
+ln -sv $HOME/dotfiles/nvim/init.lua $HOME/.config/nvim/
+ln -sv $HOME/dotfiles/nvim/lua/ $HOME/.config/nvim/
+
 # Browser
 echo "Configuring firedragon browser..."
 firedragon &>/dev/null &
@@ -20,14 +27,11 @@ sleep 1
 killall -q firedragon
 python update_prefsjs.py
 
-# Setup other configs (starship, helix)
+# Setup other configs (starship, update script)
 echo "Configuring starship shell prompt..."
 rm ~/.config/starship.toml
 ln -sv $HOME/dotfiles/starship/starship.toml $HOME/.config/
-echo "Configuring helix editor..."
-mkdir ~/.config/helix
-ln -sv $HOME/dotfiles/helix/config.toml $HOME/.config/helix/
-ln -sv $HOME/dotfiles/helix/languages.toml $HOME/.config/helix/
+echo "Adding update script..."
 ln -sv $HOME/dotfiles/scripts/update.sh $HOME/
 
 # Change shell
@@ -35,6 +39,6 @@ echo "Changing shell..."
 chsh -s /usr/bin/zsh
 
 # Final message
-echo "Computer has been set up. Your computer will restart in 10 seconds. Press C-c to cancel and reboot later."
-sleep 10s
+echo "Computer has been set up. Your computer will restart in 5 seconds. Press C-c to cancel and reboot later."
+sleep 5s
 reboot
