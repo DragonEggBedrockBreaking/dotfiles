@@ -2,13 +2,16 @@
 
 # Install packages (assumes paru is installed)
 echo "Installing packages..."
-sudo apt install <packages/apt.list
+sudo apt install $(cat packages/apt.list)
 curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' | sh -s -- -y
 source $HOME/.cargo/env
-cargo install <packages/cargo.list
-npm install <packages/npm.list
-sudo snap install <packages/snap.list
-flatpak install <packages/flatpak.list
+cargo install $(cat packages/cargo.list)
+cd ..
+npm install $(cat packages/npm.list)
+cd dotfiles
+flatpak install $(cat packages/flatpak.list)
+sudo snap install godot4-mono
+sudo snap install nvim --classic
 
 # Install zgenom, then setup zsh
 echo "Configuring zsh..."
