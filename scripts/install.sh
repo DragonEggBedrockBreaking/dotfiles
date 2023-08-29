@@ -1,10 +1,14 @@
 #!/bin/bash
 
 # Install packages (assumes paru is installed)
-echo "Updating and installing packages..."
-yes | paru -Syu                                                           # Updates system packages
-yes | paru -S $(cat packages/paru.list)                                   # Installes paru packages
-curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' | sh -s -- -y # Installs rust
+echo "Installing packages..."
+sudo apt install <packages/apt.list
+curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' | sh -s -- -y
+source $HOME/.cargo/env
+cargo install <packages/cargo.list
+npm install <packages/npm.list
+sudo snap install <packages/snap.list
+flatpak install <packages/flatpak.list
 
 # Install zgenom, then setup zsh
 echo "Configuring zsh..."
@@ -20,13 +24,6 @@ mkdir ~/.config/nvim
 ln -sv $HOME/dotfiles/nvim/init.lua $HOME/.config/nvim/
 ln -sv $HOME/dotfiles/nvim/lua/ $HOME/.config/nvim/
 
-# Browser
-echo "Configuring firedragon browser..."
-firedragon &>/dev/null &
-sleep 1
-killall -q firedragon
-python update_prefsjs.py
-
 # Setup other configs (starship, update script)
 echo "Configuring starship shell prompt..."
 rm ~/.config/starship.toml
@@ -39,5 +36,5 @@ echo "Changing shell..."
 chsh -s /usr/bin/zsh
 
 # Final message
-echo "Computer has been set up. Your computer will restart in 5 seconds. Press C-c to cancel and reboot later."
+echo "Computer has been set up (some things may require manual intervention). Your computer will restart in 5 seconds. Press C-c to cancel and reboot later."
 sleep 5s && reboot
