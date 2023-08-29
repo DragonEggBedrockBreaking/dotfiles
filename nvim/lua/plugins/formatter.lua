@@ -7,8 +7,9 @@ require("formatter").setup({
                 return {
                     exe = "clang-format",
                     args = {
-                        "--style=llvm",
-                    }
+                        "--style=file"
+                    },
+                    stdin = true
                 }
             end
         },
@@ -17,7 +18,7 @@ require("formatter").setup({
                 return {
                     exe = "clang-format",
                     args = {
-                        "--style=llvm",
+                        "--style=file",
                     },
                     stdin = true
                 }

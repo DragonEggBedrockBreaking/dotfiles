@@ -3,6 +3,7 @@ vim.opt.expandtab = true --tabs to spaces
 vim.opt.shiftwidth = 4 --tab = 4 spaces
 vim.opt.smarttab = true --tabstop
 vim.opt.tabstop = 4 --tab = 4 spaces
+vim.opt.formatoptions -= co --comment on newline disabled for o in command (not enter in i)
 
 vim.opt.ignorecase = true --ignore case in search
 vim.opt.smartcase = true --unless there's a capital
