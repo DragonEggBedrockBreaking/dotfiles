@@ -3,7 +3,6 @@ vim.opt.expandtab = true --tabs to spaces
 vim.opt.shiftwidth = 4 --tab = 4 spaces
 vim.opt.smarttab = true --tabstop
 vim.opt.tabstop = 4 --tab = 4 spaces
---vim.opt.formatoptions -= co --comment on newline disabled for o in command (not enter in i)
 
 vim.opt.ignorecase = true --ignore case in search
 vim.opt.smartcase = true --unless there's a capital
@@ -26,3 +25,5 @@ vim.completeopt = {'menu', 'menuone', 'noselect'} --helps autocomplete
 vim.opt.termguicolors = true --helps syntax highlighting
 vim.opt.laststatus = 2 --status line
 vim.opt.ttyfast = true --improves performance
+
+vim.api.nvim_exec([[autocmd FileType * set formatoptions-=o]], 0) --comment on 'o' disabled
