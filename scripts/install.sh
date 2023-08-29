@@ -3,7 +3,7 @@
 # Install packages (assumes paru is installed)
 echo "Updating and installing packages..."
 yes | paru -Syu                                                           # Updates system packages
-yes | paru -S <packages/paru.list                                         # Installes paru packages
+yes | paru -S $(cat packages/paru.list)                                   # Installes paru packages
 curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' | sh -s -- -y # Installs rust
 
 # Install zgenom, then setup zsh
@@ -40,5 +40,4 @@ chsh -s /usr/bin/zsh
 
 # Final message
 echo "Computer has been set up. Your computer will restart in 5 seconds. Press C-c to cancel and reboot later."
-sleep 5s
-reboot
+sleep 5s && reboot
