@@ -2,6 +2,7 @@
 
 # Install packages (assumes paru is installed)
 echo "Installing packages..."
+sudo add-apt-repository multiverse
 sudo apt install $(cat packages/apt.list)
 curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' | sh -s -- -y
 source $HOME/.cargo/env
@@ -12,6 +13,12 @@ cd dotfiles
 flatpak install $(cat packages/flatpak.list)
 sudo snap install godot4-mono
 sudo snap install nvim --classic
+wget https://launchpad.net/veracrypt/trunk/1.25.9/+download/veracrypt-1.25.9-Ubuntu-23.04-amd64.deb
+wget https://updates.safing.io/latest/linux_amd64/packages/portmaster-installer.deb
+sudo apt install *.deb
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+chmod +x Miniconda3-latest-linux-x86_64.sh
+./Miniconda3-latest-linux-x86_64.sh
 
 # Install zgenom, then setup zsh
 echo "Configuring zsh..."
