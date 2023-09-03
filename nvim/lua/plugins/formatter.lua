@@ -24,19 +24,19 @@ require("formatter").setup({
                 }
             end
         },
-        python = {
-            function()
-                return {
-                    exe = "autopep8",
-                    args = {
-                        "-a",
-                        "--experimental",
-                        "-"
-                    },
-                    stdin = true
-                }
-            end
-        },
+        -- python = {
+        --     function()
+        --         return {
+        --             exe = "autopep8",
+        --             args = {
+        --                 "-a",
+        --                 "--experimental",
+        --                 "-"
+        --             },
+        --             stdin = true
+        --         }
+        --     end
+        -- },
         json = {
             function()
                 return {
