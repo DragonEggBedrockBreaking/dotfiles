@@ -24,6 +24,18 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk install java 8.0.382-tem
 sdk install java 17.0.8.fx-zulu
 
+# Install fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/UbuntuMono.zip
+mkdir font-temp
+mv UbuntuMono.zip font-temp
+cd font-temp
+unzip UbuntuMono.zip
+mkdir ~/.fonts
+mv *.ttf ~/.fonts
+cd ..
+rm -rf font-temp
+fc-cache ~/.fonts
+
 # Install zgenom, then setup zsh
 echo "Configuring zsh..."
 git clone https://github.com/jandamm/zgenom.git "${HOME}/.zgenom"
