@@ -7,10 +7,12 @@ cowsay
 docker
 dotnet-runtime-7.0
 dotnet-sdk-7.0
+eog
 exa
 fd-find
 fortune-mod
 gimp
+gnome-system-monitor
 golang
 kdeconnect
 libfuse2
