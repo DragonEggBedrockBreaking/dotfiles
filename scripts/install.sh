@@ -21,7 +21,7 @@ rm *.sh *.deb                                                                   
 curl -s "https://get.sdkman.io" | bash                                                              # install sdkman
 source "$HOME/.sdkman/bin/sdkman-init.sh"                                                           # setup sdkman
 sdk install java 8.0.382-tem                                                                        # used for older mc versions
-sdk install java 21.ea.35-open                                                                      # used for newer mc versions
+sdk install java 21-graal                                                                           # used for newer mc versions
 sdk install java 17.0.8.fx-zulu                                                                     # used for general development - default (latest sdk)
 
 # Install fonts (unzip, move font files to ~/.fonts, rebuild font cache, cleanup) - no oapt/snap - VARIABLE URL
