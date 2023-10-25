@@ -1,20 +1,13 @@
 local lsp = require('lsp-zero').preset('recommended')
-lsp.ensure_installed({
-    'pyright',
-    'clangd',
-    'rust_analyzer',
-    'jdtls',
-    'gopls',
-    'eslint',
-    'tsserver',
-    'texlab',
+require('mason').setup({})
+require('mason-lspconfig').setup({
+    ensure_installed = { "pyright", "clangd", "rust_analyzer", "jdtls", "gopls", "eslint", "tsserver", "texlab" },
+    skip_server_setup = { "rust_analyzer", "clangd" }
 })
 
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({buffer = bufnr})
 end)
-lsp.skip_server_setup({'rust_analyzer'})
-lsp.skip_server_setup({'clangd'})
 
 lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}

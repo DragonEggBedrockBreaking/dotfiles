@@ -4,7 +4,7 @@ clang
 cloc
 cmake
 cowsay
-docker
+docker.io
 dotnet-runtime-7.0
 dotnet-sdk-7.0
 eog

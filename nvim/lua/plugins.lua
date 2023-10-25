@@ -40,12 +40,6 @@ return require('packer').startup(function()
             require('plugins.nvim-tree')
         end
     }
-    use { -- visual indents
-        'lukas-reineke/indent-blankline.nvim',
-        config = function()
-            require('plugins.indent-blankline')
-        end
-    }
     use { -- commenting in nvim
         'numToStr/Comment.nvim',
         config = function()
