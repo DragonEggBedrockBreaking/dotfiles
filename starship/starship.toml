@@ -34,10 +34,10 @@ disabled = false
 [c]
 detect_extensions = ['c', 'h', 'cpp', 'hpp']
 commands = [['gcc', '--version']]
-symbol = '🐂 '
+symbol = "𓄀  "
 [custom.clang]
 format = 'via [$symbol(v$output)-clang ]($style)'
-symbol = '🐉 '
+symbol = "𓆰𓆪 "
 detect_extensions = ['c', 'h', 'cpp', 'hpp']
-command = 'clang --version | head -n 1 | cut -d " " -f 3'
+command = 'clang --version | head -n 1 | cut -d " " -f 4'
 style = 'bold 149'
