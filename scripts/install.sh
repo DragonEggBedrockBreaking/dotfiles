@@ -24,8 +24,8 @@ sdk install java 8.0.382-tem                                                    
 sdk install java 21-graal                                                                           # used for newer mc versions
 sdk install java 17.0.8.fx-zulu                                                                     # used for general development - default (latest sdk)
 
-# Install fonts (unzip, move font files to ~/.fonts, rebuild font cache, cleanup) - no oapt/snap - VARIABLE URL
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/UbuntuMono.zip
+# Install fonts (unzip, move font files to ~/.fonts, rebuild font cache, cleanup) - VARIABLE URL
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/UbuntuMono.zip
 mkdir font-temp
 mv UbuntuMono.zip font-temp
 cd font-temp
