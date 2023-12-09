@@ -9,7 +9,6 @@ source $HOME/.cargo/env                                                         
 cargo install $(cat packages/cargo.list)                                                            # cargo packages (rust)
 sudo npm install -g $(cat packages/npm.list)                                                        # npm packages (nodejs)
 flatpak install $(cat packages/flatpak.list)                                                        # flatpak (installed manually though gui in welcome app on first boot)
-sudo snap install godot4-mono                                                                       # no apt/flatpak
 sudo snap install nvim --classic                                                                    # apt out of date
 wget https://launchpad.net/veracrypt/trunk/1.25.9/+download/veracrypt-1.25.9-Ubuntu-23.04-amd64.deb # no apt/snap/flatpak - VARIABLE URL
 wget https://updates.safing.io/latest/linux_amd64/packages/portmaster-installer.deb                 # no apt/snap/flatpak - CONSTANT URL

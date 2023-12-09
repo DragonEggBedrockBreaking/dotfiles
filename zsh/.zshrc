@@ -24,13 +24,12 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up # better zsh history
 
 # env vars
 export LANG=en_GB.UTF-8              # some programs use it
-export EDITOR=helix                  # some programs use it
+export EDITOR=nvim                   # some programs use it
 export GPG_TTY=$(tty)                # needed for git commits
 export CC=clang                      # use clang for c
 export CXX=clang++                   # use clang++ for c++
 export CC_LD=mold                    # use mold as c linker
 export CXX_LD=mold                   # use mold as c++ linker
-export DOTNET_CLI_TELEMETRY_OPTOUT=1 # disable dotnet telemetry
 export PATH="$PATH:/usr/local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin"
 
 # aliases
@@ -38,10 +37,7 @@ alias bat='bat --force-colorization --theme ansi'
 alias exa='exa -ah@ --colour=auto --icons --git --group-directories-first'
 alias lexa='exa -lah@ --colour=auto --icons --no-permissions --git --group-directories-first'
 alias texa='exa -Th@ --colour=auto --icons --no-permissions --git'
-alias fd='fd -uuij 16'
-alias procs='procs --tree --color always'
 alias rg='rg -uuupj 16'
-alias tokei='tokei --hidden'
 alias brachyura='java -jar brachyura-bootstrap-0.jar'
 alias szrc='source $HOME/.zshrc'
 
