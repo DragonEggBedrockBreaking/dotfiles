@@ -8,10 +8,13 @@ docker.io
 eog
 exa
 fortune-mod
+fzf
 gimp
 gnome-system-monitor
 golang
+handbrake
 kdeconnect
+libfuse2
 llvm
 lshw
 meson
@@ -24,6 +27,7 @@ nvidia-cuda-toolkit
 obs-studio
 pdfarranger
 python3-autopep8
+python3-venv
 ripgrep
 shfmt
 steam
