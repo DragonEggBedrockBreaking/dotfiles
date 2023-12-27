@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Install packages
+# Install most packages
 echo "Installing packages..."
 sudo add-apt-repository multiverse                                                  # apt repo
 sudo apt install $(cat packages/apt.list)                                           # apt packages
@@ -23,6 +23,11 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"                                       
 sdk install java 8.0.382-tem                                                        # used for older mc versions
 sdk install java 21-graal                                                           # used for newer mc versions
 sdk install java 17.0.8.fx-zulu                                                     # used for general development - default (latest sdk)
+# discord
+sudo -E gpg --no-default-keyring --keyring=/usr/share/keyrings/javinator9889-ppa-keyring.gpg --keyserver keyserver.ubuntu.com --recv-keys 08633B4AAAEB49FC
+sudo tee /etc/apt/sources.list.d/javinator9889-ppa.list <<< "deb [arch=amd64 signed-by=/usr/share/keyrings/javinator9889-ppa-keyring.gpg] https://ppa.javinator9889.com all main"
+sudo apt update
+sudo apt install discord
 
 # Install fonts (unzip, move font files to ~/.fonts, rebuild font cache, cleanup) - VARIABLE URL
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/UbuntuMono.zip
