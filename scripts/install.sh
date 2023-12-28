@@ -15,14 +15,14 @@ sudo snap install scc                                                           
 wget https://updates.safing.io/latest/linux_amd64/packages/portmaster-installer.deb # no apt/snap/flatpak - CONSTANT URL
 sudo apt install ./*.deb                                                            # install .deb packages
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh          # no apt/snap - CONSTANT URL
-chmod +x ./Miniconda3-latest-linux-x86_64.sh                                        # make script executable
-./Miniconda3-latest-linux-x86_64.sh                                                 # run install script
+chmod +x ./Miniconda3-latest-Linux-x86_64.sh                                        # make script executable
+./Miniconda3-latest-Linux-x86_64.sh                                                 # run install script
 rm *.sh *.deb                                                                       # cleanup of downloads
 curl -s "https://get.sdkman.io" | bash                                              # install sdkman
 source "$HOME/.sdkman/bin/sdkman-init.sh"                                           # setup sdkman
-sdk install java 8.0.382-tem                                                        # used for older mc versions
-sdk install java 21-graal                                                           # used for newer mc versions
-sdk install java 17.0.8.fx-zulu                                                     # used for general development - default (latest sdk)
+sdk install java 8.0.392-tem                                                        # used for older mc versions
+sdk install java 21.0.1-graal                                                           # used for newer mc versions
+sdk install java 17.0.9.fx-zulu                                                     # used for general development - default (latest sdk)
 # discord
 sudo -E gpg --no-default-keyring --keyring=/usr/share/keyrings/javinator9889-ppa-keyring.gpg --keyserver keyserver.ubuntu.com --recv-keys 08633B4AAAEB49FC
 sudo tee /etc/apt/sources.list.d/javinator9889-ppa.list <<< "deb [arch=amd64 signed-by=/usr/share/keyrings/javinator9889-ppa-keyring.gpg] https://ppa.javinator9889.com all main"
