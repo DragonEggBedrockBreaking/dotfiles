@@ -20,8 +20,8 @@ chmod +x ./Miniconda3-latest-Linux-x86_64.sh                                    
 rm *.sh *.deb                                                                       # cleanup of downloads
 curl -s "https://get.sdkman.io" | bash                                              # install sdkman
 source "$HOME/.sdkman/bin/sdkman-init.sh"                                           # setup sdkman
-sdk install java 8.0.392-tem                                                        # used for older mc versions
-sdk install java 21.0.2-graal                                                           # used for newer mc versions
+sdk install java 8.0.402-tem                                                        # used for older mc versions
+sdk install java 21.0.2-graal                                                       # used for newer mc versions
 sdk install java 17.0.9.fx-zulu                                                     # used for general development - default (latest sdk)
 # discord
 sudo -E gpg --no-default-keyring --keyring=/usr/share/keyrings/javinator9889-ppa-keyring.gpg --keyserver keyserver.ubuntu.com --recv-keys 08633B4AAAEB49FC
