@@ -4,7 +4,6 @@ zgenom autoupdate                   # auto update zgenom
 if ! zgenom saved; then
 	zgenom ohmyzsh                                     # oh my zsh
 	zgenom ohmyzsh plugins/git                         # many git aliases
-	zgenom ohmyzsh plugins/sudo                        # easy sudo toggle
 	zgenom load zsh-users/zsh-autosuggestions          # autosuggestions
 	zgenom load zsh-users/zsh-syntax-highlighting      # syntax highlighting
 	zgenom load zsh-users/zsh-history-substring-search # better history traversal
@@ -31,12 +30,11 @@ export CXX_LD=mold                   # use mold as c++ linker
 export PATH="$PATH:/usr/local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin"
 
 # aliases
-alias bat='batcat --force-colorization --theme ansi'
+alias bat='batcat --force-colorization --theme="Monokai Extended Bright"'
 alias exa='exa -ah@ --colour=auto --icons --git --group-directories-first'
 alias lexa='exa -lah@ --colour=auto --icons --no-permissions --git --group-directories-first'
 alias texa='exa -Th@ --colour=auto --icons --no-permissions --git -I ".git|venv"'
 alias rg='rg -uuupj 16'
-alias brachyura='java -jar brachyura-bootstrap-0.jar'
 alias szrc='source $HOME/.zshrc'
 
 # set up programs
