@@ -103,6 +103,29 @@ require("formatter").setup({
                     stdin = true
                 }
             end
+        },
+        zig = {
+            function()
+                return {
+                    exe = "zig",
+                    args = {
+                        "fmt",
+                        util.get_current_buffer_file_name()
+                    },
+                    stdin = true
+                }
+            end
+        },
+        nim = {
+            function()
+                return {
+                    exe = "nimpretty",
+                    args = {
+                        util.get_current_buffer_file_name()
+                    },
+                    stdin = true
+                }
+            end
         }
     }
 })

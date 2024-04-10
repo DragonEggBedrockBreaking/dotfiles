@@ -1,7 +1,7 @@
 local lsp = require('lsp-zero').preset('recommended')
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { "pyright", "clangd", "rust_analyzer", "jdtls", "gopls", "eslint", "tsserver", "texlab" },
+    ensure_installed = { "clangd", "eslint", "jdtls", "gopls", "nim_langserver", "pyright", "svelte", "texlab", "tsserver", "zls" },
     skip_server_setup = { "rust_analyzer", "clangd" }
 })
 
@@ -10,11 +10,14 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lspconfig = require('lspconfig')
-lspconfig.pyright.setup {}
 lspconfig.clangd.setup {}
-lspconfig.jdtls.setup {}
 lspconfig.eslint.setup {}
+lspconfig.jdtls.setup {}
+lspconfig.nim_langserver.setup {}
+lspconfig.pyright.setup {}
+lspconfig.svelte.setup {}
 lspconfig.texlab.setup {}
+lspconfig.zls.setup {}
 
 require('copilot').setup({
     suggestion = {enabled = true},
