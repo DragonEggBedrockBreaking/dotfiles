@@ -12,6 +12,7 @@ flatpak install $(cat packages/flatpak.list)                                    
 sudo snap install nvim --classic                                                    # apt out of date
 sudo snap install zig --classic --beta                                              # no apt
 sudo snap install scc                                                               # no apt, faster than cloc
+sudo snap install code --classic                                                    # no apt
 wget https://updates.safing.io/latest/linux_amd64/packages/portmaster-installer.deb # no apt/snap/flatpak - CONSTANT URL
 sudo apt install ./*.deb                                                            # install .deb packages
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh          # no apt/snap - CONSTANT URL
@@ -21,13 +22,12 @@ rm *.sh *.deb                                                                   
 curl -s "https://get.sdkman.io" | bash                                              # install sdkman
 source "$HOME/.sdkman/bin/sdkman-init.sh"                                           # setup sdkman
 sdk install java 8.0.402-tem                                                        # used for older mc versions
-sdk install java 21.0.2-graal                                                       # used for newer mc versions
-sdk install java 17.0.10.fx-zulu                                                     # used for general development - default (latest sdk)
+sdk install java 17.0.10.fx-zulu                                                    # used for newish mc versions
+sdk install java 21.0.2-graal                                                       # used for newest mc versions - default (latest lts)
 # discord
 sudo -E gpg --no-default-keyring --keyring=/usr/share/keyrings/javinator9889-ppa-keyring.gpg --keyserver keyserver.ubuntu.com --recv-keys 08633B4AAAEB49FC
-sudo tee /etc/apt/sources.list.d/javinator9889-ppa.list <<< "deb [arch=amd64 signed-by=/usr/share/keyrings/javinator9889-ppa-keyring.gpg] https://ppa.javinator9889.com all main"
+sudo tee /etc/apt/sources.list.d/javinator9889-ppa.list <<<"deb [arch=amd64 signed-by=/usr/share/keyrings/javinator9889-ppa-keyring.gpg] https://ppa.javinator9889.com all main"
 sudo apt update
-sudo apt install discord
 
 # Install fonts (unzip, move font files to ~/.fonts, rebuild font cache, cleanup) - VARIABLE URL
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/UbuntuMono.zip
