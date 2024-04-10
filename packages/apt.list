@@ -21,6 +21,7 @@ lshw
 meson
 mold
 ncdu
+nim
 ninja-build
 nodejs
 npm
