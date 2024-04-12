@@ -30,7 +30,7 @@ sudo tee /etc/apt/sources.list.d/javinator9889-ppa.list <<<"deb [arch=amd64 sign
 sudo apt update
 
 # Install fonts (unzip, move font files to ~/.fonts, rebuild font cache, cleanup) - VARIABLE URL
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/UbuntuMono.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/UbuntuMono.zip
 mkdir font-temp
 mv UbuntuMono.zip font-temp
 cd font-temp
