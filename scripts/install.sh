@@ -24,9 +24,9 @@ chmod +x ./Miniconda3-latest-Linux-x86_64.sh                                    
 rm *.sh *.deb                                                                       # cleanup of downloads
 curl -s "https://get.sdkman.io" | bash                                              # install sdkman
 source "$HOME/.sdkman/bin/sdkman-init.sh"                                           # setup sdkman
-sdk install java 8.0.402-tem                                                        # used for older mc versions
-sdk install java 17.0.10.fx-zulu                                                    # used for newish mc versions
-sdk install java 21.0.2-graal                                                       # used for newest mc versions - default (latest lts)
+sdk install java 8.0.412-tem                                                        # used for older mc versions
+sdk install java 17.0.10.fx-zulu                                                    # used for newish mc versions; contains javafx (for mcaselector)
+sdk install java 21.0.3-graal                                                       # used for newest mc versions - default (latest lts)
 
 # Install fonts (unzip, move font files to ~/.fonts, rebuild font cache, cleanup) - VARIABLE URL
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/UbuntuMono.zip
