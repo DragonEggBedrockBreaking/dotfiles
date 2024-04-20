@@ -3,6 +3,9 @@
 # Install most packages
 echo "Installing packages..."
 sudo add-apt-repository multiverse                                                  # apt repo
+sudo -E gpg --no-default-keyring --keyring=/usr/share/keyrings/javinator9889-ppa-keyring.gpg --keyserver keyserver.ubuntu.com --recv-keys 08633B4AAAEB49FC
+sudo tee /etc/apt/sources.list.d/javinator9889-ppa.list <<<"deb [arch=amd64 signed-by=/usr/share/keyrings/javinator9889-ppa-keyring.gpg] https://ppa.javinator9889.com all main"
+sudo apt update                                                                     # sync ppa and repo stuff
 sudo apt install $(cat packages/apt.list)                                           # apt packages
 curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' | sh -s -- -y           # rust
 source $HOME/.cargo/env                                                             # setup rust
@@ -24,10 +27,6 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"                                       
 sdk install java 8.0.402-tem                                                        # used for older mc versions
 sdk install java 17.0.10.fx-zulu                                                    # used for newish mc versions
 sdk install java 21.0.2-graal                                                       # used for newest mc versions - default (latest lts)
-# discord
-sudo -E gpg --no-default-keyring --keyring=/usr/share/keyrings/javinator9889-ppa-keyring.gpg --keyserver keyserver.ubuntu.com --recv-keys 08633B4AAAEB49FC
-sudo tee /etc/apt/sources.list.d/javinator9889-ppa.list <<<"deb [arch=amd64 signed-by=/usr/share/keyrings/javinator9889-ppa-keyring.gpg] https://ppa.javinator9889.com all main"
-sudo apt update
 
 # Install fonts (unzip, move font files to ~/.fonts, rebuild font cache, cleanup) - VARIABLE URL
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/UbuntuMono.zip

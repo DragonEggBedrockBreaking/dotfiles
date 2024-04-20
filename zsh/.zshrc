@@ -27,7 +27,7 @@ export EDITOR=nvim                   # some programs use it
 export GPG_TTY=$(tty)                # needed for git commits
 export CC_LD=mold                    # use mold as c linker
 export CXX_LD=mold                   # use mold as c++ linker
-export PATH="$PATH:/usr/local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin"
+export PATH="$PATH:/usr/local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin:$HOME/miniconda3/bin"
 
 # aliases
 alias bat='batcat --force-colorization --theme="Monokai Extended Bright"'
