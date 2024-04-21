@@ -40,10 +40,9 @@ require("formatter").setup({
         json = {
             function()
                 return {
-                    exe = "fixjson",
+                    exe = "jq",
                     args = {
-                        "-wi4",
-                        "--stdin-filename",
+                        ".",
                         util.get_current_buffer_file_name()
                     },
                     stdin = true

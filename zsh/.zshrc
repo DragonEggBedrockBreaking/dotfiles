@@ -22,12 +22,13 @@ unsetopt beep                                          # no beep
 bindkey "$terminfo[kcuu1]" history-substring-search-up # better zsh history
 
 # env vars
-export LANG=en_GB.UTF-8              # some programs use it
-export EDITOR=nvim                   # some programs use it
-export GPG_TTY=$(tty)                # needed for git commits
-export CC_LD=mold                    # use mold as c linker
-export CXX_LD=mold                   # use mold as c++ linker
-export PATH="$PATH:/usr/local/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin:$HOME/miniconda3/bin"
+export LANG=en_GB.UTF-8                        # some programs use it
+export EDITOR=nvim                             # some programs use it
+export GPG_TTY=$(tty)                          # needed for git commits
+export CC_LD=mold                              # use mold as c linker
+export CXX_LD=mold                             # use mold as c++ linker
+export STARSHIP_CONFIG=~/.config/starship.toml # starship.rs config
+export PATH="$PATH:/usr/local/bin:$HOME/bin:$HOME/.local/bin:$HOME/miniconda3/bin"
 
 # aliases
 alias bat='batcat --force-colorization --theme="Monokai Extended Bright"'
