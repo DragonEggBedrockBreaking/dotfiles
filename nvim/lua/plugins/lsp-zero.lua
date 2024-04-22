@@ -1,7 +1,7 @@
 local lsp = require('lsp-zero').preset('recommended')
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { "clangd", "eslint", "jdtls", "gopls", "nim_langserver", "pyright", "svelte", "texlab", "tsserver", "zls" },
+    ensure_installed = { "clangd", "eslint", "jdtls", "gopls", "nim_langserver", "pyright", "rust_analyzer", "svelte", "texlab", "tsserver", "zls" },
     skip_server_setup = { "rust_analyzer", "clangd" }
 })
 

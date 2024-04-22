@@ -121,4 +121,14 @@ return require('packer').startup(function()
             require('plugins.formatter')
         end
     }
+    use { --copilot chat
+        'CopilotC-Nvim/CopilotChat.nvim',
+        requires = {
+            'zbirenbaum/copilot.lua',
+            'nvim-lua/plenary.nvim'
+        },
+        config = function()
+            require("CopilotChat").setup {}
+        end
+    }
 end)
