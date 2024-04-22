@@ -11,7 +11,4 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk selfupdate
 sdk update
-echo "Finding sdkman package versions..."
-sdk list java | rg tem | rg ' 8'
-sdk list java | rg 'fx\-zulu' | rg 17
-sdk list java | rg 'graal ' | rg 21
+python sdk_package_updates.py

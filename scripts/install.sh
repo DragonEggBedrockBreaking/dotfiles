@@ -39,7 +39,7 @@ cd ..
 rm -rf font-temp
 fc-cache ~/.fonts
 
-# Install zgenom, setup zsh with symlink, change shell to zsh; install packer.nvim, setup nvim with symlink; setup starship, update.sh with symlinks
+# Install zgenom, packer.nvim; symlink configs; change shell
 echo "Configuring zsh..."
 git clone https://github.com/jandamm/zgenom.git "${HOME}/.zgenom"
 source "${HOME/.zgenom/zgenom.zsh}"
@@ -55,6 +55,7 @@ rm ~/.config/starship.toml
 ln -sv $HOME/dotfiles/starship/starship.toml $HOME/.config/
 echo "Adding update script..."
 ln -sv $HOME/dotfiles/scripts/update.sh $HOME/
+ln -sv $HOME/dotfiles/scripts/sdk_package_updates.py $HOME/
 echo "Changing shell..."
 chsh -s /usr/bin/zsh
 
