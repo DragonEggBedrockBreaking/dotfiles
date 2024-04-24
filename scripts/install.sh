@@ -22,8 +22,7 @@ rm *.sh *.deb                                                                   
 curl -s "https://get.sdkman.io" | bash                                              # install sdkman
 source "$HOME/.sdkman/bin/sdkman-init.sh"                                           # setup sdkman
 sdk install java 8.0.412-tem                                                        # used for older mc versions
-sdk install java 17.0.10.fx-zulu                                                    # used for newish mc versions; contains javafx (for mcaselector)
-sdk install java 21.0.3-graal                                                       # used for newest mc versions - default (latest lts)
+sdk install java 21.0.3-graal                                                       # used for newer mc versions - default (latest lts)
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"                                # install starship.rs - don't build cargo, snap doesn't work properly
 
 # Install fonts (unzip, move font files to ~/.fonts, rebuild font cache, cleanup) - VARIABLE URL
