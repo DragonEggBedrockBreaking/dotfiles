@@ -32,9 +32,9 @@ export PATH="$PATH:/usr/local/bin:$HOME/bin:$HOME/.local/bin:$HOME/miniconda3/bi
 
 # aliases
 alias bat='batcat --force-colorization --theme="Monokai Extended Bright"'
-alias exa='exa -ah@ --colour=auto --icons --git --group-directories-first'
-alias lexa='exa -lah@ --colour=auto --icons --no-permissions --git --group-directories-first'
-alias texa='exa -Th@ --colour=auto --icons --no-permissions --git -I ".git|venv"'
+alias lsd='lsd -A --group-directories-first'
+alias lsdl='lsd -Al --group-directories-first --git'
+alias lsdt='lsd -A --tree'
 alias rg='rg -uuupj 16'
 alias szrc='source $HOME/.zshrc'
 
