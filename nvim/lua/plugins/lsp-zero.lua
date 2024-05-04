@@ -17,6 +17,7 @@ lspconfig.nim_langserver.setup {}
 lspconfig.pyright.setup {}
 lspconfig.svelte.setup {}
 lspconfig.texlab.setup {}
+lspconfig.tsserver.setup {}
 lspconfig.zls.setup {}
 
 require('copilot').setup({
