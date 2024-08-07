@@ -20,10 +20,6 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh      
 chmod +x ./Miniconda3-latest-Linux-x86_64.sh                                        # make script executable
 ./Miniconda3-latest-Linux-x86_64.sh                                                 # run install script
 rm *.sh *.deb                                                                       # cleanup of downloads
-curl -s "https://get.sdkman.io" | bash                                              # install sdkman
-source "$HOME/.sdkman/bin/sdkman-init.sh"                                           # setup sdkman
-sdk install java 8.0.412-tem                                                        # used for older mc versions
-sdk install java 21.0.3-graal                                                       # used for newer mc versions - default (latest lts)
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"                                # install starship.rs - don't build cargo, snap doesn't work properly
 
 # Install fonts (unzip, move font files to ~/.fonts, rebuild font cache, cleanup) - VARIABLE URL
@@ -55,7 +51,6 @@ rm ~/.config/starship.toml
 ln -sv $HOME/dotfiles/starship/starship.toml $HOME/.config/
 echo "Adding update script..."
 ln -sv $HOME/dotfiles/scripts/update.sh $HOME/
-ln -sv $HOME/dotfiles/scripts/sdk_package_updates.py $HOME/
 echo "Changing shell..."
 chsh -s /usr/bin/zsh
 
