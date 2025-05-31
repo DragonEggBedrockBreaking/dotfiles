@@ -1,7 +1,7 @@
-local lsp = require('lsp-zero').preset('recommended')
+local lsp = require('lsp-zero')
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { "clangd", "eslint", "jdtls", "gopls", "nim_langserver", "pyright", "rust_analyzer", "svelte", "texlab", "tsserver", "zls" },
+    ensure_installed = { "clangd", "eslint", "jdtls", "gopls", "nim_langserver", "pyright", "rust_analyzer", "svelte", "texlab", "zls" },
     skip_server_setup = { "rust_analyzer", "clangd" }
 })
 
@@ -17,19 +17,11 @@ lspconfig.nim_langserver.setup {}
 lspconfig.pyright.setup {}
 lspconfig.svelte.setup {}
 lspconfig.texlab.setup {}
-lspconfig.tsserver.setup {}
 lspconfig.zls.setup {}
-
-require('copilot').setup({
-    suggestion = {enabled = true},
-    panel = {enabled = false}
-})
-require('copilot_cmp').setup()
 
 local cmp = require('cmp')
 cmp.setup({
     sources = {
-        {name = 'copilot'},
         {name = 'nvim_lsp'},
         {name = 'buffer'},
         {name = 'luasnip'},
@@ -76,45 +68,12 @@ lspconfig.gopls.setup({
   },
 })
 
-lspconfig.tsserver.setup({
-  on_attach = function(c, b)
-    ih.on_attach(c, b)
-  end,
-  settings = {
-    javascript = {
-      inlayHints = {
-        includeInlayEnumMemberValueHints = true,
-        includeInlayFunctionLikeReturnTypeHints = true,
-        includeInlayFunctionParameterTypeHints = true,
-        includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-        includeInlayPropertyDeclarationTypeHints = true,
-        includeInlayVariableTypeHints = true,
-      },
-    },
-    typescript = {
-      inlayHints = {
-        includeInlayEnumMemberValueHints = true,
-        includeInlayFunctionLikeReturnTypeHints = true,
-        includeInlayFunctionParameterTypeHints = true,
-        includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
-        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-        includeInlayPropertyDeclarationTypeHints = true,
-        includeInlayVariableTypeHints = true,
-      },
-    },
-  },
-})
-
 local rust_tools = require('rust-tools')
 rust_tools.setup({
     tools = {
         on_initialized = function()
             ih.set_all()
         end,
-        inlay_hints = {
-            auto = false,
-        },
     },
     server = {
         on_attach = function(client, bufnr)
@@ -125,7 +84,5 @@ rust_tools.setup({
 })
 
 require('clangd_extensions').setup()
-require("clangd_extensions.inlay_hints").setup_autocmd()
-require("clangd_extensions.inlay_hints").set_inlay_hints()
 
 lsp.setup()

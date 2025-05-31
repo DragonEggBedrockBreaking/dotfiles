@@ -6,16 +6,15 @@ sudo add-apt-repository multiverse # apt repo
 sudo dpkg --add-architecture i386  # 32-bit packages (steam)
 curl -q 'https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1>/dev/null
 echo "deb [signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $(lsb_release -cs)" | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
+sudo add-apt-repository ppa:neovim-ppa/unstable                                                 # nvim ppa
 sudo apt update                                                                                 # sync ppa and repo stuff
 sudo apt install -y $(cat packages/apt.list)                                                    # apt packages
 curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' | sh -s -- -y                       # rust
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo # flathub
 flatpak install $(cat packages/flatpak.list)                                                    # flatpak
-sudo snap install --classic nvim                                                                # out of date apt
 sudo snap install --beta prettier                                                               # no apt; better than npm
 sudo snap install scc                                                                           # no apt
 sudo snap install --classic --beta zig                                                          # no apt
-sudo snap install discord                                                                       # no apt
 sudo snap install tailscale --edge                                                              # no apt
 wget https://updates.safing.io/latest/linux_amd64/packages/portmaster-installer.deb             # no apt/snap/flatpak - CONSTANT URL
 sudo apt install -y ./*.deb                                                                     # install .deb packages

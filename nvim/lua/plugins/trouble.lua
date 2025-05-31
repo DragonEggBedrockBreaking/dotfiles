@@ -1,6 +1,5 @@
 require("trouble").setup {
     position = "right",
-    auto_open = true,
     auto_close = true
 }
 vim.api.nvim_set_keymap('n', '<leader>xx', ':Trouble<cr>', {})

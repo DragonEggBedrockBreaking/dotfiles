@@ -92,10 +92,6 @@ return require('packer').startup(function()
             'L3MON4D3/LuaSnip',
             'hrsh7th/cmp-nvim-lsp',
 
-            --gh copilot
-            'zbirenbaum/copilot.lua',
-            'zbirenbaum/copilot-cmp',
-
             --folds
             'kevinhwang91/nvim-ufo',
             'kevinhwang91/promise-async',
@@ -119,16 +115,6 @@ return require('packer').startup(function()
         'mhartington/formatter.nvim',
         config = function()
             require('plugins.formatter')
-        end
-    }
-    use { --copilot chat
-        'CopilotC-Nvim/CopilotChat.nvim',
-        requires = {
-            'zbirenbaum/copilot.lua',
-            'nvim-lua/plenary.nvim'
-        },
-        config = function()
-            require("CopilotChat").setup {}
         end
     }
 end)
