@@ -4,25 +4,26 @@
 echo "Installing packages..."
 sudo add-apt-repository multiverse # apt repo
 sudo dpkg --add-architecture i386  # 32-bit packages (steam)
-sudo -E gpg --no-default-keyring --keyring=/usr/share/keyrings/javinator9889-ppa-keyring.gpg --keyserver keyserver.ubuntu.com --recv-keys 08633B4AAAEB49FC
-sudo tee /etc/apt/sources.list.d/javinator9889-ppa.list <<<"deb [arch=amd64 signed-by=/usr/share/keyrings/javinator9889-ppa-keyring.gpg] https://ppa.javinator9889.com all main"
 curl -q 'https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1>/dev/null
 echo "deb [signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $(lsb_release -cs)" | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
-sudo apt update                                                                     # sync ppa and repo stuff
-sudo apt install $(cat packages/apt.list)                                           # apt packages
-curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' | sh -s -- -y           # rust
-flatpak install $(cat packages/flatpak.list)                                        # flatpak (installed manually though gui in welcome app on first boot)
-sudo snap install --classic nvim                                                    # out of date apt
-sudo snap install --beta prettier                                                   # no apt; better than npm
-sudo snap install scc                                                               # np apt
-sudo snap install --classic --beta zig                                              # np apt
-wget https://updates.safing.io/latest/linux_amd64/packages/portmaster-installer.deb # no apt/snap/flatpak - CONSTANT URL
-sudo apt install ./*.deb                                                            # install .deb packages
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh          # no apt/snap - CONSTANT URL
-chmod +x ./Miniconda3-latest-Linux-x86_64.sh                                        # make script executable
-./Miniconda3-latest-Linux-x86_64.sh                                                 # run install script
-rm *.sh *.deb                                                                       # cleanup of downloads
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"                                # install starship.rs - don't build cargo, snap doesn't work properly
+sudo apt update                                                                                 # sync ppa and repo stuff
+sudo apt install -y $(cat packages/apt.list)                                                    # apt packages
+curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' | sh -s -- -y                       # rust
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo # flathub
+flatpak install $(cat packages/flatpak.list)                                                    # flatpak
+sudo snap install --classic nvim                                                                # out of date apt
+sudo snap install --beta prettier                                                               # no apt; better than npm
+sudo snap install scc                                                                           # no apt
+sudo snap install --classic --beta zig                                                          # no apt
+sudo snap install discord                                                                       # no apt
+sudo snap install tailscale --edge                                                              # no apt
+wget https://updates.safing.io/latest/linux_amd64/packages/portmaster-installer.deb             # no apt/snap/flatpak - CONSTANT URL
+sudo apt install -y ./*.deb                                                                     # install .deb packages
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh                      # no apt/snap - CONSTANT URL
+chmod +x ./Miniconda3-latest-Linux-x86_64.sh                                                    # make script executable
+./Miniconda3-latest-Linux-x86_64.sh                                                             # run install script
+rm *.sh *.deb                                                                                   # cleanup of downloads
+sh -c "$(curl -fsSL https://starship.rs/install.sh)"                                            # install starship.rs - don't build cargo, snap doesn't work properly
 
 # Install fonts (unzip, move font files to ~/.fonts, rebuild font cache, cleanup) - VARIABLE URL
 echo "Installing UbuntuMono nerd font..."

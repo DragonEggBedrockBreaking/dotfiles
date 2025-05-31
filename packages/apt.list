@@ -4,10 +4,10 @@ clang
 clang-format
 cmake
 cowsay
-discord
 docker.io
 docker-compose
 eog
+flatpak
 fortune-mod
 fzf
 gimp
@@ -28,6 +28,7 @@ nodejs
 npm
 nvidia-cuda-toolkit
 obs-studio
+openjdk-21-jdk
 pdfarranger
 prismlauncher
 python3-autopep8
