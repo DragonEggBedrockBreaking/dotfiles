@@ -16,8 +16,6 @@ sudo snap install --beta prettier                                               
 sudo snap install scc                                                                           # no apt
 sudo snap install --classic --beta zig                                                          # no apt
 sudo snap install tailscale --edge                                                              # no apt
-wget https://updates.safing.io/latest/linux_amd64/packages/portmaster-installer.deb             # no apt/snap/flatpak - CONSTANT URL
-sudo apt install -y ./*.deb                                                                     # install .deb packages
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh                      # no apt/snap - CONSTANT URL
 chmod +x ./Miniconda3-latest-Linux-x86_64.sh                                                    # make script executable
 ./Miniconda3-latest-Linux-x86_64.sh                                                             # run install script
