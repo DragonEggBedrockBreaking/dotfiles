@@ -3,6 +3,7 @@ build-essential
 clang
 clang-format
 cmake
+code
 cowsay
 docker.io
 docker-compose

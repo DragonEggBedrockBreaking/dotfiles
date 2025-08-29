@@ -6,6 +6,7 @@ sudo add-apt-repository multiverse # apt repo
 sudo dpkg --add-architecture i386  # 32-bit packages (steam)
 curl -q 'https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1>/dev/null
 echo "deb [signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $(lsb_release -cs)" | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
+echo "code code/add-microsoft-repo boolean true" | sudo debconf-set-selections                  # vscode
 sudo add-apt-repository ppa:neovim-ppa/unstable                                                 # nvim ppa
 sudo apt update                                                                                 # sync ppa and repo stuff
 sudo apt install -y $(cat packages/apt.list)                                                    # apt packages
