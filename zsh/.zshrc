@@ -41,7 +41,9 @@ alias szrc='source $HOME/.zshrc'
 # set up programs
 eval "$(zoxide init zsh)"                                                                      # sets up zoxide (alternative to cd)
 eval "$(starship init zsh)"                                                                    # sets up starship (part of shell theme)
-[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh # Sets up miniconda
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh # sets up miniconda
+[ -f "/home/anton/.ghcup/env" ] && . "/home/anton/.ghcup/env"                                  # sets up ghcup-env (for haskell)
 
 # Other
 fortune | cowsay # shell header
+

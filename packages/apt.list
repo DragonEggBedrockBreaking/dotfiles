@@ -18,6 +18,7 @@ handbrake
 hplip
 kdeconnect
 libfuse2
+libgmp-dev
 llvm
 lsd
 lshw
@@ -39,7 +40,7 @@ python3-venv
 ripgrep
 shfmt
 steam-installer
-texlive-latex-base
+texlive-full
 tlp
 vifm
 yt-dlp

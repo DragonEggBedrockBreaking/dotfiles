@@ -11,6 +11,7 @@ sudo add-apt-repository ppa:neovim-ppa/unstable                                 
 sudo apt update                                                                                 # sync ppa and repo stuff
 sudo apt install -y $(cat packages/apt.list)                                                    # apt packages
 curl --proto '=https' --tlsv1.2 -sSf 'https://sh.rustup.rs' | sh -s -- -y                       # rust
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh                         # haskell
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo # flathub
 flatpak install $(cat packages/flatpak.list)                                                    # flatpak
 sudo snap install --beta prettier                                                               # no apt; better than npm
