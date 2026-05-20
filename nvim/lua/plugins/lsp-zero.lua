@@ -1,7 +1,7 @@
 local lsp = require('lsp-zero')
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { "clangd", "eslint", "jdtls", "gopls", "nim_langserver", "pyright", "rust_analyzer", "svelte", "texlab", "zls" },
+    ensure_installed = { "clangd", "eslint", "jdtls", "gopls", "kotlin_lsp", "nim_langserver", "pyright", "rust_analyzer", "svelte", "texlab", "zls" },
     skip_server_setup = { "rust_analyzer", "clangd" }
 })
 
@@ -9,15 +9,15 @@ lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({buffer = bufnr})
 end)
 
-lspconfig = require('lspconfig')
-lspconfig.clangd.setup {}
-lspconfig.eslint.setup {}
-lspconfig.jdtls.setup {}
-lspconfig.nim_langserver.setup {}
-lspconfig.pyright.setup {}
-lspconfig.svelte.setup {}
-lspconfig.texlab.setup {}
-lspconfig.zls.setup {}
+vim.lsp.enable('clangd')
+vim.lsp.enable('eslint')
+vim.lsp.enable('jdtls')
+vim.lsp.enable('kotlin_lsp')
+vim.lsp.enable('nim_languageserver')
+vim.lsp.enable('pyright')
+vim.lsp.enable('svelte')
+vim.lsp.enable('texlab')
+vim.lsp.enable('zls')
 
 local cmp = require('cmp')
 cmp.setup({
@@ -49,7 +49,7 @@ require('ufo').setup()
 local ih = require('inlay-hints')
 ih.setup()
 
-lspconfig.gopls.setup({
+--[[vim.lsp.enable('gopls').setup({
   on_attach = function(c, b)
     ih.on_attach(c, b)
   end,
@@ -66,7 +66,7 @@ lspconfig.gopls.setup({
       },
     },
   },
-})
+})]]--
 
 local rust_tools = require('rust-tools')
 rust_tools.setup({
