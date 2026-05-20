@@ -21,5 +21,7 @@ ln -sv $HOME/dotfiles/starship/starship.toml $HOME/.config/
 
 echo "Changing shell..."
 chsh -s /usr/bin/zsh
+echo "Enabling login manager..."
+sudo systemctl enable plasmalogin 
 echo "Computer has been set up. Your computer will restart in 5 seconds; press C-c to cancel."
 sleep 5s && reboot

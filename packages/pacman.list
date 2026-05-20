@@ -1,3 +1,4 @@
+alacritty
 autopep8
 base-devel
 bat
@@ -11,10 +12,11 @@ firefox
 fortune-mod
 fzf
 gimp
-git
 go
 handbrake
+kde-system
 kdeconnect
+konsole
 ghc
 llvm
 lsd
@@ -31,11 +33,14 @@ obs-studio
 obsidian
 jre21-openjdk
 pdfarranger
+plasma-login-manager
+plasma-meta
 prettier
 prismlauncher
 ripgrep
 rust
 shfmt
+starship
 steam
 tailscale
 texlive
